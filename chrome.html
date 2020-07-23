@@ -1,1 +1,344 @@
-/Users/neo/WebstormProjects/themes/chrome/index.html
+<!DOCTYPE html>
+<html>
+    <body class="{select:Next Page} {select:Columns Number} {select:Background Type} {block:ifContainedLayout}contained{/block:ifContainedLayout}">
+    <div class="backgroundContainer"></div>
+
+    <main id="mainContainer">
+        <header>
+            <div id="iosButtons">
+                <span class="bubble-red"></span>
+                <span class="bubble-orange"></span>
+                <span class="bubble-green"></span>
+            </div>
+            <div id="searchBarPart">
+                <form action="/search" method="get" id="searchForm">
+                    <input type="text" name="q" placeholder="https://" value="{SearchQuery}">
+                    <button type="submit">
+                        <span class="chrome-search"></span>
+                    </button>
+                </form>
+            </div>
+        </header>
+
+        {block:AskEnabled}
+            <div id="gmailContainer">
+                <aside id="gmailLat">
+                    <span class="chrome-cancel"></span>
+                    <ul>
+                        <li class="selected upper openPop">
+                            <a href="#askbox">Compose</a>
+                        </li>
+                        <li class="upper openPop">
+                            <a href="#faq">F.A.Q</a>
+                        </li>
+                        <li class="upper">
+                            <a href="/tagged/{text:Your Answer Tag}">Sent</a>
+                        </li>
+                    </ul>
+                </aside>
+
+                <div id="gmailContent">
+                    <div class="gmailBox" id="askbox">
+                        <h2 class="askLabel">
+                            <span></span>
+                            {AskLabel}
+                        </h2>
+                        <iframe frameborder="0" scrolling="no" width="100%" height="190" src="https://www.tumblr.com/ask_form/{Name}.tumblr.com" style="background-color: transparent; overflow: hidden; height: 190px;" id="ask_form"></iframe>
+                    </div>
+                    <div class="gmailBox" id="faq">
+                        <div class="faqContainer">
+                            <h2 class="faqQuestion">{text:Gmail FAQ Question 1}</h2>
+                            <div class="faqAnswer">
+                                <p>{text:Gmail FAQ Answer 1}</p>
+                            </div>
+                        </div>
+                        <div class="faqContainer">
+                            <h2 class="faqQuestion">{text:Gmail FAQ Question 2}</h2>
+                            <div class="faqAnswer">
+                                <p>{text:Gmail FAQ Answer 2}</p>
+                            </div>
+                        </div>
+                        <div class="faqContainer">
+                            <h2 class="faqQuestion">{text:Gmail FAQ Question 3}</h2>
+                            <div class="faqAnswer">
+                                <p>{text:Gmail FAQ Answer 3}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {/block:AskEnabled}
+
+        <div id="chromeContainer">
+            <aside id="chromeAside">
+                <h1 class="upper">{Title}</h1>
+                <div id="middleLat">
+                    <div id="userPortrait">
+                        <a href="/"><img src="{PortraitURL-96}" alt="{Name}"></a>
+                    </div>
+                    <div id="blogDesc" class="border-box">
+                        {Description}
+                    </div>
+                </div>
+                <nav id="latNav">
+                    <ul class="cancel-li">
+                        {block:AskEnabled}
+                            <li>
+                                <a title="{AskLabel}" href="/ask" {block:ifGmail}id="openGmail"{/block:ifGmail} class="chrome-mail"></a>
+                            </li>
+                        {/block:AskEnabled}
+                        <li>
+                            <a title="Archive" href="/archive" class="chrome-calendar"></a>
+                        </li>
+                        <li>
+                            <a title="{text:Title Location Icon}" href="{text:Link Location Icon}" class="chrome-maps"></a>
+                        </li>
+                        <li>
+                            <a title="{text:Title Folder Icon}" href="{text:Link Folder Icon}" class="chrome-drive"></a>
+                        </li>
+                        <li>
+                            <a title="{text:Title User Icon}" href="{text:Link User Icon}" class="chrome-user"></a>
+                        </li>
+                        <li>
+                            <a title="{text:Title Heart Icon}" href="{text:Link Heart Icon}" class="chrome-heart"></a>
+                        </li>
+                        <li>
+                            <a title="{text:Title Tag Icon}" href="{text:Link Tag Icon}" class="chrome-tag"></a>
+                        </li>
+                        <li>
+                            <a title="{text:Title Cloud Icon}" href="{text:Link Cloud Icon}" class="chrome-cloud"></a>
+                        </li>
+                        <li>
+                            <a title="{text:Title Attach Icon}" href="{text:Link Attach Icon}" class="chrome-attach"></a>
+                        </li>
+                    </ul>
+                </nav>
+                {block:IndexPage}
+                    {block:Pagination}
+                        <div id="pagination" class="upper">
+                            {block:PreviousPage}
+                            <a href="{PreviousPage}">Back</a> ||
+                            {/block:PreviousPage}
+                            {block:NextPage}
+                            <a href="{NextPage}">Next</a>
+                            {/block:NextPage}
+                        </div>
+                    {/block:Pagination}
+                {/block:IndexPage}
+            </aside>
+
+            <div id="blogContent" data-loaded="[{CurrentPage}]">
+                {block:Posts}
+                    <div id="{PostID}" class="post border-box {PostType} {block:IfHideCaptions}{block:IndexPage}noCaps{/block:IndexPage}{/block:IfHideCaptions} {block:IfShowPinnedIcon}{block:PinnedPostLabel}pinned{/block:PinnedPostLabel}{/block:IfShowPinnedIcon} {block:Quote}length-{Length}{/block:Quote} {block:Photoset}photoset layout-{PhotosetLayout}{/block:Photoset}">
+                        <div class="postContent">
+                            {block:IfShowPinnedIcon}
+                                {block:PinnedPostLabel}
+                                    <div class="pinnedIcon">
+                                        <span class="chrome-pin"></span>
+                                    </div>
+                                {/block:PinnedPostLabel}
+                            {/block:IfShowPinnedIcon}
+
+                            {block:Photo}
+                                <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="mainImage"/>
+                            {/block:Photo}
+
+                            {block:Text}
+                                {block:Title}
+                                    <h2 class="title">{Title}</h2>
+                                {/block:Title}
+                                {block:Permalink}
+                                    {block:Body}
+                                        {Body}
+                                    {/block:Body}
+                                {/block:Permalink}
+                            {/block:Text}
+
+                            {block:Photoset}
+                                <div class="photosetContainer">
+                                    {block:Photos}
+                                        <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                                    {/block:Photos}
+                                </div>
+                            {/block:Photoset}
+
+                            {block:Panorama}
+                                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                            {/block:Panorama}
+
+                            {block:Quote}
+                                <h2 class="title">{Quote}</h2>
+                                {block:Source}
+                                    <div class="quoteSource">
+                                        {Source}
+                                    </div>
+                                {/block:Source}
+                            {/block:Quote}
+
+                            {block:Link}
+                                <a href="{URL}" title="{Name}" class="linkContainer" {Target}>
+                                    {block:Thumbnail}
+                                        <div class="linkThumb">
+                                            <img src="{Thumbnail}" alt="{Name}">
+                                        </div>
+                                    {/block:Thumbnail}
+                                    <div class="linkInfo upper">
+                                        <h2 class="title">{Name}</h2>
+                                    </div>
+                                </a>
+                            {/block:Link}
+
+                            {block:Chat}
+                                {block:Title}<h2 class="title">{Title}</h2>{/block:Title}
+                                {block:Lines}
+                                    <div class="chatRepartee">
+                                        {block:Label}
+                                            <div class="chatOrator">
+                                                {Label}
+                                            </div>
+                                        {/block:Label}
+                                        <div class="chatTalk">
+                                            {Line}
+                                        </div>
+                                    </div>
+                                {/block:Lines}
+                            {/block:Chat}
+
+                            {block:Audio}
+                            <div class="audioContainer">
+                                <div class="audioMedia">
+                                    {block:AlbumArt}
+                                        <div class="audioThumb">
+                                            <img src="{AlbumArtURL}"{block:TrackName} alt="{TrackName}"{/block:TrackName}>
+                                        </div>
+                                    {/block:AlbumArt}
+                                    <div class="audioPlayer">
+                                        {AudioPlayer}
+                                    </div>
+                                </div>
+
+
+                                <div class="audioInfo upper">
+                                    {block:Artist}
+                                        <p class="artist">{Artist}</p>
+                                    {/block:Artist}
+                                    {block:TrackName}
+                                        <p class="track">{TrackName}</p>
+                                    {/block:TrackName}
+                                </div>
+                            </div>
+                            {/block:Audio}
+
+                            {block:Video}
+                                {VideoEmbed-700}
+                            {/block:Video}
+
+                            {block:Answer}
+                                <div class="answerContainer">
+                                    <div class="answerThumb">
+                                        <img src="{AskerPortraitURL-96}" alt="{AskerPortraitURL-96}">
+                                    </div>
+                                    <div class="answerInfo">
+                                        <span class="asker upper">{Asker}</span>
+                                        <p>{Question}</p>
+                                    </div>
+                                </div>
+                                <div class="captionBlock">
+                                    <div class="captionItem">
+                                        <div class="captionUser">
+                                            <a href="{BlogUrl}" title="{Name}">
+                                                <img src="{PortraitURL-64}" alt="{Name}">
+                                                <b>{Name}</b>
+                                            </a>
+                                        </div>
+                                        <div class="captionContent">
+                                            {Answer}
+                                        </div>
+                                    </div>
+                                </div>
+                            {/block:Answer}
+
+                            <div class="captionBlock">
+                                {block:Reblogs}
+                                    <div class="captionItem">
+                                        <div class="captionUser {block:IsDeactivated}deactivated{/block:IsDeactivated}">
+                                            <a href="{Permalink}" title="{Username}">
+                                                <img src="{PortraitURL-64}" alt="{Username}">
+                                                <b>{Username}</b>
+                                            </a>
+                                        </div>
+                                        <div class="captionContent">
+                                            {Body}
+                                        </div>
+                                    </div>
+                                {/block:Reblogs}
+                            </div>
+                        </div>
+                        <div class="postMeta">
+                            <div class="postMetaCont">
+                                <div class="rebloggedFrom">
+                                    {block:RebloggedFrom}
+                                    <a href="{ReblogParentURL}" title="{ReblogParentTitle}">
+                                        <span class="chrome-reblog"></span>
+                                        {ReblogParentName}
+                                    </a>
+                                    {/block:RebloggedFrom}
+                                </div>
+                                {block:Date}
+                                <div class="postsNotes">
+                                    <a href="{Permalink}">
+                                        <time>
+                                            {ShortMonth}., {MonthNumber}{DayOfMonthSuffix}
+                                        </time>
+                                        <span class="chrome-heart"></span>
+                                        {NoteCount}
+                                    </a>
+                                </div>
+                                {/block:Date}
+                            </div>
+                            {block:HasTags}
+                                <div class="tags">
+                                    {block:Tags}
+                                        <a href="{TagURL}"># {Tag}</a>
+                                    {/block:Tags}
+                                </div>
+                            {/block:HasTags}
+
+                            {block:PostNotes}
+                                <div id="postNoteDetails">{PostNotes-64}</div>
+                            {/block:PostNotes}
+                        </div>
+                    </div>
+                {/block:Posts}
+            </div>
+            {block:IndexPage}
+                <div id="loadMoreSection" class="upper">
+                    <a id="loadMore"> Load more </a>
+                </div>
+            {/block:IndexPage}
+        </div>
+    </main>
+
+    </body>
+
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/colcade@0/colcade.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.min.js"></script>
+    <script src="https://assets.neothm.com/chrome/js/script.min.js"></script>
+
+    <script>
+        $(function(){
+            var nextPageOpt = window.outerWidth > 780 ? "{select:Next Page}" : "infiniteScroll";
+
+            $(document).neothm({
+                {block:IfNotLazyLoading}lazyLoading: false,{/block:IfNotLazyLoading}
+                {block:PermalinkPage}indexPage: false,{/block:PermalinkPage}
+                nextPage: nextPageOpt
+            });
+        });
+    </script>
+
+</html>
