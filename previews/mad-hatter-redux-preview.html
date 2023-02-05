@@ -1,0 +1,2059 @@
+<!--
+ 
+    THEME #13 (MAD HATTER - REDUX) BY NEOTHM
+    ========================================
+ 
+    ## Information
+        Creator:                     Neo  @mtrics
+        Release:                     2016-11-05
+        Version:                     1.0
+        Source:                      https://github.com/neothm/public-releases/...
+ 
+    ## Links
+        Support                      https://neothm.com/tagged/answeo
+          > Related to this theme:   https://neothm.com/tagged/a:13
+        Terms of use                 https://neothm.com/terms
+ 
+    ## Dependencies & Credits
+        CSS Reset:                   https://meyerweb.com/eric/tools/css/reset/
+        Tippy.js:                    https://atomiks.github.io/tippyjs/
+        Feather icons:               https://feathericons.com/
+ 
+-->
+    
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            Mad Hatter REDUX
+        </title>
+        
+        <link rel="preconnect" href="https://static.tumblr.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <!-- 
+            Theme options 
+        -->
+        <meta name="image:Favicon" content="{Favicon}" />
+        <meta name="color:Body Text" content="#686868" />
+        <meta name="color:Links" content="#0fff47" />
+        <meta name="color:Links on Hover" content="#0ff0ff" />
+        <meta name="color:Background" content="#fff" />
+        <meta name="color:Accents" content="#ffff00" />
+        
+        <meta name="text:Google Font" content="Montserrat" />
+        <meta name="text:Google Title Font" content="Cormorant Infant" />
+        <meta name="text:Base Font Size" content="12px" />
+        <meta name="text:Post Size Index" content="250px" />
+        <meta name="text:Post Size Permalink" content="700px" />
+        <meta name="text:Post Spacing" content="50px" />
+        <meta name="text:Post Padding Index" content="0px" />
+        <meta name="text:Post Padding Permalink" content="30px" />
+        
+        <meta name="text:Custom Link 1 URL" content="" />
+        <meta name="text:Custom Link 1 Content" content="" />
+        <meta name="text:Custom Link 2 URL" content="" />
+        <meta name="text:Custom Link 2 Content" content="" />
+        <meta name="text:Custom Link 3 URL" content="" />
+        <meta name="text:Custom Link 3 Content" content="" />
+        
+        <meta name="select:Next Page" content="np-pagination" title="Jump pagination">
+        <meta name="select:Next Page" content="np-load-more" title="Load more button">
+        <meta name="select:Next Page" content="np-infinite-scroll" title="Infinite scroll">
+        
+        <meta name="if:Archive Link" content="1">
+        <meta name="if:Show Tumblr Pages" content="1">
+        <meta name="if:Post Shadow On Hover" content="1">
+        <meta name="if:Show Captions On Hover" content="1">
+
+        <!-- 
+            Header + meta tags
+        -->
+        <link rel="icon" type="image/x-icon" href="{image:Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="description" content="{MetaDescription}" />
+        
+        <!-- 
+            Font
+        -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/pORrpbukq/glider.min.css" rel="stylesheet">
+        
+        <link href="https://static.tumblr.com/emvnqzg/yLjrpkn1m/base.css" rel="stylesheet">
+        
+        <link href="https://static.tumblr.com/emvnqzg/vOmrpfphp/notes.css" rel="stylesheet">
+
+        <link href="https://static.tumblr.com/emvnqzg/jLmrpkn2y/posts-captions.css" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/KzPrpa3mt/reblog-trails.css" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/ZtQrpk6bu/pagination.css" rel="stylesheet">
+
+        <style type="text/css">
+            :root {
+                --transition-duration: 0.4s;
+                --body-font: "Montserrat";
+                --title-font: "Playfair Display";
+                --link-color: #f393b5;
+                --hover-link-color: #a87ca0;
+                --text-color: #686868;
+                --background-color: #ffffff;
+                --background-color-transparent: #ffffffCC;
+                
+                --post-size: 250px;
+                --post-size-permalink: 650px;
+                --post-margin: 50px;
+                --post-padding: 20px;
+                --post-padding-permalink: 20px;
+                --base-font-size: 12px;
+                
+                
+                --accent-color: #4d8b3c;
+                /* https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4 */
+                --accent-color-transparent: #4d8b3c99;
+                
+                --glider-dot: #d89d7d;
+                --glider-dot-active: #d89d7d;
+                
+                --lightest-gray: #f2f2f2;
+                --medium-gray: #aaaaaa;
+                --dark-gray: #8c8c8c;
+
+                --box-shadow: 7px 7px 0px rgb(200 200 200 / 20%);
+                
+                --border-radius: 6px;
+                --photoset-spacing: 10px;
+            }
+
+
+
+            /* ================================================================
+              CAROUSEL PHOTOSET POSTS
+            ================================================================ */
+            body.index-page .glider-track {
+                height: 100%;
+            }
+
+            body.index-page .photoset-container .dots {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 5px;
+                z-index: 1;
+            }
+
+            body.index-page .photoset-container .dots .glider-dot {
+                background-color: transparent;
+                border: 2px solid var(--glider-dot);
+                width: 13px;
+                height: 13px;
+            }
+
+            body.index-page .photoset-container .dots .glider-dot.active {
+                border-color: var(--glider-dot-active);
+                background-color: var(--glider-dot-active); 
+            }
+
+            /* ================================================================
+                AUDIO POSTS
+                https://codepen.io/neothm/pen/abjjaNP
+            ================================================================ */
+            body.index-page .audio-player-container {
+              position: relative;
+              border-radius: 5px;
+              background-size: cover;
+            }
+
+            body.index-page .audio-player-container > span {
+              display: block;
+              position: absolute;
+              overflow: hidden;
+              
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%) scale(1.4);
+              
+              width: 26px;
+              height: 26px;
+              border-radius: 50%;
+            }
+
+            body.index-page .audio-player-container .audio_player {
+              transform: translateX(-4px);
+            }
+
+            body.index-page .audio-player-container > span > button {
+              cursor: pointer;
+              background-color: #fff !important;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+
+            body.index-page .audio-player-container > span > button svg {
+              width: 17px;
+              fill: #000;
+            }
+
+            /* ================================================================
+                AUDIO POSTS
+                https://codepen.io/neothm/pen/MWBBQBY
+            ================================================================ */
+
+            body.permalink-page .audio-player {
+              display: flex;
+              gap: 30px;
+              align-items: center;
+            }
+
+            body.permalink-page .audio-player-container {
+              position: relative;
+              width: 25%;
+              border-radius: 5px;
+              background-size: cover;
+            }
+
+            body.permalink-page .audio-player-container:after {
+              content: "";
+              display: block;
+              padding-bottom: 100%;
+            }
+
+            body.permalink-page .audio-player-container > span {
+              display: block;
+              position: absolute;
+              overflow: hidden;
+              
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%) scale(1.4);
+              
+              width: 26px;
+              height: 26px;
+              border-radius: 50%;
+            }
+
+            body.permalink-page .audio-player-container .audio_player {
+              transform: translateX(-4px);
+            }
+
+            body.permalink-page .audio-player-container > span > button {
+              cursor: pointer;
+              background-color: #fff !important;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+
+            body.permalink-page .audio-player-container > span > button svg {
+              width: 17px;
+              fill: #000;
+            }
+
+            body.permalink-page .audio-metas svg {
+              width: 13px;
+              height: 13px;
+            }
+
+            body.permalink-page .audio-metas > .audio-trackname {
+              margin-bottom: 10px;
+            }
+
+            body.permalink-page .audio-metas > div:not(:last-child) {
+              margin-bottom: 5px;
+            }
+
+            body.permalink-page .audio-artist, .audio-album {
+              gap: 7px;
+            }
+            
+            /* ================================================================
+                DEFAULT
+            ================================================================ */
+            body {
+                font-size: var(--base-font-size);
+            }
+            
+            .tmblr-lightbox .lightbox-image {
+                border-radius: var(--border-radius) !important;    
+            }
+            
+            iframe.tmblr-iframe.iframe-controls--desktop {
+                top: 16px;
+            }
+            
+            .tippy-content {
+                font: 10px/1 var(--body-font);
+                background-color: var(--accent-color);
+                border-radius: calc(var(--border-radius) / 2);
+                max-width: 120px;
+                text-align: center;
+            }
+            
+            /* ================================================================
+                GLOBAL
+            ================================================================ */
+            #posts-container {
+                margin: 10vh auto;
+            }
+
+            body.index-page #posts-container {
+                display: grid;
+                grid-template-columns: repeat(4, var(--post-size));
+                grid-auto-flow: dense;
+                gap: var(--post-margin);
+                width: calc((var(--post-size) * 4) + (var(--post-margin) * 3));
+            }
+
+            body.permalink-page #posts-container {
+                width: var(--post-size-permalink);
+            }
+
+            article {
+              background-color: #fff;
+              width: var(--post-size);
+              
+              transition-duration: var(--transition-duration);
+            }
+
+            body.index-page article {
+              height: var(--post-size);
+              border-radius: var(--border-radius);
+            }
+
+            body.index-page .text-post-container {
+              padding: var(--post-padding);
+            }
+            body.permalink-page article {
+              padding: var(--post-padding-permalink);
+            }
+            
+            body.index-page article:hover {
+                box-shadow: var(--box-shadow);
+            }
+            
+            body.index-page article[data-tags*="enhanced"] {
+                grid-column-end: span 2;
+                grid-row-end: span 2;
+                width: calc((var(--post-size) * 2) + var(--post-margin));
+                height: calc((var(--post-size) * 2) + var(--post-margin));
+            }
+            
+            body.index-page article[data-tags*="hidden"] {
+                display: none;
+            }
+            
+            #posts-container.no-search-results {
+                padding: 0 var(--post-margin);
+                margin: 0!important;
+                display: flex;
+                width: unset;
+            }
+            
+            #posts-container.no-search-results h1 {
+                font-size: 4em;
+            }
+            
+            #posts-container.no-search-results h1 i {
+                font-style: italic;
+            }
+            
+            /* ================================================================
+                AUDIO POSTS
+            ================================================================ */
+            body.index-page .posts-contents {
+                border-radius: var(--border-radius);
+            }
+            
+            body.index-page .posts-contents.long-posts-contents .read-more-link {
+                /* Position of overlay */
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding-bottom: 12px;
+                
+                /* Gradient background */
+                background: rgb(255,255,255);
+                background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%);
+                height: 60%;
+                
+                /* Align text to bottom of gradient */
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+            
+            body.index-page .posts-contents.long-posts-contents .read-more-link a {
+                text-transform: uppercase;
+                font-size: 0.8em;
+                letter-spacing: 0.1em;
+                word-spacing: 0.2em;
+            }
+            
+            .chat-bubble {
+                padding: 8px;
+            }
+            
+            .chat-bubble.even {
+                background-color: var(--lightest-gray);
+                border-radius: var(--border-radius);
+            }
+            
+            /* ================================================================
+                PERMALINKS
+            ================================================================ */
+            /* Captions on posts */
+            body.index-page .hover-captions, body.index-page .reblog-metas {
+                position: absolute;
+                right: 10px;
+                z-index: 2;
+            }
+            
+            body.index-page .hover-captions {
+                background-color: #fff;
+                top: 10px;
+                left: 10px;
+                padding: 10px;
+                border-radius: var(--border-radius);
+                font-size: 0.9em;
+                /* margin: 10px; */
+                display: var(--display-captions-hover);
+
+                visibility: hidden;
+                opacity: 0;
+                transition-duration: var(--transition-duration);
+            }
+            
+            body.index-page .hover-captions .trail-user {
+                margin-bottom: 5px;
+            }
+            
+            body.index-page .hover-captions .trail-user b {
+                font-weight: bold;
+            }
+            
+            body.index-page article:hover .hover-captions {
+                visibility: visible;
+                opacity: 1;
+            }
+            
+            body.index-page .hover-captions .trail-item:first-child .trail-content {
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            
+            body.index-page .hover-captions .trail-item .trail-content > *:not(:first-child),
+            body.index-page .hover-captions .trail-item:not(:first-child) {
+                display: none !important;
+            }
+
+            body.permalink-page .hover-captions {
+                display: none !important;
+            }
+
+            
+            /* Reblog buttons on index */
+            body.index-page .reblog-metas {
+                gap: 4px;
+                /* bottom: calc((var(--post-padding) * -1) - 10px); */
+                bottom: -30px;
+                transition-duration: var(--transition-duration);
+            }
+            
+            body.index-page .custom-like-btn {
+                transition-duration: var(--transition-duration);
+            }
+            
+            body.index-page .reblog-metas > a,
+            body.index-page .custom-like-btn {
+                /* background-color: rgb(0 0 0 / 50%); */
+                background-color: var(--accent-color-transparent);
+                padding: 3px;
+                width: 18px;
+                height: 18px;
+                cursor: pointer;
+                border-radius: calc(var(--border-radius) / 2);
+            }
+            
+            body.index-page .reblog-metas > a:hover,
+            body.index-page .custom-like-btn:hover {
+                background-color: var(--accent-color);
+            }
+            
+            body.index-page article.photo .reblog-metas,
+            body.index-page article.audio .reblog-metas {
+                /* margin: 10px;
+                bottom: calc((var(--post-padding) * -1) - 20px); */
+            }
+            
+            body.index-page article:hover .reblog-metas {
+                bottom: 10px;
+            }
+            
+            
+            body.index-page .custom-like-btn .like_button.liked + svg {
+                /* fill: var(--accent-color);
+                stroke: var(--accent-color); */
+                fill: #fff;
+            }
+            
+            body.index-page .reblog-metas svg {
+                stroke: #fff;
+                width: 12px;
+                height: 12px;
+            }
+            
+            body.index-page .custom-like-btn .like_button {
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                opacity: 0;
+            }
+            
+            body.index-page .reblog-metas .permalink-notecount {
+                font-size: 0.65em;
+                font-weight: bold;
+                color: #fff;
+                width: unset;
+            }
+            
+            body.index-page .reblog-metas .permalink-notecount span {
+                opacity: 0;
+                visibility: hidden;
+                
+                transform: translateX(5px);
+                max-width: 0;
+                overflow: hidden;
+                transition-duration: var(--transition-duration);
+            }
+            
+            body.index-page .reblog-metas .permalink-notecount:hover {
+                gap: 5px;
+            }
+            
+            body.index-page .reblog-metas .permalink-notecount:hover span {
+                opacity: 1;
+                visibility: visible;
+                
+                transform: translateX(2px);
+                max-width: 50px;
+            }
+            
+            body.index-page .reblog-metas svg {
+                stroke-width: 2px;
+            }
+            
+            body.index-page .reblog-metas .permalink-notecount svg,
+            body.index-page .reblog-metas .glider-arrow-prev svg,
+            body.index-page .reblog-metas .glider-arrow-next svg {
+                stroke-width: 3px;
+            }
+            
+            body.permalink-page .reblogged-from, 
+            body.permalink-page .perma-tags, 
+            body.permalink-page ol.notes, 
+            body.permalink-page .date-metas {
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 1px solid var(--lightest-gray);
+            }
+            
+            body.permalink-page .reblogged-from {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            body.permalink-page .date-metas,
+            body.permalink-page .reblogged-from a {
+                gap: 20px;
+                font-size: 0.85em;
+            }
+            
+            body.permalink-page .reblogged-from img {
+                width: 50px;
+                height: 50px;
+                border-radius: var(--border-radius);
+            }
+            
+            body.permalink-page .reblogged-from a div {
+                transition-duration: 0s;
+            }
+            
+            body.permalink-page .date-metas,
+            body.permalink-page .reblogged-from b {
+                font: bold 1em/1 var(--title-font);
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+            }
+            
+            body.permalink-page .date-metas sup {
+                vertical-align: super;
+                font-size: 0.6em;
+            }
+            
+            body.permalink-page .reblogged-from i {
+                font-style: italic;
+            }
+            
+            body.permalink-page .perma-tags {
+                gap: 20px;
+            }
+            
+            body.permalink-page .perma-tags svg {
+                width: 30px;
+            }
+            
+            body.permalink-page .perma-tags div {
+                gap: 2px 8px;
+                flex-wrap: wrap;
+                width: calc(100% - 38px);
+            }
+            
+            body.permalink-page .perma-tags a {
+                text-transform: uppercase;
+                font-size: 0.8em;
+            }
+
+            /* ================================================================
+                HEADER
+            ================================================================ */
+            .main-header {
+                justify-content: space-between;
+                background-color: var(--background-color);
+                margin: 0 auto;
+                padding: 30px 10px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 4;
+                
+                /* flex-wrap: wrap; */
+            }
+            
+            body.index-page .main-header {
+                width: calc((var(--post-size) * 4) + (var(--post-margin) * 3) + 20px);
+            }
+            
+            body.permalink-page .main-header {
+                width: calc(var(--post-size-permalink) + 20px);
+                padding: var(--post-padding-permalink);
+            }
+            
+            .main-header h1 a {
+                color: #000;
+            }
+            
+            .main-header form input {
+                padding: 5px;
+                border-bottom: 1px solid var(--medium-gray);
+                transform: translateX(-30px);
+                transition-duration: var(--transition-duration);
+                width: 120px;
+                font: inherit;
+                opacity: 0;
+                visibility: hidden;
+            }
+            
+            .main-header form:hover input,
+            .main-header form.active input {
+                transform: translateX(0px);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .main-header form input:focus {
+                border-color: var(--accent-color);
+            }
+            
+            .main-header form button {
+                cursor: pointer;
+            }
+            
+            .main-header svg {
+                width: 22px;
+                display: block;
+                stroke-width: 1.5;
+            }
+            
+            .main-header > div {
+                gap: 20px;
+                transition: padding var(--transition-duration);
+            }
+            
+            .main-header > div > a {
+                color: #000;
+            }
+            
+            .hamburger-menu {
+                width: 22px;
+                height: 16px;
+                flex-direction: column;
+                display: flex;
+                gap: 5px;
+            }
+            
+            .hamburger-menu span {
+                width: 100%;
+                height: 2px;
+                border-radius: 2px;
+                background: #000;
+            }
+            
+            .hamburger-menu span:nth-child(2) {
+                width: 70%;
+            }
+            
+            .hamburger-menu.active span,
+            .hamburger-menu:hover span {
+                width: 70%;
+            }
+            
+            .hamburger-menu.active span:nth-child(2),
+            .hamburger-menu:hover span:nth-child(2) {
+                width: 100%;
+            }
+            
+            /* ================================================================
+                SIDE
+            ================================================================ */
+            .side-menu {
+                position: fixed;
+                z-index: 3;
+                background-color: var(--background-color-transparent);
+                backdrop-filter: blur(2px);
+            }
+            
+            .side-menu nav {
+                background-color: var(--background-color);
+                width: 30vw;
+                top: 0;
+                right: 0;
+                position: absolute;
+                padding: 3vw;
+                transform: translateX(15vw);
+                transition-duration: var(--transition-duration);
+            }
+            
+            .side-menu.visible nav {
+                transform: translateX(0vw);
+            }
+            
+            .side-menu nav ul {
+                flex-direction: column;
+                gap: 30px;
+                font: 2em/1 var(--title-font);
+                align-items: flex-start;
+            }
+            
+            /* ================================================================
+                PAGINATION
+            ================================================================ */
+            .pagination-container {
+                margin: 0 auto 10vh;
+                width: calc((var(--post-size) * 4) + (var(--post-margin) * 3));
+            }
+
+            body.permalink-page .pagination-container {
+              display: none;
+            }
+
+            body.index-page .permalink-post,
+            body.permalink-page .reblog-metas,
+            body.permalink-page article:not(.permalink-post) {
+              display:  none;
+            }
+
+            body.permalink-page .permalink-post {
+              width: 100%;
+            }
+            
+            /* ================================================================
+                RESPONSIVE
+            ================================================================ */
+            @media only screen and (max-width: 1200px) {
+                body.index-page .pagination-container,
+                body.index-page .main-header {
+                    width: calc((var(--post-size) * 3) + (var(--post-margin) * 2) + 20px);
+                }
+                
+                body.index-page #posts-container {
+                    grid-template-columns: repeat(3, var(--post-size));
+                    width: calc((var(--post-size) * 3) + (var(--post-margin) * 2));
+                }
+            }
+            
+            @media only screen and (max-width: 900px) {
+                body.index-page .pagination-container,
+                body.index-page .main-header {
+                    width: calc((var(--post-size) * 2) + var(--post-margin) + 20px);
+                }
+                
+                body.index-page #posts-container {
+                    grid-template-columns: repeat(2, var(--post-size));
+                    width: calc((var(--post-size) * 2) + var(--post-margin));
+                }
+                
+                .side-menu nav {
+                    width: 50%;
+                }
+                
+                .main-header form {
+                    display: none;
+                }
+                
+                iframe.tmblr-iframe.iframe-controls--desktop {
+                    top: 3px;
+                }
+                
+                iframe.tmblr-iframe.iframe-controls--desktop + .ui_dialog_lock + .main-header,
+                iframe.tmblr-iframe.iframe-controls--desktop + .main-header {
+                    padding-top: 60px;
+                }
+            }
+            
+            @media only screen and (max-width: 600px) {
+                #posts-container,
+                .pagination-container,
+                .main-header {
+                    /* width: calc(100% - (var(--post-margin) * 2)); */
+                    width: 100% !important;
+                    padding-left: calc(var(--post-margin) / 2) !important;
+                    padding-right: calc(var(--post-margin) / 2) !important;
+                } 
+                
+                #posts-container {
+                    display: block !important;
+                }
+                
+                article[data-tags*="enhanced"] {
+                    grid-column-end: unset !important;
+                    grid-row-end: unset !important;
+                }
+                
+                article,
+                article[data-tags*="enhanced"] {
+                    height: unset !important;
+                    width: 100% !important;
+                }
+                
+                article {
+                    position: relative !important;
+                    margin-bottom: var(--post-margin) !important;
+                }
+                
+                .side-menu nav {
+                    width: 75% !important;
+                }
+
+                body.index-page .posts-contents {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                
+                body.index-page article:after {
+                    content: "";
+                    display: block;
+                    padding-bottom: 100%;
+                }
+                
+                body.permalink-page .date-metas, 
+                body.permalink-page .reblogged-from {
+                    display: block;
+                }
+
+                body.permalink-page .reblogged-from a:first-child {
+                    margin-bottom: 10px;
+                }
+            }
+            
+            /* ================================================================
+                CUSTOM CSS
+            ================================================================ */
+            .customization-container {
+              z-index: 99;
+              position: fixed;
+              top: 20px;
+              left: 20px;
+              font-size: 12px;
+            }
+
+            .customization-container > input {
+              display: none;
+            }
+
+            .customization-container > label {
+              cursor: pointer;
+              width: 40px;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #ffe7db;
+              border-radius: 3px;
+              border: 1px solid #f0b697;
+            }
+
+            .customization-container > label svg {
+              fill: #d19879;
+              width: 25px;
+              height: 25px;
+            }
+
+            .customization-options {
+              background-color: #ffffff;
+              border: 1px solid #f0b697;
+              border-radius: 3px;
+
+              overflow: hidden;
+              max-width: 0px;
+              max-height: 0px;
+
+              box-shadow: 5px 5px 0px rgb(170 170 170 / 50%);
+            }
+
+            .customization-container > input:checked + label + .customization-options {
+              margin-top: 15px;
+              padding: 20px;
+              max-width: 300px;
+              max-height: calc(100% - 40px);
+            }
+
+            .customization-options h3 {
+              margin: 15px 0 5px;
+              font-weight: bold;
+              font-size: 1.2em;
+            }
+
+            .customization-options h3,
+            .customization-options h2 {
+              color: #000;
+            }
+
+            .customization-options .footer-buttons {
+              display: flex;
+              justify-content: space-between;
+            }
+
+            .customization-options .footer-buttons button {
+              margin: 15px 0 5px;
+              font-weight: bold;
+              border: 1px solid #f0b697;
+              padding: 10px 15px;
+              border-radius: 4px;
+              font-size: 0.9em;
+              line-height: 1;
+              color: #f0b697;
+              background-color: #ffffff;
+            }
+
+            .customization-options .footer-buttons button:hover {
+              background-color: #f0b697;
+              color: #ffffff;
+            }
+
+            .customization-options li {
+              display: flex;
+              align-items: center;
+              width: 100%;
+              justify-content: space-between;
+              gap: 20px;
+            }
+
+            .customization-options li input[type="color"] {
+              width: 34px;
+              height: 22px;
+              border-radius: 50%;
+            }
+
+            .customization-options li input {
+              margin-bottom: 5px;
+            } 
+
+            .customization-options li input[type="text"][disabled] {
+              background-color: #f2f2f2;
+              cursor: not-allowed;  
+              border-radius: 5px;
+              border: 1px solid #c3c3c3;
+            } 
+
+            .customization-options li input[type="text"] {
+              border-bottom: 1px solid #c3c3c3;
+            } 
+
+            .customization-options li select,
+            .customization-options li input[type="text"] {
+              width: 40%;
+              text-align: right;
+              padding: 5px;
+            }
+
+            .customization-options li select {
+              border: 1px solid #c3c3c3;
+              border-radius: 4px;
+              margin-bottom: 5px;
+            }    
+
+            .customization-options .toggle-button b,
+            .customization-options .toggle-button b:before {
+              transition-duration: 0.3s;
+            }
+
+            .customization-options .toggle-button {
+              margin-bottom: 5px;
+              cursor: pointer;
+              width: 42px;
+              height: 22px;
+              border: 1px solid black;
+              border-radius: 11px;
+              position: relative;
+              background-color: #fff;
+            }
+
+            .customization-options .toggle-button b {
+              display: block;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              border-radius: 11px;
+              background-color: #9b9b9b;
+              top: 0;
+              left: 0;
+            }
+
+            .customization-options .toggle-button b:before {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 20px;
+              height: 20px;
+              border-radius: 11px;
+              border: 1px solid black;
+              top: -1px;
+              left: -1px;
+              background-color: #e2e2e2;
+            }
+
+            .customization-options .toggle-button input:checked + b {
+              background-color: #a7e26e;
+            }
+
+            .customization-options .toggle-button input:checked + b:before {
+              left: calc(100% - 21px);
+              background-color: #ffffff;
+            }
+
+            .customization-options .toggle-button > input {
+              display: none;
+            }
+
+            .customization-container input,
+            .customization-container > label svg,
+            .customization-container .customization-options {
+              transition-duration: 0.5s;
+            }
+
+            .customization-container > input:checked + label svg:first-child,
+            .customization-container > input + label svg:last-child,
+            .customization-container > input + label + .customization-options {
+              visibility: hidden;
+              opacity: 0;
+              max-height: 0;
+              max-width: 0;
+            }
+
+            .customization-container > input + label svg:first-child,
+            .customization-container > input:checked + label svg:last-child,
+            .customization-container > input:checked + label + .customization-options {
+              visibility: visible;
+              opacity: 1;
+              max-height: 100vh;
+              max-width: 100vw;
+            }
+
+        </style>
+    </head>
+    <body class="index-page ox-h oy-auto">
+        <div class="customization-container">
+          <input type="checkbox" id="customization-checkbox" name="customization-checkbox" />
+          <label title="Customization options" for="customization-checkbox">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M512 256c0 .9 0 1.8 0 2.7c-.4 36.5-33.6 61.3-70.1 61.3H344c-26.5 0-48 21.5-48 48c0 3.4 .4 6.7 1 9.9c2.1 10.2 6.5 20 10.8 29.9c6.1 13.8 12.1 27.5 12.1 42c0 31.8-21.6 60.7-53.4 62c-3.5 .1-7 .2-10.6 .2C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM128 288c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zm0-96c17.7 0 32-14.3 32-32s-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32zM288 96c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zm96 96c17.7 0 32-14.3 32-32s-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+          </label>
+          <div class="customization-options">
+            <h2>Theme options</h2>
+            <h3>Colors</h3>
+            <ul>
+              <li>
+                <span>Background color</span>
+                <input type="color" data-default="#ffffff" data-attribute="--background-color" class="variable-input" />
+              </li>
+              <li>
+                <span>Text color</span>
+                <input type="color" data-default="#686868" data-attribute="--text-color" class="variable-input" />
+              </li>
+              <li>
+                <span>Link color</span>
+                <input type="color" data-default="#42ba31" data-attribute="--link-color" class="variable-input" />
+              </li>
+              <li>
+                <span>Link color on hover</span>
+                <input type="color" data-default="#000000" data-attribute="--hover-link-color" class="variable-input" />
+              </li>
+              <li>
+                <span>Accent color</span>
+                <input type="color" data-default="#4d8b3c" data-attribute="--accent-color" class="variable-input" />
+              </li>
+            </ul>
+            <h3>Text options</h3>
+            <ul>
+              <li>
+                <span>Base font size</span>
+                <input type="text" data-default="12px" data-attribute="--base-font-size" class="variable-input" />
+              </li>
+              <li title="Not available in preview mode">
+                <span>Font (body)</span>
+                <input type="text" data-default="Montserrat" data-attribute="--body-font" class="variable-input" disabled />
+              </li>
+              <li title="Not available in preview mode">
+                <span>Font (titles)</span>
+                <input type="text" data-default="Playfair Display" data-attribute="--title-font" class="variable-input" disabled />
+              </li>
+              <li>
+                <span>Post size (index)</span>
+                <input type="text" data-default="250px" data-attribute="--post-size" class="variable-input" value="" />
+              </li>
+              <li>
+                <span>Post size (permalink)</span>
+                <input type="text" data-default="650px" data-attribute="--post-size-permalink" class="variable-input" value="" />
+              </li>
+              <li>
+                <span>Post spacing</span>
+                <input type="text" data-default="50px" data-attribute="--post-margin" class="variable-input" />
+              </li>
+              <li>
+                <span>Post padding (index)</span>
+                <input type="text" data-default="10px" data-attribute="--post-padding" class="variable-input" />
+              </li>
+              <li>
+                <span>Post padding (permalink)</span>
+                <input type="text" data-default="20px" data-attribute="--post-padding-permalink" class="variable-input" />
+              </li>
+            </ul>
+            <h3>Multi-choices</h3>
+            <ul>
+              <li>
+                <span>Next page type</span>
+                <select class="variable-input" data-default="np-pagination" data-attribute="--pagination-type">
+                  <option value="np-pagination">Pagination</option>
+                  <option value="np-load-more">Load more button</option>
+                  <option value="np-infinite-scroll">Infinite scroll</option>
+                </select>
+              </li>
+            </ul>
+            <h3>Toggles</h3>
+            <ul>
+              <li>
+                <span>Show posts shadows</span>
+                <label class="toggle-button">
+                  <input type="checkbox" class="variable-input" data-default="true" data-iftrue="7px 7px 0px rgb(200 200 200 / 20%)" data-iffalse="none" data-attribute="--box-shadow" />
+                  <b></b>
+                </label>
+              </li>
+              <li>
+                <span>Show archive link</span>
+                <label class="toggle-button">
+                  <input type="checkbox" class="variable-input" data-default="true" data-iftrue="block" data-iffalse="none" data-attribute="--display-archive-link" />
+                  <b></b>
+                </label>
+              </li>
+              <li>
+                <span>Show captions on hover</span>
+                <label class="toggle-button">
+                  <input type="checkbox" class="variable-input" data-default="true" data-iftrue="block" data-iffalse="none" data-attribute="--display-captions-hover" />
+                  <b></b>
+                </label>
+              </li>
+              <li>
+                <span>Display tumblr pages in menu</span>
+                <label class="toggle-button">
+                  <input type="checkbox" class="variable-input" data-default="true" data-iftrue="block" data-iffalse="none" data-attribute="--display-tumblr-pages" />
+                  <b></b>
+                </label>
+              </li>
+              <li>
+                <span>Enhanced post</span>
+                <label class="toggle-button">
+                  <input type="checkbox" class="variable-input" data-default="true" data-iftrue="true" data-iffalse="false" data-attribute="--enhance-post" />
+                  <b></b>
+                </label>
+              </li>
+            </ul>
+            <div class="footer-buttons">
+              <button class="show-permalink-page">Preview permalink page</button>
+              <button class="reset-attributes">Reset selected options</button>
+            </div>
+          </div>
+        </div>
+
+        <header class="main-header d-flex-a-center">
+            <h1>
+                <a href="/">
+                    Mad Hatter Redux
+                </a>
+            </h1>
+            <div class="d-flex-aj-center">
+                <form action="/search" method="get" class="d-flex-aj-center">
+                    <input type="text" name="q" value="" autocomplete="off">
+                    <button type="submit">
+                        <span data-feather="search"></span>
+                    </button>
+                </form>
+                
+                <a href="/ask" title="Ask me anything">
+                    <span data-feather="mail"></span>
+                </a>
+            
+                <a href="/archive" title="Archive" style="display: var(--display-archive-link);">
+                    <span data-feather="calendar"></span>
+                </a>
+            
+                <a href="/" class="hamburger-menu">
+                    <span class="d-block"></span>
+                    <span class="d-block"></span>
+                    <span class="d-block"></span>
+                </a>
+            </div>
+        </header>
+        
+        <aside class="side-menu wh-100 invisible">
+            <nav class="h-100 d-flex-a-center">
+                <ul class="d-flex-a-center">
+                    <li style="display: var(--display-tumblr-pages);">
+                        <a href="/">
+                            Link to a page
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                            Custom link #1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                            Custom link #2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                            Custom link #3
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main -->
+        <main class="oy-h">
+            <section id="posts-container" data-currentpage="1">
+              <!-- posts loops -->
+              <article id="post-707935761527439361" class="permalink-post post p-r ox-h oy-h photo" data-permalink="https://mtrics.tumblr.com/post/708075681112866816/jensen-jay-supernatural-4x02-are-you-there" data-tags="whimpers lorem_ipsum lorem ipsum dolor_sit_amet dolor sit amet lorem_ipsum_dolor_sit_amet enhanced  reblog"><div class="d-hidden npf-container">'{}'</div><div class="posts-contents ox-h oy-h"><div class="media-container photoset-container" data-layout="[&quot;1&quot;,&quot;1&quot;,&quot;1&quot;]"><div class="photoset-row photoset-row-1"><img src="https://64.media.tumblr.com/3d06814857d8c3c2595a69c7d46a7c91/dadfe4e309d6bae5-35/s640x960/28e75192759b7e5458a968300ab3ca8a22892564.jpg" alt="jensen-jay:“ Supernatural | 4x02 - Are you there, God? It’s me, Dean Winchester”" data-width="600" data-height="387" class="tumblr-lightbox-loaded-trigger"></div><div class="photoset-row photoset-row-1"><img src="https://64.media.tumblr.com/31520c96ffe545cc5f237d123b92791c/dadfe4e309d6bae5-b4/s640x960/f3cba180f5b45d13a734834b16ea2cbca28c2564.jpg" alt="jensen-jay:“ Supernatural | 4x02 - Are you there, God? It’s me, Dean Winchester”" data-width="600" data-height="386" class="tumblr-lightbox-loaded-trigger"></div><div class="photoset-row photoset-row-1"><img src="https://64.media.tumblr.com/80054e8c5297547178c04dfb11b98424/dadfe4e309d6bae5-bb/s640x960/ddaa53fddc17d303516359fabcc5c456b007de3b.jpg" alt="jensen-jay:“ Supernatural | 4x02 - Are you there, God? It’s me, Dean Winchester”" data-width="600" data-height="386" class="tumblr-lightbox-loaded-trigger"></div></div><div class="posts-caption"><div class="trail-item"><div class="trail-user"><img src="https://64.media.tumblr.com/avatar_5728f0e68b5c_64.pnj" alt="jensen-jay"><b><a href="https://jensen-jay.tumblr.com/post/646286301625286656">jensen-jay</a></b></div><div class="trail-content"><p><b>Supernatural</b> | 4x02 - Are you there, God? It’s me, Dean Winchester<br></p></div></div></div></div><div class="permalink-metas"><time class="date-metas d-flex-aj-center"><span>January 30<sup>th</sup>, 2023 (4 days ago)</span>•<span>451 notes</span></time><div class="perma-tags d-flex-a-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-hash"><line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line></svg><div class="d-flex-a-center"><a href="#">SPN</a><a href="#">lorem ipsum</a><a href="#">lorem</a><a href="#">ipsum</a><a href="#">dolor sit amet</a><a href="#">dolor</a><a href="#">sit</a><a href="#">amet</a><a href="#">lorem ipsum dolor sit amet</a><a href="#">enhanced</a></div></div><div class="reblogged-from"><a href="https://mtrics.tumblr.com/post/708075681112866816/jensen-jay-supernatural-4x02-are-you-there" class="d-flex-a-center"><img src="https://api.tumblr.com/v2/blog/mtrics.tumblr.com/avatar"><div><b class="d-block">via mtrics</b><i>young gods</i></div></a><a href="https://jensen-jay.tumblr.com/post/646286301625286656/supernatural-4x02-are-you-there-god-its-me" class="d-flex-a-center"><img src="https://64.media.tumblr.com/avatar_5728f0e68b5c_96.pnj"><div><b class="d-block">from jensen-jay</b><i>Do you believe in the Supernatural?</i></div></a></div><ol class="notes"><li class="note like tumblelog_camstercage03 without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://camstercage03.tumblr.com/"><img src="https://64.media.tumblr.com/900c650f708167610d425bff9f899488/cd728353e3bebbd0-f1/s64x64u_c1/ba2bf8fb97f92df8ac2a08966c7e1f4603606d5d.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://camstercage03.tumblr.com/">camstercage03</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_inlovewithfictionalcharacters666 without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://inlovewithfictionalcharacters666.tumblr.com/"><img src="https://64.media.tumblr.com/a046d23a12d640ad08ca8fd8405cd4b6/e26ed8b4521ebe9a-eb/s64x64u_c1/b73863434b6f7efc7872f1d833a4e1c2721a2c9d.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://inlovewithfictionalcharacters666.tumblr.com/post/691395941727617024"><a rel="nofollow" href="https://inlovewithfictionalcharacters666.tumblr.com/post/691395941727617024" class="tumblelog">inlovewithfictionalcharacters666</a>reblogged this from<a rel="nofollow" href="https://jensen-jay.tumblr.com/" class="source_tumblelog">jensen-jay</a></span><div class="clear"></div></li><li class="note like tumblelog_inlovewithfictionalcharacters666 without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://inlovewithfictionalcharacters666.tumblr.com/"><img src="https://64.media.tumblr.com/a046d23a12d640ad08ca8fd8405cd4b6/e26ed8b4521ebe9a-eb/s64x64u_c1/b73863434b6f7efc7872f1d833a4e1c2721a2c9d.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://inlovewithfictionalcharacters666.tumblr.com/">inlovewithfictionalcharacters666</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_brotherlyembrace without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://brotherlyembrace.tumblr.com/"><img src="https://64.media.tumblr.com/85d984b882634c74d83491cb1ace76a5/6ac231ba9f4c9e38-17/s64x64u_c1/52c450aa2eabe520c87a0ba4bd496a8a7590386a.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://brotherlyembrace.tumblr.com/">brotherlyembrace</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_lovecforever without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://lovecforever.tumblr.com/"><img src="https://64.media.tumblr.com/445209e7cc320a79c68148463caa82a2/b426f1b5434ffcb7-2b/s64x64u_c1/43320d4817c6508c90765eaf5cd9bec40c22add2.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://lovecforever.tumblr.com/">lovecforever</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_i-have-doubts without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://i-have-doubts.tumblr.com/"><img src="https://64.media.tumblr.com/bc81a5ddb7cb047d6fce36dfb5c0d7c7/4c7b486c21e21604-26/s64x64u_c1/084363c8fed12070578dff1f21cfa6c43a01a651.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://i-have-doubts.tumblr.com/post/682917624509874176"><a rel="nofollow" href="https://i-have-doubts.tumblr.com/post/682917624509874176" class="tumblelog">i-have-doubts</a>reblogged this from<a rel="nofollow" href="https://escapingpurgatorypodcast.tumblr.com/" class="source_tumblelog">escapingpurgatorypodcast</a></span><div class="clear"></div></li><li class="note reblog tumblelog_escapingpurgatorypodcast without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://escapingpurgatorypodcast.tumblr.com/"><img src="https://64.media.tumblr.com/af695446c932c6bb89f4e15397b3a7a5/a552508e74daeb97-24/s64x64u_c1/6b38b267283cbf3df29c062b866b9b110b8edd95.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://escapingpurgatorypodcast.tumblr.com/post/682912371973521408"><a rel="nofollow" href="https://escapingpurgatorypodcast.tumblr.com/post/682912371973521408" class="tumblelog">escapingpurgatorypodcast</a>reblogged this from<a rel="nofollow" href="https://jensen-jay.tumblr.com/" class="source_tumblelog">jensen-jay</a></span><div class="clear"></div></li><li class="note like tumblelog_heather-xy without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://heather-xy.tumblr.com/"><img src="https://64.media.tumblr.com/eaf6531b42027b8381c404de4df16387/a1b84d49733f3766-26/s64x64u_c1/f77e78c1e32438189d5a50ceb3a47d61c408af50.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://heather-xy.tumblr.com/">heather-xy</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_demonkillers without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://demonkillers.tumblr.com/"><img src="https://64.media.tumblr.com/6d66b1fb94315bdeb247ff7b823661aa/2ee80a72c842bfb4-d5/s64x64u_c1/4c5b734748d92ad018c80b624b133e923fb835fc.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://demonkillers.tumblr.com/">demonkillers</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_anabethdjackson without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://anabethdjackson.tumblr.com/"><img src="https://assets.tumblr.com/images/default_avatar/cone_open_64.png" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://anabethdjackson.tumblr.com/">anabethdjackson</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_scentedauthorhumanoidlamp without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://scentedauthorhumanoidlamp.tumblr.com/"><img src="https://assets.tumblr.com/images/default_avatar/cone_open_64.png" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://scentedauthorhumanoidlamp.tumblr.com/">scentedauthorhumanoidlamp</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_annissina without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://annissina.tumblr.com/"><img src="https://64.media.tumblr.com/e89483ab719615779539450e202aeaff/b27e4db689930274-d8/s64x64u_c1/158000b2163c187705de79710b47cee72274346e.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://annissina.tumblr.com/">annissina</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_saltyincorrectquotessketchnerd without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://saltyincorrectquotessketchnerd.tumblr.com/"><img src="https://64.media.tumblr.com/7087247e45e19f9cae55ca50b4515d3c/8306f2b06a371563-48/s64x64u_c1/e1c30ac2898978408b337d70e9397160d4f5699a.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://saltyincorrectquotessketchnerd.tumblr.com/">saltyincorrectquotessketchnerd</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_deanrosescas without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://deanrosescas.tumblr.com/"><img src="https://64.media.tumblr.com/3bc95551d7f4f6fee0e4463f13cbaf2c/25b961087bc65050-51/s64x64u_c1/ce0075b2c4f48598a4ce282b09db1149c66af4cd.jpg" class="avatar" alt=""></a><span class="action" data-post-url="https://deanrosescas.tumblr.com/post/659420507015348224"><a rel="nofollow" href="https://deanrosescas.tumblr.com/post/659420507015348224" class="tumblelog">deanrosescas</a>reblogged this from<a rel="nofollow" href="https://jensen-jay.tumblr.com/" class="source_tumblelog">jensen-jay</a></span><div class="clear"></div></li><li class="note like tumblelog_anarchy-daughter without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://anarchy-daughter.tumblr.com/"><img src="https://64.media.tumblr.com/avatar_01b400ea1d03_64.gif" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://anarchy-daughter.tumblr.com/">anarchy-daughter</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_dwbicth without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://dwbicth.tumblr.com/"><img src="https://64.media.tumblr.com/f02a3b9d26fa52dd245b914748db6fa4/4e2c61e133c790c6-5b/s64x64u_c1/32c5285214b3a1f11d8ad40c4e16c88819a46b56.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://dwbicth.tumblr.com/">dwbicth</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_casbiotic without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://casbiotic.tumblr.com/"><img src="https://64.media.tumblr.com/a50af03ed2cc9d054fcfe137049f3f15/c07c8050abfc91a4-1f/s64x64u_c1/05292a52811d4424469b8bd5eb88bd4b76156df1.jpg" class="avatar" alt=""></a><span class="action" data-post-url="https://casbiotic.tumblr.com/post/656900130319024128"><a rel="nofollow" href="https://casbiotic.tumblr.com/post/656900130319024128" class="tumblelog">casbiotic</a>reblogged this from<a rel="nofollow" href="https://jensen-jay.tumblr.com/" class="source_tumblelog">jensen-jay</a></span><div class="clear"></div></li><li class="note like tumblelog_casbiotic without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://casbiotic.tumblr.com/"><img src="https://64.media.tumblr.com/a50af03ed2cc9d054fcfe137049f3f15/c07c8050abfc91a4-1f/s64x64u_c1/05292a52811d4424469b8bd5eb88bd4b76156df1.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://casbiotic.tumblr.com/">casbiotic</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_logicalerror101 without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://logicalerror101.tumblr.com/"><img src="https://64.media.tumblr.com/9d485a2ff64fd6a774679d89978e9153/ac09af25d531fb47-09/s64x64u_c1/d89390dd48d4dff328714c7bd1afc3881e5c0e0a.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://logicalerror101.tumblr.com/">logicalerror101</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_natalunarstation without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://natalunarstation.tumblr.com/"><img src="https://64.media.tumblr.com/d911c01eb43b4c5649285d6edb3f076b/6ae6b5a5c9c545ab-e1/s64x64u_c1/4b165c496d808f2383acccf3d448080cb3617ef2.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://natalunarstation.tumblr.com/">natalunarstation</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_thisstupidmistake without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://thisstupidmistake.tumblr.com/"><img src="https://64.media.tumblr.com/f2b11c21c306e157fbe30efba64d0e20/1d1b54c94fe5b008-84/s64x64u_c1/ccd74e2fdc433ec951a600ec2c4d3f3a76d26259.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://thisstupidmistake.tumblr.com/">thisstupidmistake</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_casedeanjamiecordismwyattclayfan without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://casedeanjamiecordismwyattclayfan.tumblr.com/"><img src="https://64.media.tumblr.com/eb63a7ae36e03e129ca0933a55eb0860/eed7bdda0cd15399-09/s64x64u_c1/8df09acaaf46a87ecb83bf8d61cd75b4e6a7ef61.jpg" class="avatar" alt=""></a><span class="action" data-post-url="https://casedeanjamiecordismwyattclayfan.tumblr.com/post/653410671983263744"><a rel="nofollow" href="https://casedeanjamiecordismwyattclayfan.tumblr.com/post/653410671983263744" class="tumblelog">casedeanjamiecordismwyattclayfan</a>reblogged this from<a rel="nofollow" href="https://jensen-jay.tumblr.com/" class="source_tumblelog">jensen-jay</a></span><div class="clear"></div></li><li class="note like tumblelog_casedeanjamiecordismwyattclayfan without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://casedeanjamiecordismwyattclayfan.tumblr.com/"><img src="https://64.media.tumblr.com/eb63a7ae36e03e129ca0933a55eb0860/eed7bdda0cd15399-09/s64x64u_c1/8df09acaaf46a87ecb83bf8d61cd75b4e6a7ef61.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://casedeanjamiecordismwyattclayfan.tumblr.com/">casedeanjamiecordismwyattclayfan</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_doodlydoooo without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://doodlydoooo.tumblr.com/"><img src="https://64.media.tumblr.com/49e7d4d053b6b166a381890713b2157d/7ee4dd82ea6aef8a-22/s64x64u_c1/14ec94696114182522cfca023b48e689f348eac4.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://doodlydoooo.tumblr.com/">doodlydoooo</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_shenth without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://shenth.tumblr.com/"><img src="https://64.media.tumblr.com/df095c08c26284ae28b2566e9c2a2b00/d485ec07e49c9021-9c/s64x64u_c1/5d4a758968baa34ef2c4fa8b4947f19c8a5d9035.jpg" class="avatar" alt=""></a><span class="action" data-post-url="https://shenth.tumblr.com/post/653073499518353408"><a rel="nofollow" href="https://shenth.tumblr.com/post/653073499518353408" class="tumblelog">shenth</a>reblogged this from<a rel="nofollow" href="https://lulu-zodiac.tumblr.com/" class="source_tumblelog">lulu-zodiac</a></span><div class="clear"></div></li><li class="note like tumblelog_shenth without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://shenth.tumblr.com/"><img src="https://64.media.tumblr.com/df095c08c26284ae28b2566e9c2a2b00/d485ec07e49c9021-9c/s64x64u_c1/5d4a758968baa34ef2c4fa8b4947f19c8a5d9035.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://shenth.tumblr.com/">shenth</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_the-wild-thistle without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://the-wild-thistle.tumblr.com/"><img src="https://64.media.tumblr.com/eb4adbabc81a82e48ea6903f593f08f0/a7bb46940fd3a543-95/s64x64u_c1/6e39c1383383d00182d344163c36b278caabe1f0.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://the-wild-thistle.tumblr.com/">the-wild-thistle</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_bonebreakinbrekker without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://bonebreakinbrekker.tumblr.com/"><img src="https://64.media.tumblr.com/a78837068a4ec754082a106abd08d1cf/fff6e66642d2f3ca-94/s64x64u_c1/2d9ed3b7487ca845c6a7e6cdd10ddd0c3793f854.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://bonebreakinbrekker.tumblr.com/">bonebreakinbrekker</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_deanandkastiel without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://deanandkastiel.tumblr.com/"><img src="https://64.media.tumblr.com/0919c347ef9b1d3719378dfccab880ba/e735e7f98381c649-47/s64x64u_c1/4178e390cc28c488b763e8e7d0f1650a42d420d7.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://deanandkastiel.tumblr.com/">deanandkastiel</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_viola-sororia without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://viola-sororia.tumblr.com/"><img src="https://64.media.tumblr.com/608b80fe8aa34f15d0c2c897fc5155db/be6ec9a9fbe9480b-d6/s64x64u_c1/b78572685bdd8d6e8ea16206a7d0bd2aef259b34.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://viola-sororia.tumblr.com/">viola-sororia</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_flutehammer without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://flutehammer.tumblr.com/"><img src="https://64.media.tumblr.com/e9e1f1f0762e67665f6f8c5345fe4250/f5c3e66699cb543b-78/s64x64u_c1/edb54278f8bfa5a4f01059f35d35cafeaaa17e1f.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://flutehammer.tumblr.com/">flutehammer</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_lizzahbeth without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://lizzahbeth.tumblr.com/"><img src="https://64.media.tumblr.com/9203772449059f888be3db5af033f19b/933245ba44cfa894-84/s64x64u_c1/15d0d67b9a5350ba1abefbfffcfa40377337dbc5.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://lizzahbeth.tumblr.com/">lizzahbeth</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_bluehandprint without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://bluehandprint.tumblr.com/"><img src="https://64.media.tumblr.com/4fd89a07733bebcf2b7548c35d1edf4d/da0948a55218a9f3-57/s64x64u_c1/d28243320afdd2d844ac26ce710627a3a7dc1390.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://bluehandprint.tumblr.com/">bluehandprint</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_hexamarillion without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://hexamarillion.tumblr.com/"><img src="https://64.media.tumblr.com/avatar_40d73d7ffdb1_64.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://hexamarillion.tumblr.com/">hexamarillion</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_carryonlikewedidbefore without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://carryonlikewedidbefore.tumblr.com/"><img src="https://64.media.tumblr.com/6f2ce724269e830d94cb775b4d96c69f/23df6aaf29f650e4-9d/s64x64u_c1/d6260a18f5bea583246b42c4477a8ad6b32676a8.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://carryonlikewedidbefore.tumblr.com/">carryonlikewedidbefore</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_theanity without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://theanity.tumblr.com/"><img src="https://64.media.tumblr.com/avatar_69c363d639d9_64.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://theanity.tumblr.com/">theanity</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_deanplushie without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://deanplushie.tumblr.com/"><img src="https://64.media.tumblr.com/7c946dfd78aeff1d5d6e36e1096b40c7/8405041b38383cd8-3a/s64x64u_c1/76c690388ac2086812b2fb1ef182cfe78adc53d7.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://deanplushie.tumblr.com/">deanplushie</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_livelongphoenix without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://livelongphoenix.tumblr.com/"><img src="https://64.media.tumblr.com/avatar_308c43eb5375_64.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://livelongphoenix.tumblr.com/post/652950933249081344"><a rel="nofollow" href="https://livelongphoenix.tumblr.com/post/652950933249081344" class="tumblelog">livelongphoenix</a>reblogged this from<a rel="nofollow" href="https://jensen-jay.tumblr.com/" class="source_tumblelog">jensen-jay</a></span><div class="clear"></div></li><li class="note like tumblelog_freek-watching-you without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://freek-watching-you.tumblr.com/"><img src="https://64.media.tumblr.com/6ab90d375770f31e1fac5b7af3ecbad3/8e4db17a479c3e41-07/s64x64u_c1/89cc8f958cfa06f31b703547dc13e0fb5cf74e11.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://freek-watching-you.tumblr.com/">freek-watching-you</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_winchestersbaby067 without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://winchestersbaby067.tumblr.com/"><img src="https://64.media.tumblr.com/638dea14e3c8dbb84b079f97f17efaeb/71fd6c80f992a02c-fe/s64x64u_c1/4397fc55789d5e536be2b9951a01f10022906a89.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://winchestersbaby067.tumblr.com/post/651080901169692672"><a rel="nofollow" href="https://winchestersbaby067.tumblr.com/post/651080901169692672" class="tumblelog">winchestersbaby067</a>reblogged this from<a rel="nofollow" href="https://jensen-jay.tumblr.com/" class="source_tumblelog">jensen-jay</a></span><div class="clear"></div></li><li class="note reblog tumblelog_redhogwarts without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://redhogwarts.tumblr.com/"><img src="https://64.media.tumblr.com/9077a22bda1c9ff097fccd73552dbe82/d119470ac8810a85-4f/s64x64u_c1/44118ed8636254069d30c59843e0a6f629a24771.jpg" class="avatar" alt=""></a><span class="action" data-post-url="https://redhogwarts.tumblr.com/post/650491954402066432"><a rel="nofollow" href="https://redhogwarts.tumblr.com/post/650491954402066432" class="tumblelog">redhogwarts</a>reblogged this from<a rel="nofollow" href="https://agentsacklesandpadalecki.tumblr.com/" class="source_tumblelog">agentsacklesandpadalecki</a></span><div class="clear"></div></li><li class="note like tumblelog_reverizing-raven without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://reverizing-raven.tumblr.com/"><img src="https://assets.tumblr.com/images/default_avatar/pyramid_open_64.png" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://reverizing-raven.tumblr.com/">reverizing-raven</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_jensen-jay original_post without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://jensen-jay.tumblr.com/"><img src="https://64.media.tumblr.com/avatar_5728f0e68b5c_64.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://jensen-jay.tumblr.com/post/646286301625286656"><a rel="nofollow" href="https://jensen-jay.tumblr.com/" class="tumblelog">jensen-jay</a>posted this</span><div class="clear"></div></li><li class="note more_notes_link_container" style="text-align:center" id="more_notes_707935761527439361"><a class="more_notes_link" rel="nofollow" href="#">Show more notes</a><span class="notes_loading" id="notes_loading_707935761527439361" style="display:none">Loading...</span></li></ol></div></article>
+
+              <article id="post-707935761527439361" class="post p-r ox-h oy-h photo" data-permalink="https://mtrics.tumblr.com/post/708076641786740736/zayyarwinthein-greenery-2015" data-tags="whimpers lorem_ipsum lorem ipsum dolor_sit_amet dolor sit amet lorem_ipsum_dolor_sit_amet reblog">
+                <div class="d-hidden npf-container">
+                  '{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22media_key\x22:\x223d06814857d8c3c2595a69c7d46a7c91:dadfe4e309d6bae5-35\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:600,\x22height\x22:387,\x22url\x22:\x22https://64.media.tumblr.com/3d06814857d8c3c2595a69c7d46a7c91/dadfe4e309d6bae5-35/s640x960/28e75192759b7e5458a968300ab3ca8a22892564.jpg\x22,\x22colors\x22:{\x22c0\x22:\x22010605\x22,\x22c1\x22:\x222d4d3f\x22},\x22has_original_dimensions\x22:true},{\x22media_key\x22:\x223d06814857d8c3c2595a69c7d46a7c91:dadfe4e309d6bae5-35\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:540,\x22height\x22:348,\x22url\x22:\x22https://64.media.tumblr.com/3d06814857d8c3c2595a69c7d46a7c91/dadfe4e309d6bae5-35/s540x810/96e18c19f5312af1654381f75599d728aa06d16f.jpg\x22,\x22colors\x22:{\x22c0\x22:\x22010605\x22,\x22c1\x22:\x222d4d3f\x22}},{\x22media_key\x22:\x223d06814857d8c3c2595a69c7d46a7c91:dadfe4e309d6bae5-35\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:500,\x22height\x22:323,\x22url\x22:\x22https://64.media.tumblr.com/3d06814857d8c3c2595a69c7d46a7c91/dadfe4e309d6bae5-35/s500x750/03900d9e32249c0b1a460eec8c47fa749f4c66ad.jpg\x22,\x22colors\x22:{\x22c0\x22:\x22010605\x22,\x22c1\x22:\x222d4d3f\x22}},{\x22media_key\x22:\x223d06814857d8c3c2595a69c7d46a7c91:dadfe4e309d6bae5-35\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:400,\x22height\x22:258,\x22url\x22:\x22https://64.media.tumblr.com/3d06814857d8c3c2595a69c7d46a7c91/dadfe4e309d6bae5-35/s400x600/4ce46b6a4ceb7afeee178a436702751de4efddff.jpg\x22,\x22colors\x22:{\x22c0\x22:\x22010605\x22,\x22c1\x22:\x222d4d3f\x22}},{\x22media_key\x22:\x223d06814857d8c3c2595a69c7d46a7c91:dadfe4e309d6bae5-35\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:250,\x22height\x22:161,\x22url\x22:\x22https://64.media.tumblr.com/3d06814857d8c3c2595a69c7d46a7c91/dadfe4e309d6bae5-35/s250x400/47e75258a736b70ec88d5f794b179e584e3fb0a2.jpg\x22,\x22colors\x22:{\x22c0\x22:\x22010605\x22,\x22c1\x22:\x222d4d3f\x22}},{\x22media_key\x22:\x223d06814857d8c3c2595a69c7d46a7c91:dadfe4e309d6bae5-35\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:100,\x22height\x22:65,\x22url\x22:\x22https://64.media.tumblr.com/3d06814857d8c3c2595a69c7d46a7c91/dadfe4e309d6bae5-35/s100x200/b855108d9e8dd998d44374a5e739e7462f5849cc.jpg\x22,\x22colors\x22:{\x22c0\x22:\x22010605\x22,\x22c1\x22:\x222d4d3f\x22}},{\x22media_key\x22:\x223d06814857d8c3c2595a69c7d46a7c91:dadfe4e309d6bae5-35\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:75,\x22height\x22:75,\x22url\x22:\x22https://64.media.tumblr.com/3d06814857d8c3c2595a69c7d46a7c91/dadfe4e309d6bae5-35/s75x75_c1/809443ed20c5bc5593f96fb2aa5dea2ae3756a99.jpg\x22,\x22colors\x22:{\x22c0\x22:\x22010605\x22,\x22c1\x22:\x222d4d3f\x22},\x22cropped\x22:true}],\x22colors\x22:{\x22c0\x22:\x22010605\x22,\x22c1\x22:\x222d4d3f\x22}},{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22media_key\x22:\x2231520c96ffe545cc5f237d123b92791c:dadfe4e309d6bae5-b4\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:600,\x22height\x22:386,\x22url\x22:\x22https://64.media.tumblr.com/31520c96ffe545cc5f237d123b92791c/dadfe4e309d6bae5-b4/s640x960/f3cba180f5b45d13a734834b16ea2cbca28c2564.jpg\x22,\x22colors\x22:{\x22c0\x22:\x222f140d\x22,\x22c1\x22:\x22030604\x22},\x22has_original_dimensions\x22:true},{\x22media_key\x22:\x2231520c96ffe545cc5f237d123b92791c:dadfe4e309d6bae5-b4\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:540,\x22height\x22:347,\x22url\x22:\x22https://64.media.tumblr.com/31520c96ffe545cc5f237d123b92791c/dadfe4e309d6bae5-b4/s540x810/61feb4253b5cfab97b317895356ea1d5606cb1d9.jpg\x22,\x22colors\x22:{\x22c0\x22:\x222f140d\x22,\x22c1\x22:\x22030604\x22}},{\x22media_key\x22:\x2231520c96ffe545cc5f237d123b92791c:dadfe4e309d6bae5-b4\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:500,\x22height\x22:322,\x22url\x22:\x22https://64.media.tumblr.com/31520c96ffe545cc5f237d123b92791c/dadfe4e309d6bae5-b4/s500x750/0e1a8b4601e79828b0f79488159950b40aa778e3.jpg\x22,\x22colors\x22:{\x22c0\x22:\x222f140d\x22,\x22c1\x22:\x22030604\x22}},{\x22media_key\x22:\x2231520c96ffe545cc5f237d123b92791c:dadfe4e309d6bae5-b4\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:400,\x22height\x22:257,\x22url\x22:\x22https://64.media.tumblr.com/31520c96ffe545cc5f237d123b92791c/dadfe4e309d6bae5-b4/s400x600/4a4000f1c60846b552b044a801cc72f32bf62b1c.jpg\x22,\x22colors\x22:{\x22c0\x22:\x222f140d\x22,\x22c1\x22:\x22030604\x22}},{\x22media_key\x22:\x2231520c96ffe545cc5f237d123b92791c:dadfe4e309d6bae5-b4\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:250,\x22height\x22:161,\x22url\x22:\x22https://64.media.tumblr.com/31520c96ffe545cc5f237d123b92791c/dadfe4e309d6bae5-b4/s250x400/2ef7e273741b72ef964e865a8e8965c3161f5a80.jpg\x22,\x22colors\x22:{\x22c0\x22:\x222f140d\x22,\x22c1\x22:\x22030604\x22}},{\x22media_key\x22:\x2231520c96ffe545cc5f237d123b92791c:dadfe4e309d6bae5-b4\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:100,\x22height\x22:64,\x22url\x22:\x22https://64.media.tumblr.com/31520c96ffe545cc5f237d123b92791c/dadfe4e309d6bae5-b4/s100x200/7b90b73eccbf9e68ffc3b2f222565192604a50c0.jpg\x22,\x22colors\x22:{\x22c0\x22:\x222f140d\x22,\x22c1\x22:\x22030604\x22}},{\x22media_key\x22:\x2231520c96ffe545cc5f237d123b92791c:dadfe4e309d6bae5-b4\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:75,\x22height\x22:75,\x22url\x22:\x22https://64.media.tumblr.com/31520c96ffe545cc5f237d123b92791c/dadfe4e309d6bae5-b4/s75x75_c1/7b30ff5a8ec1db7e3e14c96aef0774833adc104c.jpg\x22,\x22colors\x22:{\x22c0\x22:\x222f140d\x22,\x22c1\x22:\x22030604\x22},\x22cropped\x22:true}],\x22colors\x22:{\x22c0\x22:\x222f140d\x22,\x22c1\x22:\x22030604\x22}},{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22media_key\x22:\x2280054e8c5297547178c04dfb11b98424:dadfe4e309d6bae5-bb\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:600,\x22height\x22:386,\x22url\x22:\x22https://64.media.tumblr.com/80054e8c5297547178c04dfb11b98424/dadfe4e309d6bae5-bb/s640x960/ddaa53fddc17d303516359fabcc5c456b007de3b.jpg\x22,\x22colors\x22:{\x22c0\x22:\x22010304\x22,\x22c1\x22:\x22562516\x22},\x22has_original_dimensions\x22:true},{\x22media_key\x22:\x2280054e8c5297547178c04dfb11b98424:dadfe4e309d6bae5-bb\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:540,\x22height\x22:347,\x22url\x22:\x22https://64.media.tumblr.com/80054e8c5297547178c04dfb11b98424/dadfe4e309d6bae5-bb/s540x810/98fc18d898c6cc0b41d272ecf58ad6384a09a437.jpg\x22,\x22colors\x22:{\x22c0\x22:\x22010304\x22,\x22c1\x22:\x22562516\x22}},{\x22media_key\x22:\x2280054e8c5297547178c04dfb11b98424:dadfe4e309d6bae5-bb\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:500,\x22height\x22:322,\x22url\x22:\x22https://64.media.tumblr.com/80054e8c5297547178c04dfb11b98424/dadfe4e309d6bae5-bb/s500x750/b69a6a558cf3c19174abcde1b7b632ecdd9dd3d7.jpg\x22,\x22colors\x22:{\x22c0\x22:\x22010304\x22,\x22c1\x22:\x22562516\x22}},{\x22media_key\x22:\x2280054e8c5297547178c04dfb11b98424:dadfe4e309d6bae5-bb\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:400,\x22height\x22:257,\x22url\x22:\x22https://64.media.tumblr.com/80054e8c5297547178c04dfb11b98424/dadfe4e309d6bae5-bb/s400x600/d747f1e6e6df218cb45841aed3a13d216929f282.jpg\x22,\x22colors\x22:{\x22c0\x22:\x22010304\x22,\x22c1\x22:\x22562516\x22}},{\x22media_key\x22:\x2280054e8c5297547178c04dfb11b98424:dadfe4e309d6bae5-bb\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:250,\x22height\x22:161,\x22url\x22:\x22https://64.media.tumblr.com/80054e8c5297547178c04dfb11b98424/dadfe4e309d6bae5-bb/s250x400/4da952231369bb36c951d9f2f984ca08a6978deb.jpg\x22,\x22colors\x22:{\x22c0\x22:\x22010304\x22,\x22c1\x22:\x22562516\x22}},{\x22media_key\x22:\x2280054e8c5297547178c04dfb11b98424:dadfe4e309d6bae5-bb\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:100,\x22height\x22:64,\x22url\x22:\x22https://64.media.tumblr.com/80054e8c5297547178c04dfb11b98424/dadfe4e309d6bae5-bb/s100x200/26dbbe2cd19e4d45c87706c46dd2ce255e44d09d.jpg\x22,\x22colors\x22:{\x22c0\x22:\x22010304\x22,\x22c1\x22:\x22562516\x22}},{\x22media_key\x22:\x2280054e8c5297547178c04dfb11b98424:dadfe4e309d6bae5-bb\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:75,\x22height\x22:75,\x22url\x22:\x22https://64.media.tumblr.com/80054e8c5297547178c04dfb11b98424/dadfe4e309d6bae5-bb/s75x75_c1/0f29a2edec66d425b6f825bbb792ed61e051af5c.jpg\x22,\x22colors\x22:{\x22c0\x22:\x22010304\x22,\x22c1\x22:\x22562516\x22},\x22cropped\x22:true}],\x22colors\x22:{\x22c0\x22:\x22010304\x22,\x22c1\x22:\x22562516\x22}},{\x22type\x22:\x22text\x22,\x22text\x22:\x22Supernatural | 4x02 - Are you there, God? It\u2019s me, Dean Winchester \x22,\x22formatting\x22:[{\x22type\x22:\x22bold\x22,\x22start\x22:0,\x22end\x22:12}]}],\x22layout\x22:[],\x22post\x22:{\x22id\x22:\x22646286301625286656\x22},\x22blog\x22:{\x22name\x22:\x22jensen-jay\x22,\x22title\x22:\x22Do you believe in the Supernatural?\x22,\x22description\x22:\x22Supernatural | Dean Winchester | Jensen Ackles | \\\x22Saving people, hunting things...the family business\\\x22\x22,\x22url\x22:\x22https://jensen-jay.tumblr.com/\x22,\x22uuid\x22:\x22t:j6xwSrC9IVeUYE5kpUcYqg\x22,\x22updated\x22:1675457615,\x22blog_view_url\x22:\x22https://www.tumblr.com/jensen-jay\x22,\x22key\x22:\x229nmiB7fT7\x22,\x22theme\x22:{\x22header_full_width\x22:600,\x22header_full_height\x22:400,\x22header_focus_width\x22:600,\x22header_focus_height\x22:338,\x22avatar_shape\x22:\x22circle\x22,\x22background_color\x22:\x22#ddd9d4\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x2215,600,353,0\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/1706dad6daa2511167a9acd8355b0b39/fed893018c6a036b-7d/s600x400/29e39c9609b0e819bbc6c30ccb5d6f552150e67a.jpg\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/1706dad6daa2511167a9acd8355b0b39/fed893018c6a036b-7d/s2048x3072_c0,3750,100000,88250/0f743f06ffe97a4917ce60b788f9956437981fc6.jpg\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/1706dad6daa2511167a9acd8355b0b39/fed893018c6a036b-7d/s2048x3072/e6dba149bea88f04eec6837a74bcc64a1a12d995.jpg\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#213f52\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:true,\x22show_title\x22:true,\x22title_color\x22:\x22#444444\x22,\x22title_font\x22:\x22Streetscript\x22,\x22title_font_weight\x22:\x22bold\x22},\x22can_message\x22:true,\x22share_likes\x22:true,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22active\x22:true}}]}'
+                </div>
+                <div class="reblog-metas d-flex-a-center">
+                  <a class="glider-arrow-prev d-flex-a-center" title="Previous image">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left">
+                      <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                  </a>
+                  <a href="https://mtrics.tumblr.com/post/708076641786740736/zayyarwinthein-greenery-2015" class="permalink-notecount d-flex-a-center" title="Permalink">
+                    <span>451N.</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </a>
+                  <a href="https://www.tumblr.com/reblog/mtrics/708075681112866816/sGzI8Dv1" title="Reblog" target="_blank" class="d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-repeat">
+                      <polyline points="17 1 21 5 17 9"></polyline>
+                      <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                      <polyline points="7 23 3 19 7 15"></polyline>
+                      <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                    </svg>
+                  </a>
+                  <div class="custom-like-btn p-r d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                  </div>
+                  <a class="glider-arrow-next d-flex-a-center" title="Next image">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </a>
+                </div>
+                <div class="posts-contents d-flex-aj-center wh-100 ox-h oy-h">
+                  <div class="media-container photoset-container p-r wh-100" data-layout="[&quot;1&quot;,&quot;1&quot;,&quot;1&quot;]">
+                    <div class="glider wh-100">
+                      <img src="https://64.media.tumblr.com/3d06814857d8c3c2595a69c7d46a7c91/dadfe4e309d6bae5-35/s640x960/28e75192759b7e5458a968300ab3ca8a22892564.jpg" alt="jensen-jay:“ Supernatural | 4x02 - Are you there, God? It’s me, Dean Winchester”" data-width="600" data-height="387">
+                      <img src="https://64.media.tumblr.com/31520c96ffe545cc5f237d123b92791c/dadfe4e309d6bae5-b4/s640x960/f3cba180f5b45d13a734834b16ea2cbca28c2564.jpg" alt="jensen-jay:“ Supernatural | 4x02 - Are you there, God? It’s me, Dean Winchester”" data-width="600" data-height="386">
+                      <img src="https://64.media.tumblr.com/80054e8c5297547178c04dfb11b98424/dadfe4e309d6bae5-bb/s640x960/ddaa53fddc17d303516359fabcc5c456b007de3b.jpg" alt="jensen-jay:“ Supernatural | 4x02 - Are you there, God? It’s me, Dean Winchester”" data-width="600" data-height="386">
+                    </div>
+                  </div>
+                  <div class="hover-captions">
+                    <div class="trail-item">
+                      <div class="trail-user">
+                        <img src="https://64.media.tumblr.com/avatar_5728f0e68b5c_64.png" alt="jensen-jay">
+                        <b>
+                          <a href="https://jensen-jay.tumblr.com/post/646286301625286656">jensen-jay</a>
+                        </b>
+                      </div>
+                      <div class="trail-content">
+                        <p>
+                          <b>Supernatural | </b>4x02 - Are you there, God? It’s me, Dean Winchester <br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article id="post-708100951288020992" class="post post-to-enhance p-r ox-h oy-h photo" data-permalink="https://mtrics.tumblr.com/post/708072903951974400/ps1-azores-sao-miguel" data-tags="enhanced reblog">
+                <div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22media_key\x22:\x2229be0f61d8a3117e825022f1e61f477f:b76d54f06b46a7f1-fe\x22,\x22type\x22:\x22image/png\x22,\x22width\x22:1024,\x22height\x22:683,\x22url\x22:\x22https://64.media.tumblr.com/29be0f61d8a3117e825022f1e61f477f/b76d54f06b46a7f1-fe/s1280x1920/95bceeab4abc21627525fbbddccfdb2b464db9fc.png\x22,\x22colors\x22:{\x22c0\x22:\x22103405\x22,\x22c1\x22:\x22c2d1e9\x22},\x22has_original_dimensions\x22:true},{\x22media_key\x22:\x2229be0f61d8a3117e825022f1e61f477f:b76d54f06b46a7f1-fe\x22,\x22type\x22:\x22image/png\x22,\x22width\x22:640,\x22height\x22:427,\x22url\x22:\x22https://64.media.tumblr.com/29be0f61d8a3117e825022f1e61f477f/b76d54f06b46a7f1-fe/s640x960/b3039c0909bd55bd807f2b878ec807870f14a45b.png\x22,\x22colors\x22:{\x22c0\x22:\x22103405\x22,\x22c1\x22:\x22c2d1e9\x22}},{\x22media_key\x22:\x2229be0f61d8a3117e825022f1e61f477f:b76d54f06b46a7f1-fe\x22,\x22type\x22:\x22image/png\x22,\x22width\x22:540,\x22height\x22:360,\x22url\x22:\x22https://64.media.tumblr.com/29be0f61d8a3117e825022f1e61f477f/b76d54f06b46a7f1-fe/s540x810/01c1cf88c0839b7ef04c9e3b3004af122b24fcdb.png\x22,\x22colors\x22:{\x22c0\x22:\x22103405\x22,\x22c1\x22:\x22c2d1e9\x22}},{\x22media_key\x22:\x2229be0f61d8a3117e825022f1e61f477f:b76d54f06b46a7f1-fe\x22,\x22type\x22:\x22image/png\x22,\x22width\x22:500,\x22height\x22:333,\x22url\x22:\x22https://64.media.tumblr.com/29be0f61d8a3117e825022f1e61f477f/b76d54f06b46a7f1-fe/s500x750/be6b901ec7d3b4f074f7a01301252cc5774c9a1d.png\x22,\x22colors\x22:{\x22c0\x22:\x22103405\x22,\x22c1\x22:\x22c2d1e9\x22}},{\x22media_key\x22:\x2229be0f61d8a3117e825022f1e61f477f:b76d54f06b46a7f1-fe\x22,\x22type\x22:\x22image/png\x22,\x22width\x22:400,\x22height\x22:267,\x22url\x22:\x22https://64.media.tumblr.com/29be0f61d8a3117e825022f1e61f477f/b76d54f06b46a7f1-fe/s400x600/df7e93b88aa4465c6d9b07933283ab2138a8585a.png\x22,\x22colors\x22:{\x22c0\x22:\x22103405\x22,\x22c1\x22:\x22c2d1e9\x22}},{\x22media_key\x22:\x2229be0f61d8a3117e825022f1e61f477f:b76d54f06b46a7f1-fe\x22,\x22type\x22:\x22image/png\x22,\x22width\x22:250,\x22height\x22:167,\x22url\x22:\x22https://64.media.tumblr.com/29be0f61d8a3117e825022f1e61f477f/b76d54f06b46a7f1-fe/s250x400/a3f3ca8f78c0e00fa6295bb791de30b216481507.png\x22,\x22colors\x22:{\x22c0\x22:\x22103405\x22,\x22c1\x22:\x22c2d1e9\x22}},{\x22media_key\x22:\x2229be0f61d8a3117e825022f1e61f477f:b76d54f06b46a7f1-fe\x22,\x22type\x22:\x22image/png\x22,\x22width\x22:100,\x22height\x22:67,\x22url\x22:\x22https://64.media.tumblr.com/29be0f61d8a3117e825022f1e61f477f/b76d54f06b46a7f1-fe/s100x200/09d842b576a6282717ab821f5bf8ffb35684b589.png\x22,\x22colors\x22:{\x22c0\x22:\x22103405\x22,\x22c1\x22:\x22c2d1e9\x22}},{\x22media_key\x22:\x2229be0f61d8a3117e825022f1e61f477f:b76d54f06b46a7f1-fe\x22,\x22type\x22:\x22image/png\x22,\x22width\x22:75,\x22height\x22:75,\x22url\x22:\x22https://64.media.tumblr.com/29be0f61d8a3117e825022f1e61f477f/b76d54f06b46a7f1-fe/s75x75_c1/dc57799dfacd24870e00369b8e4deedd743fb55e.png\x22,\x22colors\x22:{\x22c0\x22:\x22103405\x22,\x22c1\x22:\x22c2d1e9\x22},\x22cropped\x22:true}],\x22attribution\x22:{\x22type\x22:\x22link\x22,\x22url\x22:\x22https://www.flickr.com/photos/frankplamann/52296027980/in/dateposted/\x22,\x22url_redirect\x22:\x22https://href.li/?https://www.flickr.com/photos/frankplamann/52296027980/in/dateposted/\x22},\x22colors\x22:{\x22c0\x22:\x22103405\x22,\x22c1\x22:\x22c2d1e9\x22}},{\x22type\x22:\x22text\x22,\x22text\x22:\x22Azores - Sao Miguel\x22,\x22formatting\x22:[{\x22type\x22:\x22link\x22,\x22start\x22:0,\x22end\x22:19,\x22url\x22:\x22https://href.li/?https://www.flickr.com/photos/frankplamann/52296027980/in/dateposted/\x22}]}],\x22layout\x22:[],\x22post\x22:{\x22id\x22:\x22698288398411137024\x22},\x22blog\x22:{\x22name\x22:\x22ps1\x22,\x22title\x22:\x22PS1\x22,\x22description\x22:\x22\x3ca href=\\\x22https://ammo.carrd.co/\\\x22\x3e\u2605\u5f61\x3c/a\x3e\x22,\x22url\x22:\x22https://ps1.tumblr.com/\x22,\x22uuid\x22:\x22t:TI78x7q9jNBDgPzP0--zQA\x22,\x22updated\x22:1673911862,\x22blog_view_url\x22:\x22https://www.tumblr.com/ps1\x22,\x22key\x22:\x22DmYVZGrPn\x22,\x22theme\x22:{\x22header_full_width\x22:1400,\x22header_full_height\x22:934,\x22header_focus_width\x22:1225,\x22header_focus_height\x22:689,\x22avatar_shape\x22:\x22square\x22,\x22background_color\x22:\x22#ffffff\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x22191,1225,880,0\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/5a605f7732f355f5e3d053f1c90b45aa/e51ad86405d4a0dd-f6/s1400x934/bdb25de46389f58fc3d2b632c11fb584cde9542a.jpg\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/5a605f7732f355f5e3d053f1c90b45aa/e51ad86405d4a0dd-f6/s2048x3072_c0,20450,87500,94218/4d3f81bb17fb31f07dbf94cd9b502703ea39d29d.jpg\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/5a605f7732f355f5e3d053f1c90b45aa/e51ad86405d4a0dd-f6/s2048x3072/3c1503d38253394147abeb8bc3c857d5d6bebded.jpg\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#579400\x22,\x22show_avatar\x22:false,\x22show_description\x22:true,\x22show_header_image\x22:true,\x22show_title\x22:false,\x22title_color\x22:\x22#000000\x22,\x22title_font\x22:\x22Brutal Type\x22,\x22title_font_weight\x22:\x22regular\x22},\x22can_message\x22:true,\x22share_likes\x22:false,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22active\x22:true}}]}'</div>
+                <div class="reblog-metas d-flex-a-center">
+                  <a href="https://mtrics.tumblr.com/post/708072903951974400/ps1-azores-sao-miguel" title="Permalink" class="permalink-notecount d-flex-a-center">
+                    <span>2484N.</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </a>
+                  <a href="https://www.tumblr.com/reblog/mtrics/708072903951974400/RScmoBPD" title="Reblog" target="_blank" class="d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-repeat">
+                      <polyline points="17 1 21 5 17 9"></polyline>
+                      <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                      <polyline points="7 23 3 19 7 15"></polyline>
+                      <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                    </svg>
+                  </a>
+                  <div class="custom-like-btn p-r d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="posts-contents d-flex-aj-center wh-100 ox-h oy-h">
+                  <div class="media-container photo-container wh-100">
+                    <img src="https://64.media.tumblr.com/29be0f61d8a3117e825022f1e61f477f/b76d54f06b46a7f1-fe/s1280x1920/95bceeab4abc21627525fbbddccfdb2b464db9fc.png" alt="ps1:“Azores - Sao Miguel”" data-width="1024" data-height="683" class="wh-100 tumblr-lightbox-loaded-trigger">
+                  </div>
+                  <div class="hover-captions">
+                    <div class="trail-item">
+                      <div class="trail-user">
+                        <img src="https://64.media.tumblr.com/21ea2aa48d72cdf6a9568c09b76dcac2/e51ad86405d4a0dd-04/s64x64u_c1/a6f240bc0cf4beef728f5048342e8b87828cb120.png" alt="ps1">
+                        <b>
+                          <a href="https://ps1.tumblr.com/post/698288398411137024">ps1</a>
+                        </b>
+                      </div>
+                      <div class="trail-content">
+                        <p>
+                          <a href="https://href.li/?https://www.flickr.com/photos/frankplamann/52296027980/in/dateposted/">Azores - Sao Miguel</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article id="post-708354185854353408" class="post p-r ox-h oy-h audio" data-permalink="https://darkin520.tumblr.com/post/73437144245/aerosmith-rag-doll" data-tags="reblog">
+                <div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22audio\x22,\x22provider\x22:\x22tumblr\x22,\x22url\x22:null,\x22title\x22:\x22Rag Doll\x22,\x22artist\x22:\x22Aerosmith\x22,\x22album\x22:\x22Permanent Vacation\x22,\x22embed_html\x22:\x22\x3ciframe class=\\\x22tumblr_audio_player tumblr_audio_player_708354185854353408\\\x22 src=\\\x22https://mtrics.tumblr.com/post/708354185854353408/audio_player_iframe/mtrics/tumblr_mzgmpvk4CS1tpkhc4?audio_file=https%3A%2F%2Fa.tumblr.com%2Ftumblr_mzgmpvk4CS1tpkhc4o1.mp3\\\x22 frameborder=\\\x220\\\x22 allowtransparency=\\\x22true\\\x22 scrolling=\\\x22no\\\x22 width=\\\x22540\\\x22 height=\\\x22169\\\x22\x3e\x3c/iframe\x3e\x22,\x22media\x22:{\x22url\x22:\x22https://a.tumblr.com/tumblr_mzgmpvk4CS1tpkhc4o1.mp3?play_key=e6ba8f023e92bbb5aaf06052cd0c6551\x22,\x22type\x22:\x22audio/mpeg\x22},\x22poster\x22:[{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_mzgmpvk4CS1tpkhc4o1_1389818371_cover.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:225,\x22height\x22:225}]}],\x22layout\x22:[],\x22post\x22:{\x22id\x22:\x2273437144245\x22},\x22blog\x22:{\x22name\x22:\x22darkin520\x22,\x22title\x22:\x22Because the world is round, it turns me on...\x22,\x22description\x22:\x22Just pure randomness at this point. Enjoy!\\n\\n\x3ca href=\\\x22http://www.fanfiction.net/u/2665827/darkaccalia520/\\\x22\x3eMy fanfiction.net profile\x3c/a\x3e \x3c/br\x3e\\n\\n\x3ca href=\\\x22https://www.youtube.com/channel/UCWnKG9AEOrQfWw7Qi2kU_qg?view_as=subscriber/\\\x22\x3eMy YouTube channel\x3c/a\x3e \x3c/br\x3e\\n\\n\x3ca href=\\\x22https://archiveofourown.org/users/darkin520\\\x22\x3eMy AO3 profile\x3c/a\x3e \x3c/br\x3e\\n\\n\x3ca href=\\\x22https://vidders.net/profile/darkaccalia520/\\\x22\x3eMy Vidders.net profile\x3c/a\x3e \x3c/br\x3e\x22,\x22url\x22:\x22https://darkin520.tumblr.com/\x22,\x22uuid\x22:\x22t:avcobkSKe7B2JcKMpNferQ\x22,\x22updated\x22:1674076893,\x22blog_view_url\x22:\x22https://www.tumblr.com/darkin520\x22,\x22key\x22:\x22w7h8EsOaw\x22,\x22theme\x22:{\x22avatar_shape\x22:\x22circle\x22,\x22background_color\x22:\x22#0f0f0f\x22,\x22body_font\x22:\x22Calluna\x22,\x22header_bounds\x22:0,\x22header_image\x22:\x22https://static.tumblr.com/063bef5ee7a167ef129355d13fb33a4c/xp24iwi/TKxpz2ho0/tumblr_static_e1qxu0bdr6gc448oo0ww0g4s0.png\x22,\x22header_image_focused\x22:\x22https://static.tumblr.com/063bef5ee7a167ef129355d13fb33a4c/xp24iwi/TKxpz2ho0/tumblr_static_e1qxu0bdr6gc448oo0ww0g4s0_2048_v2.png\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://static.tumblr.com/063bef5ee7a167ef129355d13fb33a4c/xp24iwi/TKxpz2ho0/tumblr_static_e1qxu0bdr6gc448oo0ww0g4s0_2048_v2.png\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#095481\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:true,\x22show_title\x22:true,\x22title_color\x22:\x22#444444\x22,\x22title_font\x22:\x22Streetscript\x22,\x22title_font_weight\x22:\x22regular\x22},\x22can_message\x22:true,\x22share_likes\x22:true,\x22share_following\x22:true,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22active\x22:true}}]}'</div>
+                <div class="reblog-metas d-flex-a-center">
+                  <a href="https://darkin520.tumblr.com/post/73437144245/aerosmith-rag-doll" title="Permalink" class="permalink-notecount d-flex-a-center">
+                    <span>63N.</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </a>
+                  <a href="https://www.tumblr.com/reblog/darkin520/73437144245/tCGJ6OKx/?redirect_to=https%3A%2F%2Fdarkin520.tumblr.com%2Fpost%2F73437144245%2Faerosmith-rag-doll" target="_blank" class="d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" title="Reblog" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-repeat">
+                      <polyline points="17 1 21 5 17 9"></polyline>
+                      <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                      <polyline points="7 23 3 19 7 15"></polyline>
+                      <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                    </svg>
+                  </a>
+                  <div class="custom-like-btn p-r d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="posts-contents d-flex-aj-center wh-100 ox-h oy-h">
+                  <div class="media-container audio-container wh-100">
+                    <div class="audio-player wh-100">
+                      <div class="audio-player-container wh-100" style="background-image:url(https://64.media.tumblr.com/tumblr_mzgmpvk4CS1tpkhc4o1_1389818371_cover.jpg)">
+                          <span id="audio_player_708353930570203136"><div class="audio_player"><iframe class="tumblr_audio_player tumblr_audio_player_708353930570203136" src="https://neothms.tumblr.com/post/708353930570203136/audio_player_iframe/neothms/tumblr_mzgmpvk4CS1tpkhc4?audio_file=https%3A%2F%2Fa.tumblr.com%2Ftumblr_mzgmpvk4CS1tpkhc4o1.mp3&color=white&simple=1" frameborder="0" allowtransparency="true" scrolling="no" width="207" height="27"></iframe></div></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article id="post-708352431322529792" class="post p-r ox-h oy-h photo" data-permalink="https://benbentobox.tumblr.com/post/146844573555" data-tags="green reblog">
+                <div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22url\x22:\x22https://64.media.tumblr.com/6ca953f5bc2cee51077f20d58f535cd4/tumblr_o9qp1dTej21qezpouo1_500.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:500,\x22height\x22:334,\x22has_original_dimensions\x22:true},{\x22url\x22:\x22https://64.media.tumblr.com/6ca953f5bc2cee51077f20d58f535cd4/tumblr_o9qp1dTej21qezpouo1_400.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:400,\x22height\x22:267},{\x22url\x22:\x22https://64.media.tumblr.com/6ca953f5bc2cee51077f20d58f535cd4/tumblr_o9qp1dTej21qezpouo1_250.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:250,\x22height\x22:167},{\x22url\x22:\x22https://64.media.tumblr.com/6ca953f5bc2cee51077f20d58f535cd4/tumblr_o9qp1dTej21qezpouo1_100.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:100,\x22height\x22:67},{\x22url\x22:\x22https://64.media.tumblr.com/6ca953f5bc2cee51077f20d58f535cd4/tumblr_o9qp1dTej21qezpouo1_75sq.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:75,\x22height\x22:75,\x22cropped\x22:true}]}],\x22layout\x22:[],\x22post\x22:{\x22id\x22:\x22146844573555\x22},\x22blog\x22:{\x22name\x22:\x22benbentobox\x22,\x22title\x22:\x22bentobox\x22,\x22description\x22:\x22Swedish designer, currently living and working in the San Francisco Bay Area, California. \\nThis is my visual diary, a collection of daily inspiration, manually arranged by colors, hues, tones and shades. \\nAll posts are tagged. Use the searchbox below to only display one color or theme.\x22,\x22url\x22:\x22https://benbentobox.tumblr.com/\x22,\x22uuid\x22:\x22t:QrFpQeXyraKzh_jmIE4YZw\x22,\x22updated\x22:1673896343,\x22blog_view_url\x22:\x22https://www.tumblr.com/benbentobox\x22,\x22key\x22:\x22o8eeFNq4o\x22,\x22theme\x22:{\x22header_full_width\x22:526,\x22header_full_height\x22:388,\x22avatar_shape\x22:\x22square\x22,\x22background_color\x22:\x22#FFFFFF\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x22\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/dc0982f82c9d51bc7179077fec87fe59/63f3594b7bd2b573-cf/s526x388/95cbfa3490a2fd7d99676fa60deeb7a34ff0f4ae.png\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/dc0982f82c9d51bc7179077fec87fe59/63f3594b7bd2b573-cf/s2048x3072/71d1448c08aafa4f65f971396b40541a2d00b987.png\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/dc0982f82c9d51bc7179077fec87fe59/63f3594b7bd2b573-cf/s2048x3072/71d1448c08aafa4f65f971396b40541a2d00b987.png\x22,\x22header_stretch\x22:false,\x22link_color\x22:\x22#444444\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:false,\x22show_title\x22:true,\x22title_color\x22:\x22#444444\x22,\x22title_font\x22:\x22Avalon\x22,\x22title_font_weight\x22:\x22regular\x22},\x22can_message\x22:true,\x22share_likes\x22:true,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22active\x22:true}}]}'</div>
+                <div class="reblog-metas d-flex-a-center">
+                  <a href="https://benbentobox.tumblr.com/post/146844573555" title="Permalink" class="permalink-notecount d-flex-a-center">
+                    <span>41N.</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </a>
+                  <a href="https://www.tumblr.com/reblog/benbentobox/146844573555/qh4iMBzM" title="Reblog" target="_blank" class="d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-repeat">
+                      <polyline points="17 1 21 5 17 9"></polyline>
+                      <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                      <polyline points="7 23 3 19 7 15"></polyline>
+                      <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                    </svg>
+                  </a>
+                  <div class="custom-like-btn p-r d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="posts-contents d-flex-aj-center wh-100 ox-h oy-h">
+                  <div class="media-container photo-container wh-100">
+                    <img src="https://64.media.tumblr.com/6ca953f5bc2cee51077f20d58f535cd4/tumblr_o9qp1dTej21qezpouo1_500.jpg" alt="" data-width="500" data-height="334" class="wh-100 tumblr-lightbox-loaded-trigger">
+                  </div>
+                </div>
+              </article>
+
+              <article id="post-708063371480776704" class="post p-r ox-h oy-h text" data-permalink="https://mtrics.tumblr.com/post/708063371480776704" data-tags="quote star_trek reblog">
+                  <div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22text\x22,\x22text\x22:\x22You know the greatest danger facing us is ourselves, and irrational fear of the unknown. There is no such thing as the unknown. Only things temporarily hidden, temporarily not understood.\\\x22 \x22,\x22subtype\x22:\x22quote\x22,\x22formatting\x22:[{\x22type\x22:\x22italic\x22,\x22start\x22:0,\x22end\x22:189},{\x22type\x22:\x22bold\x22,\x22start\x22:0,\x22end\x22:189}]},{\x22type\x22:\x22text\x22,\x22text\x22:\x22James T. Kirk, \\\x22The Corbomite Maneuver\x22}],\x22layout\x22:[],\x22post\x22:{\x22id\x22:\x22188419908548\x22},\x22blog\x22:{\x22name\x22:\x22chelchosblog\x22,\x22title\x22:\x22chelchosblog\x22,\x22description\x22:\x22Poems - Stories - Pictures - Me\x22,\x22url\x22:\x22https://www.tumblr.com/chelchosblog\x22,\x22uuid\x22:\x22t:xgSm5P2lhhfoCOpQiASD6g\x22,\x22updated\x22:1673923303,\x22blog_view_url\x22:\x22https://www.tumblr.com/chelchosblog\x22,\x22key\x22:\x22e6OSX77Fn\x22,\x22theme\x22:{\x22header_full_width\x22:620,\x22header_full_height\x22:463,\x22avatar_shape\x22:\x22circle\x22,\x22background_color\x22:\x22#FAFAFA\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x22\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/fe0e921ccb4b7c24d3f65cb6f9e574ea/8f18392f6cc534e4-5e/s4032x1960/dee97469d7c6f09a2f0dc750953a0243d05cedd1.jpg\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/fe0e921ccb4b7c24d3f65cb6f9e574ea/8f18392f6cc534e4-5e/s2048x3072/74e1e8d06a19622934e5030d34e84568abe2d68c.jpg\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/fe0e921ccb4b7c24d3f65cb6f9e574ea/8f18392f6cc534e4-5e/s2048x3072/74e1e8d06a19622934e5030d34e84568abe2d68c.jpg\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#529ECC\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:true,\x22show_title\x22:true,\x22title_color\x22:\x22#894174\x22,\x22title_font\x22:\x22Sans Serif\x22,\x22title_font_weight\x22:\x22bold\x22},\x22can_message\x22:true,\x22share_likes\x22:false,\x22share_following\x22:true,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22active\x22:true}}]}'</div>
+                  
+                  <div class="reblog-metas d-flex-a-center">
+                      <a href="https://mtrics.tumblr.com/post/708063371480776704" title="Permalink" class="permalink-notecount d-flex-a-center">
+                          <span>3N.</span><span data-feather="plus"></span>
+                      </a>
+                      
+                      <a href="https://www.tumblr.com/reblog/mtrics/708063371480776704/w322fNIT/?redirect_to=https%3A%2F%2Fmtrics.tumblr.com%2Fpost%2F708063371480776704" title="Reblog" target="_blank" class="d-flex-a-center">
+                          <span data-feather="repeat"></span>
+                      </a>
+                      
+                      <div class="custom-like-btn p-r d-flex-a-center">
+                          <span data-feather="heart"></span>
+                      </div>
+                  </div>
+              
+                  <div class="posts-contents d-flex-aj-center wh-100 ox-h oy-h">
+                    <div class="text-post-container"><div class="posts-caption"><div class="trail-item"><div class="trail-user"><img src="https://64.media.tumblr.com/6d530dcbe5629da4adf33aaf68cf0f9a/83e8b3a49bc482e9-3e/s64x64u_c1/b30e02c65a7bbd74318471686c8b520b2757bd34.pnj" alt="chelchosblog"><b><a href="https://chelchosblog.tumblr.com/post/188419908548">chelchosblog</a></b></div><div class="trail-content"><p class="npf_quote"><i><b>You know the greatest danger facing us is ourselves, and irrational fear of the unknown. There is no such thing as the unknown. Only things temporarily hidden, temporarily not understood."</b></i></p><p>James T. Kirk, "The Corbomite Maneuver</p></div></div></div></div>
+                  </div>
+
+                </article>
+
+
+              <article id="post-707930351922806784" class="post p-r ox-h oy-h chat" data-permalink="https://neothm.com" data-tags="">
+                <div class="d-hidden npf-container">'{\x22content\x22:[{\x22type\x22:\x22text\x22,\x22text\x22:\x22Dean: Truth is, I\'m tired, Sam. And, I don\'t know, it\'s like there\'s a light at the end of the tunnel.\x22,\x22subtype\x22:\x22chat\x22,\x22formatting\x22:[{\x22type\x22:\x22bold\x22,\x22start\x22:0,\x22end\x22:5}]},{\x22type\x22:\x22text\x22,\x22text\x22:\x22Sam: It\'s Hellfire, Dean.\x22,\x22subtype\x22:\x22chat\x22,\x22formatting\x22:[{\x22type\x22:\x22bold\x22,\x22start\x22:0,\x22end\x22:4}]}],\x22layout\x22:[],\x22trail\x22:[]}'</div>
+                <div class="reblog-metas d-flex-a-center">
+                  <a href="https://neothm.com" class="permalink-notecount d-flex-a-center" title="Permalink">
+                    <span>0N.</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </a>
+                  <a href="https://neothm.com" target="_blank" class="d-flex-a-center" title="Reblog">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-repeat">
+                      <polyline points="17 1 21 5 17 9"></polyline>
+                      <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                      <polyline points="7 23 3 19 7 15"></polyline>
+                      <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                    </svg>
+                  </a>
+                  <div class="custom-like-btn p-r d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="posts-contents d-flex-aj-center wh-100 ox-h oy-h">
+                  <div class="text-post-container">
+                    <div class="posts-caption">
+                      <div class="chat-bubble odd">
+                        <b>Vincent:</b> And you know what they call a Quarter Pounder with Cheese in Paris?
+                      </div>
+                      <div class="chat-bubble even">
+                        <b>Jules:</b> They don't call it a Quarter Pounder with cheese?
+                      </div>
+                      <div class="chat-bubble odd">
+                        <b>Vincent:</b> No man, they got the metric system. They wouldn't know what the fuck a Quarter Pounder is.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article id="post-7083524313225297921" class="post p-r ox-h oy-h photo" data-permalink="https://mtrics.tumblr.com/post/134554460649" data-tags="green reblog">
+                <div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22url\x22:\x22https://64.media.tumblr.com/6ca953f5bc2cee51077f20d58f535cd4/tumblr_o9qp1dTej21qezpouo1_500.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:500,\x22height\x22:334,\x22has_original_dimensions\x22:true},{\x22url\x22:\x22https://64.media.tumblr.com/6ca953f5bc2cee51077f20d58f535cd4/tumblr_o9qp1dTej21qezpouo1_400.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:400,\x22height\x22:267},{\x22url\x22:\x22https://64.media.tumblr.com/6ca953f5bc2cee51077f20d58f535cd4/tumblr_o9qp1dTej21qezpouo1_250.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:250,\x22height\x22:167},{\x22url\x22:\x22https://64.media.tumblr.com/6ca953f5bc2cee51077f20d58f535cd4/tumblr_o9qp1dTej21qezpouo1_100.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:100,\x22height\x22:67},{\x22url\x22:\x22https://64.media.tumblr.com/6ca953f5bc2cee51077f20d58f535cd4/tumblr_o9qp1dTej21qezpouo1_75sq.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:75,\x22height\x22:75,\x22cropped\x22:true}]}],\x22layout\x22:[],\x22post\x22:{\x22id\x22:\x22146844573555\x22},\x22blog\x22:{\x22name\x22:\x22benbentobox\x22,\x22title\x22:\x22bentobox\x22,\x22description\x22:\x22Swedish designer, currently living and working in the San Francisco Bay Area, California. \\nThis is my visual diary, a collection of daily inspiration, manually arranged by colors, hues, tones and shades. \\nAll posts are tagged. Use the searchbox below to only display one color or theme.\x22,\x22url\x22:\x22https://benbentobox.tumblr.com/\x22,\x22uuid\x22:\x22t:QrFpQeXyraKzh_jmIE4YZw\x22,\x22updated\x22:1673896343,\x22blog_view_url\x22:\x22https://www.tumblr.com/benbentobox\x22,\x22key\x22:\x22o8eeFNq4o\x22,\x22theme\x22:{\x22header_full_width\x22:526,\x22header_full_height\x22:388,\x22avatar_shape\x22:\x22square\x22,\x22background_color\x22:\x22#FFFFFF\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x22\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/dc0982f82c9d51bc7179077fec87fe59/63f3594b7bd2b573-cf/s526x388/95cbfa3490a2fd7d99676fa60deeb7a34ff0f4ae.png\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/dc0982f82c9d51bc7179077fec87fe59/63f3594b7bd2b573-cf/s2048x3072/71d1448c08aafa4f65f971396b40541a2d00b987.png\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/dc0982f82c9d51bc7179077fec87fe59/63f3594b7bd2b573-cf/s2048x3072/71d1448c08aafa4f65f971396b40541a2d00b987.png\x22,\x22header_stretch\x22:false,\x22link_color\x22:\x22#444444\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:false,\x22show_title\x22:true,\x22title_color\x22:\x22#444444\x22,\x22title_font\x22:\x22Avalon\x22,\x22title_font_weight\x22:\x22regular\x22},\x22can_message\x22:true,\x22share_likes\x22:true,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22active\x22:true}}]}'</div>
+                <div class="reblog-metas d-flex-a-center">
+                  <a href="https://mtrics.tumblr.com/post/134554460649" class="permalink-notecount d-flex-a-center" title="Permalink">
+                    <span>89711N.</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </a>
+                  <a href="https://www.tumblr.com/reblog/mtrics/134554460649/ltgcCmif/" target="_blank" title="Reblog" class="d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-repeat">
+                      <polyline points="17 1 21 5 17 9"></polyline>
+                      <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                      <polyline points="7 23 3 19 7 15"></polyline>
+                      <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                    </svg>
+                  </a>
+                  <div class="custom-like-btn p-r d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="posts-contents d-flex-aj-center wh-100 ox-h oy-h">
+                  <div class="media-container photo-container wh-100">
+                    <img src="https://64.media.tumblr.com/4aab8d654214a31020c7f2a639c10c06/tumblr_mwuld0yaGA1t3h5e2o1_500.png" alt="" data-width="500" data-height="334" class="wh-100 tumblr-lightbox-loaded-trigger">
+                  </div>
+                </div>
+              </article>
+
+              <article id="post-708110359039508480" class="post p-r ox-h oy-h answer" data-permalink="https://mtrics.tumblr.com/" data-tags="reblog">
+                <div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22text\x22,\x22text\x22:\x22hi! i\'m using unnest and currently trying very very hard to get it to work with infinite scrolling, but failing miserably. where should i add the new elements variable? i couldn\'t find a similar question anywhere. thank you!! :)\x22},{\x22type\x22:\x22text\x22,\x22text\x22:\x22Hi, as said on the plugin\u2019s post, all you need to do to make it work with infinite scroll is using the plugin\u2019s callback. Like so:\x22},{\x22type\x22:\x22text\x22,\x22text\x22:\x22$(\u2019CONTAINER\u2019).infinitescroll({[OPTIONS]}, function( newElements ) { \u00a0\u00a0var $newElems = $( newElements ).css({ opacity: 0 }); \u00a0\u00a0$newElems.unnest(); \u00a0 $newElems.animate({ opacity: 1 });});\x22,\x22formatting\x22:[{\x22type\x22:\x22bold\x22,\x22start\x22:31,\x22end\x22:40},{\x22type\x22:\x22italic\x22,\x22start\x22:31,\x22end\x22:40},{\x22type\x22:\x22bold\x22,\x22start\x22:127,\x22end\x22:149}]}],\x22layout\x22:[{\x22type\x22:\x22ask\x22,\x22blocks\x22:[0]}],\x22post\x22:{\x22id\x22:\x22154816688104\x22},\x22blog\x22:{\x22name\x22:\x22neothm\x22,\x22title\x22:\x2200111011\x22,\x22description\x22:\x22[SEND YOUR MESSAGES FROM THE BLOG]\x3cbr /\x3ethemes, pages, and very intense discussions brought to you by \x3ca href=\\\x22http://mtrics.tumblr.com/\\\x22\x3e@mtrics\x3c/a\x3e\x22,\x22url\x22:\x22https://neothm.com/\x22,\x22uuid\x22:\x22t:T7bJO0Dvq8LH0eO9rR-1sw\x22,\x22updated\x22:1595357726,\x22blog_view_url\x22:\x22https://www.tumblr.com/neothm\x22,\x22key\x22:\x22E6y2wjCai\x22,\x22theme\x22:{\x22header_full_width\x22:3000,\x22header_full_height\x22:1055,\x22header_focus_width\x22:551,\x22header_focus_height\x22:310,\x22avatar_shape\x22:\x22circle\x22,\x22background_color\x22:\x22#FFFFFF\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x220,575,310,24\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/9d0f5ae4da65c7ee33e04f2a374b66d1/dcb902e63c4d1983-87/s3000x1055/8a77d6723a722f846fc0b26d75f5c522263e371c.jpg\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/9d0f5ae4da65c7ee33e04f2a374b66d1/dcb902e63c4d1983-87/s2048x3072_c800,0,19167,29384/4b46f5a9e073cdb7546b0f537b3c98e401b4a7e5.jpg\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/9d0f5ae4da65c7ee33e04f2a374b66d1/dcb902e63c4d1983-87/s2048x3072/a085308474129053634d6b470e9e27bb8afaed75.jpg\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#bd806d\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:true,\x22show_title\x22:true,\x22title_color\x22:\x22#9c9a96\x22,\x22title_font\x22:\x22Avalon\x22,\x22title_font_weight\x22:\x22bold\x22},\x22can_message\x22:true,\x22share_likes\x22:false,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22active\x22:true}}]}'</div>
+                <div class="reblog-metas d-flex-a-center">
+                  <a href="https://www.imdb.com/title/tt1032129/characters/nm0010075#quotes" title="Permalink" class="permalink-notecount d-flex-a-center">
+                    <span>7N.</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </a>
+                  <a href="https://www.imdb.com/title/tt1032129/characters/nm0010075#quotes" title="Reblog" target="_blank" class="d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-repeat">
+                      <polyline points="17 1 21 5 17 9"></polyline>
+                      <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                      <polyline points="7 23 3 19 7 15"></polyline>
+                      <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                    </svg>
+                  </a>
+                  <div class="custom-like-btn p-r d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="posts-contents d-flex-aj-center wh-100 ox-h oy-h">
+                  <div class="text-post-container">
+                    <div class="posts-caption">
+                      <div class="trail-item">
+                        <div class="trail-user">
+                          <img src="https://64.media.tumblr.com/6972e8ff15347b7c542e04eb7a6c4112/dccc57d3a6011bfc-b2/s540x810/4bd5721075706b2725d5ebe0187afe25016397f4.png">
+                          <b><a href="https://spn-caps.tumblr.com/post/667650176200179712">impala67</a></b>
+                        </div>
+                        <div class="trail-content"><i>(Ask post)</i> Truth is, I'm tired, Sam. And, I don't know, it's like there's a light at the end of the tunnel.</div>
+                      </div>
+                      <div class="trail-item">
+                        <div class="trail-user">
+                          <img src="https://64.media.tumblr.com/6ea6a654041118820867bb438f364ea6/9ca86b3bf663e708-df/s1280x1920/18f331c35609693bc7ee0e62c80b071c78a87b7d.jpg">
+                          <b>
+                            <a href="https://spn-caps.tumblr.com/post/648831835956264961">swinchester</a>
+                          </b>
+                        </div>
+                        <div class="trail-content">
+                          <p>It's Hellfire, Dean.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article id="post-708359552929759232" class="post p-r ox-h oy-h video" data-permalink="https://www.tumblr.com/starbashir/685072728683872256/this-is-one-of-my-fav-tng-bloopers-mainly-for-how" data-tags="reblog">
+                <div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22video\x22,\x22provider\x22:\x22tumblr\x22,\x22url\x22:\x22https://va.media.tumblr.com/tumblr_rbmzpempXi1z5wa5a.mp4\x22,\x22media\x22:{\x22url\x22:\x22https://va.media.tumblr.com/tumblr_rbmzpempXi1z5wa5a.mp4\x22,\x22type\x22:\x22video/mp4\x22,\x22width\x22:892,\x22height\x22:596},\x22poster\x22:[{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_rbmzpempXi1z5wa5a_frame1.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:892,\x22height\x22:596}],\x22filmstrip\x22:{\x22url\x22:\x22https://64.media.tumblr.com/previews/tumblr_rbmzpempXi1z5wa5a_filmstrip.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:2000,\x22height\x22:133}},{\x22type\x22:\x22text\x22,\x22text\x22:\x22this is one of my fav tng bloopers mainly for how u can see the exact moment frakes realises that brent went off script\x22}],\x22layout\x22:[],\x22post\x22:{\x22id\x22:\x22685072728683872256\x22},\x22blog\x22:{\x22name\x22:\x22starbashir\x22,\x22title\x22:\x22*\x22,\x22description\x22:\x22star trek brain rot incoming\x22,\x22url\x22:\x22https://www.tumblr.com/starbashir\x22,\x22uuid\x22:\x22t:eXH9BdY88EytdB1X38ewTw\x22,\x22updated\x22:1675530336,\x22blog_view_url\x22:\x22https://www.tumblr.com/starbashir\x22,\x22key\x22:\x22wIVMoXr4z\x22,\x22theme\x22:{\x22header_full_width\x22:1436,\x22header_full_height\x22:1080,\x22avatar_shape\x22:\x22square\x22,\x22background_color\x22:\x22#000000\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x22\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/f707c5ffde00c00be923cd9fa17507b2/dcaf96bea1c4609b-08/s900x350/7e63c66ff5b0204e78a40ec71437bc3a5a4b82ae.png\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/f707c5ffde00c00be923cd9fa17507b2/dcaf96bea1c4609b-08/s2048x3072/0a8c55dd3d622f2044e99fbdae0fd13e2ecfb261.png\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/f707c5ffde00c00be923cd9fa17507b2/dcaf96bea1c4609b-08/s2048x3072/0a8c55dd3d622f2044e99fbdae0fd13e2ecfb261.png\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#FFFFFF\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:true,\x22show_title\x22:true,\x22title_color\x22:\x22#FFFFFF\x22,\x22title_font\x22:\x22Sans Serif\x22,\x22title_font_weight\x22:\x22bold\x22},\x22can_message\x22:true,\x22share_likes\x22:false,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22active\x22:true}}]}'</div>
+                <div class="reblog-metas d-flex-a-center">
+                  <a href="https://www.tumblr.com/starbashir/685072728683872256/this-is-one-of-my-fav-tng-bloopers-mainly-for-how" title="Permalink" class="permalink-notecount d-flex-a-center">
+                    <span>3403N.</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                  </a>
+                  <a href="https://www.tumblr.com/reblog/starbashir/685072728683872256/uR7KUNd3" title="Reblog" target="_blank" class="d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-repeat">
+                      <polyline points="17 1 21 5 17 9"></polyline>
+                      <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                      <polyline points="7 23 3 19 7 15"></polyline>
+                      <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                    </svg>
+                  </a>
+                  <div class="custom-like-btn p-r d-flex-a-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div class="posts-contents d-flex-aj-center wh-100 ox-h oy-h">
+                  <div class="media-container video-container wh-100">
+                    <div class="resizable-content d-flex-aj-center wh-100">
+                      <div style="width:375px;height:250px">
+                        <iframe src="https://va.media.tumblr.com/tumblr_rbmzpempXi1z5wa5a.mp4" width="892" height="596" style="width:375px;height:250px"></iframe>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hover-captions">
+                    <div class="trail-item">
+                      <div class="trail-user">
+                        <img src="https://64.media.tumblr.com/67c1d63af069313405e2566922da0171/c2a85c1e6719a93b-b8/s64x64u_c1/0b3d9d3a1f6666d1c07da37785842d02cc0e6891.pnj" alt="starbashir">
+                        <b>
+                          <a href="https://starbashir.tumblr.com/post/685072728683872256">starbashir</a>
+                        </b>
+                      </div>
+                      <div class="trail-content">
+                        <p>this is one of my fav tng bloopers mainly for how u can see the exact moment frakes realises that brent went off script</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </section>
+            
+            <div class="pagination-container np-pagination">
+            
+                <div class="jump-pagination d-flex-aj-center">
+                    <a href="/page/1" class="nav-page d-flex-a-center">
+                        <span data-feather="chevron-left"></span>
+                        Prev
+                    </a>
+                    <a class="jump-page" href="/page/1">1</a>
+                    <span class="current-page">2</span>
+                    <a class="jump-page" href="/page/3">3</a>
+                    <a class="jump-page" href="/page/4">4</a>
+                    <a class="jump-page" href="/page/5">5</a>
+                    <a href="/page/3" class="nav-page d-flex-a-center">
+                        Next
+                        <span data-feather="chevron-right"></span>
+                    </a>
+                </div>
+                
+                <div class="load-more-container">
+                    <button>
+                        Load more posts
+                    </button>
+                </div>
+                
+            </div>
+        </main>
+    </body>
+    
+    <script src="https://static.tumblr.com/wgg6svp/DXrrnsprs/babel.min.js"></script>    
+    <script src="https://static.tumblr.com/wgg6svp/rKhro34kh/credits.min.js"></script>
+    
+    <script src="https://static.tumblr.com/emvnqzg/Fmtrpa5x3/popper.min.js"></script>
+    <script src="https://static.tumblr.com/emvnqzg/Jf1rpa5xx/tippy-bundle.umd.min.js"></script>
+    <script src="https://static.tumblr.com/emvnqzg/zQ1rpa5z0/feather.min.js"></script>
+    <script src="https://static.tumblr.com/emvnqzg/cPSrpbujq/glider.min.js"></script>
+    <script src="https://static.tumblr.com/emvnqzg/Di3rpklaa/neothm.js"></script>
+    
+    <script type="text/babel">
+
+      const root = document.querySelector(':root')
+      const dynamicInputs = document.querySelectorAll('.customization-options .variable-input')
+      const resetButton = document.querySelector('.customization-options .reset-attributes')
+      const showPermaButton = document.querySelector('.customization-options .show-permalink-page')
+
+      const customizationSpecialCases = (attribute, value) => {
+          if(attribute == "--background-color") {
+            root.style.setProperty("--background-color-transparent", `${ value }CC`)
+          } else if(attribute == "--accent-color") {
+            root.style.setProperty("--accent-color-transparent", `${ value }99`)
+          } else if(attribute == "--pagination-type") {
+            const paginationContainer = document.querySelector('.pagination-container')
+            paginationContainer.classList.remove(...paginationContainer.classList)
+            paginationContainer.classList.add('pagination-container', value)
+          } else if(attribute === "--enhance-post") {
+            const enhancablePost = document.querySelector('.post-to-enhance')
+            if(value === 'true') {
+              enhancablePost.dataset.tags = "enhanced"
+            } else {
+              enhancablePost.dataset.tags = ""
+            }
+          }
+      }
+
+      const setInputsToDefault = (input) => {
+        let defaultValue = input.dataset.default
+        if(input.type === 'checkbox') {
+          if(defaultValue === 'true') input.checked = true
+          defaultValue = input.checked ? input.dataset.iftrue : input.dataset.iffalse
+        } else {
+          input.value = defaultValue
+        }
+        root.style.setProperty(input.dataset.attribute, defaultValue)
+        customizationSpecialCases(input.dataset.attribute, defaultValue)
+      }
+
+      dynamicInputs.forEach((input) => {
+        setInputsToDefault(input)
+        input.addEventListener('change', () => {
+          let value;
+          if(input.type === 'checkbox') {
+            value = input.checked ? input.dataset.iftrue : input.dataset.iffalse
+          } else {
+            value = input.value
+          }
+          console.log(input.dataset.attribute, value)
+          root.style.setProperty(input.dataset.attribute, value)
+          customizationSpecialCases(input.dataset.attribute, value)
+        })
+      })
+
+      resetButton.addEventListener('click', () => {
+        if(confirm("Reset all options to default?")) {
+          dynamicInputs.forEach((input) => setInputsToDefault(input))
+        }
+      })
+
+      showPermaButton.addEventListener('click', () => {
+        if(document.body.classList.contains('permalink-page')) {
+          document.body.classList.remove('permalink-page')
+          document.body.classList.add('index-page')
+          showPermaButton.innerText = "Preview permalink page"
+        } else {
+          document.body.classList.add('permalink-page')
+          document.body.classList.remove('index-page')
+          showPermaButton.innerText = "Back to index view"
+        }
+      })
+
+
+        const metas = {
+            // currentUser: { "name": "{Name}", "title": {JSTitle}, "url": {JSBlogURL}, "active": true },
+            isIndexPage: document.querySelector('body').classList.contains('index-page'),
+            isPermalinkPage: document.querySelector('body').classList.contains('permalink-page')
+        }
+        
+        tippy('[title]', tippyOptions)
+
+
+        const postHeight = forceNumber("250px") // Required for formatLongTextPost
+        
+        // Articles HTML to adapt media posts
+        const articleTemplates = {
+            "photo": "<div class=\"media-container photo-container wh-100\"><img src=\"{PhotoURL-HighRes}\" alt=\"{PhotoAlt}\" data-width=\"{PhotoWidth-HighRes}\" data-height=\"{PhotoHeight-HighRes}\" class=\"tumblr-lightbox-preload wh-100\" /></div>", 
+            "photoset": "<div class=\"media-container photoset-container p-r wh-100\" data-layout={JSPhotosetLayout}><div class=\"glider wh-100\"><img src=\"{PhotoURL-HighRes}\" alt=\"{PhotoAlt}\" data-width=\"{PhotoWidth-HighRes}\" data-height=\"{PhotoHeight-HighRes}\" /></div></div>",
+            "photoset_permalink": "<div class=\"media-container photoset-container\" data-layout=\"{JSPhotosetLayout}\"><img src=\"{PhotoURL-HighRes}\" alt=\"{PhotoAlt}\" data-width=\"{PhotoWidth-HighRes}\" data-height=\"{PhotoHeight-HighRes}\" class=\"tumblr-lightbox-preload\"></div>",
+            "video": "<div class=\"media-container video-container wh-100\"><div class=\"resizable-content d-flex-aj-center wh-100\">{Video-700}</div></div>",
+            "audio": "<div class=\"media-container audio-container wh-100\"><div class=\"audio-player wh-100\"><div class=\"audio-player-container wh-100\" style=\"background-image:url({AlbumArtURL})\">{AudioPlayer}</div></div></div>",
+            "audio_permalink": "<div class=\"media-container audio-container\"><div class=\"audio-player\"><div class=\"audio-player-container\" style=\"background-image:url({AlbumArtURL})\">{AudioPlayer}</div><div class=\"audio-metas\"><h3 class=\"audio-trackname\">{TrackName}</h3><div class=\"audio-artist d-flex-a-center\"><span data-feather=\"music\"></span>{Artist}</div><div class=\"audio-album d-flex-a-center\"><span data-feather=\"disc\"></span>{Album}</div></div></div></div>",
+            "caption": "<div class=\"hover-captions\"><div class=\"trail-item\"><div class=\"trail-user\"><img src=\"{PortraitURL-64}\" alt=\"{Username}\"><b><a href=\"{Permalink}\">{Username}</a></b></div><div class=\"trail-content\">{Body}</div></div></div>"
+        }
+        
+        /*
+            Change NPF posts layout to fit old-type posts
+        */
+        const fixNPFPosts = (allPosts) => {
+            if(allPosts.length > 0) {
+                return new Promise ((resolver) => {
+                    allPosts.forEach((textPost) => {
+                        if(textPost.classList.contains('text')) {
+                            const npfData = decodeHTMLEntities(textPost.querySelector('.npf-container').innerText)
+                            const npfPost = JSON.parse(npfData.substring(1, npfData.length-1)) 
+                            const [npfContent, npfLayout] = buildNPFTrails(npfPost)
+                            const originalPostContent = npfContent[0]
+                            
+                            if(originalPostContent.length > 0) {
+                                // this post is a lil NPF bitch
+                                const firstRow = originalPostContent[0]
+                                
+                                removeEmptyNodes(textPost, '.posts-caption, p')
+                                let newPostType = '', newPostContentNode = document.createElement('div'), rowCounter = 0
+                                
+                                // Post is either a photo or a photoset
+                                if(firstRow.type === 'image') {
+                                    // Get all images before caption
+                                    const postsImagesUntilText = []
+                                    const postsRowCount = []
+                                    let foundText = false
+                                    
+                                    npfContent.forEach((content, trailIndex) => {
+                                        content.forEach((row) => ((!foundText && trailIndex === 0 && row.type === 'image') ? postsImagesUntilText.push(row) : foundText = true))
+                                        if(!foundText) postsRowCount.push('row')
+                                    })
+                                    
+                                    const isPhotoset = postsImagesUntilText.length > 1
+                                    newPostType = isPhotoset ? 'photoset' : 'photo'
+                                    const newContentNode = parser.parseFromString(articleTemplates[`${ newPostType }${ metas.isPermalinkPage && newPostType === 'photoset' ? '_permalink' : '' }`], 'text/html')
+                                    const mediaContainer = newContentNode.querySelector('.media-container')
+                                    
+                                    if(isPhotoset) {
+                                        // Set-up new photoset layout
+                                        const NPFRowSums = npfLayout[0][0].display.map((b) => b.blocks.length)
+                                        let tmpSum = 0, stopIndex = 0
+                                        
+                                        NPFRowSums.some((nbr, i) => {
+                                            if (tmpSum + nbr > postsImagesUntilText.length) {
+                                                stopIndex = i
+                                                return true
+                                            }
+                                            tmpSum += nbr
+                                        })
+    
+                                        const photosetLayout = NPFRowSums.slice(0, stopIndex)
+                                        rowCounter = photosetLayout.length
+                                        mediaContainer.dataset.layout = JSON.stringify(photosetLayout)
+                                        
+                                        if(metas.isIndexPage) {
+                                            // Set-up glider
+                                            const glider = newContentNode.querySelector('.glider')
+                                            NPFReplaceImagesHTML(glider, postsImagesUntilText)
+                                            
+                                            // Add photoset nav to caption 
+                                            const reblogMeta = textPost.querySelector('.reblog-metas')
+                                            reblogMeta.innerHTML = `<a class="glider-arrow-prev d-flex-a-center" title="Previous image"><span data-feather="chevron-left"></span></a> ${ reblogMeta.innerHTML } <a class="glider-arrow-next d-flex-a-center" title="Next image"><span data-feather="chevron-right"></span></a>`
+                                        } else {
+                                            NPFReplaceImagesHTML(mediaContainer, postsImagesUntilText)
+                                        }
+                                    } else {
+                                        rowCounter = 1
+                                        // Set-up solo image post
+                                        NPFReplaceImagesHTML(mediaContainer, postsImagesUntilText)
+                                    }
+                                    // Stuffs to remplace in new post
+                                    newPostContentNode.appendChild(mediaContainer)
+                                }
+                                else if(firstRow.type === 'video') {
+                                    newPostType = 'video'
+                                    
+                                    npfContent.forEach((content, trailIndex) => {
+                                        content.forEach((row) => {
+                                            if(trailIndex === 0 && row.type === 'video') {
+                                                const newContentNode = parser.parseFromString(articleTemplates[newPostType], 'text/html')
+                                                const mediaContainer = newContentNode.querySelector('.media-container')
+                                                const iframeDiv = document.createElement('div')
+                                                iframeDiv.innerHTML = row.embed_html
+                                                mediaContainer.querySelector('.resizable-content').appendChild(iframeDiv)
+                                                
+                                                newPostContentNode.appendChild(mediaContainer)
+                                            }
+                                        })
+                                    })
+                                    rowCounter = 1
+                                }
+                                else if(firstRow.type === 'audio') {
+                                    newPostType = 'audio'
+                                    const newContentNode = parser.parseFromString(articleTemplates[`${ newPostType }${ metas.isPermalinkPage ? '_permalink' : '' }`], 'text/html')
+                                    const mediaContainer = newContentNode.querySelector('.media-container')
+                                    const audioPlayerContainer = newContentNode.querySelector('.audio-player-container')
+                                    const audioMetasContainer = newContentNode.querySelector('.audio-metas')
+                                    
+                                    npfContent.forEach((content, trailIndex) => {
+                                        content.forEach((row) => {
+                                            if(trailIndex === 0 && row.type === 'audio') {
+                                                if(!!row.poster.length) { audioPlayerContainer.style.backgroundImage = `url(${ row.poster[0].url })` }
+                                                
+                                                const span = document.createElement('span')
+                                                span.setAttribute('class', 'p-r')
+                                                span.innerHTML = `<button class="audio-trigger-play d-flex-aj-center wh-100"><span data-feather="play"></span></button><button class="audio-trigger-pause d-flex-aj-center invisible wh-100"> <span data-feather="pause"></span></button><audio class="invisible" controls><source src="${ row.media.url }" type="${ row.media.type }"></audio>`
+                                                audioPlayerContainer.appendChild(span)
+                                                
+                                                if(!!audioMetasContainer) {
+                                                    audioMetasContainer.querySelector('.audio-trackname').innerHTML += row.title
+                                                    audioMetasContainer.querySelector('.audio-artist').innerHTML += row.artist
+                                                    audioMetasContainer.querySelector('.audio-album').innerHTML += row.album
+                                                }
+                                                
+                                                newPostContentNode.appendChild(mediaContainer)
+                                            }
+                                        })
+                                    })
+                                    rowCounter = 1
+                                }
+                                
+                                if(!!newPostType) {
+                                    const newPostNode = formatNewPostNode(textPost.cloneNode(true), newPostContentNode, newPostType, rowCounter)
+                                    textPost.replaceWith(newPostNode)
+                                }
+                            }
+                        }
+                    })
+                    resolver(true)
+                })
+            } else {
+                return Promise.resolve(true)
+            }
+        }
+        
+        /*
+            Navigation/header
+        */
+        const hamburgerMenu = document.querySelector('.hamburger-menu')
+        const sideNav = document.querySelector('.side-menu')
+        
+        hamburgerMenu.addEventListener('click', (e) => { toggleMenu(e) })
+        sideNav.addEventListener('click', (e) => { toggleMenu(e) })
+        
+        removeEmptyNodes(sideNav, 'a,li')
+        
+        const toggleMenu = (event) => {
+            if(!event.target.closest('.side-menu ul li')) {
+                event.preventDefault()
+                if(hamburgerMenu.classList.contains('active')) {
+                    hamburgerMenu.classList.remove('active')
+                    sideNav.classList.add('invisible')
+                    sideNav.classList.remove('visible')
+                } else {
+                    hamburgerMenu.classList.add('active')
+                    sideNav.classList.remove('invisible')
+                    sideNav.classList.add('visible')
+                }
+            }
+        }
+        
+    
+        /*
+            Pagination options
+        */
+        metas.nextPage = forceNumber("3")
+        metas.totalPages = forceNumber("5") 
+        
+        const paginationContainer = document.querySelector('.pagination-container')
+        const loadMoreButton = paginationContainer.querySelector('.load-more-container button')
+        const scrollingContainer = window
+        if(paginationContainer.classList.contains('np-infinite-scroll')) {
+            // Scroll
+            scrollingContainer.addEventListener('scroll', infiniteScrollFunction)
+        } else if(paginationContainer.classList.contains('np-load-more')) {
+            // Load more fonction
+            loadMoreButton.addEventListener('click', loadMoreFunction)
+        }
+        
+        /*
+            Place tumblr controls
+        */
+        const moveTumblrControls = () => {
+            const tumblrControls = document.querySelector('iframe.tmblr-iframe')
+            const windowWidth = window.innerWidth
+            
+            // Responsive 
+            if(windowWidth > 600) {
+                if(!!tumblrControls && parseInt(tumblrControls.width) > 0) {
+                    const mainHeader = document.querySelector('.main-header')
+                    const mainHeaderButtons = document.querySelector('.main-header > div')
+                    const offsetRight = Math.floor((document.body.clientWidth - mainHeader.clientWidth) / 2) - 50
+    
+                    if(!!tumblrControls) {
+                        if(windowWidth > 900) {
+                            mainHeaderButtons.style.paddingRight = `${ tumblrControls.clientWidth - 100 }px`
+                        } else {
+                            mainHeaderButtons.style.paddingRight = '0px'
+                        }
+                        tumblrControls.style.right = `${ offsetRight }px`
+                    }
+                }
+            }
+        }
+        
+        window.addEventListener('load', () => { setTimeout(moveTumblrControls, 500) })
+        window.addEventListener('resize',  moveTumblrControls)
+        
+        /*
+            Place tumblr controls
+        */
+
+        const postCallback = (newPosts, nextPage) => {
+            // Posts loops
+            fixNPFPosts(newPosts).then((res) => {
+                tippy('#posts-container [title]', tippyOptions)
+                feather.replace()
+                
+                if(newPosts.length > 0) {
+                    const newPostsIds = newPosts.map((p) => '#' + p.id) // ['#post-4545', '#post-14545']
+                    
+                    // Reinit like buttons
+                    const rawTumblrIds = newPostsIds.map((p) => p.replace('#post-', '')) // ['4545', '14545']
+                    if(typeof Tumblr !== 'undefined') {
+                        Tumblr.LikeButton.get_status_by_post_ids(rawTumblrIds)
+                    }
+                
+                    const allNewImages = document.querySelectorAll(newPostsIds.map((p) => p + ' img').join(', '))
+                    
+                     // Reselect newPosts var because fixNPFPosts replaced Nodes and messed up the ref
+                    const reinitNewPosts = document.querySelectorAll(newPostsIds.join(', '))
+                    
+                    allImagesLoaded(allNewImages).then(() => {
+                        reinitNewPosts.forEach((post) => {
+                            const postId = post.id
+                            
+                            if(metas.isIndexPage) {
+                                resizeItems(post, 'square') // Resize iframes (videos)
+                                initGlider(post, 'arrows') // Carousel
+                                formatLongTextPost(post) // Truncate long post
+                            } else {
+                                // formatPhotoset(post)
+                            }
+                            
+                            if(post.classList.contains('audio')) customAudioPlayPause(post)
+                            removeEmptyNodes(post, '.hover-captions, p')
+                            
+                            // Init Lightboxes
+                            const imagesToLoad = post.querySelectorAll('.tumblr-lightbox-preload')
+                            imagesToLoad.forEach((image) => tumblrLightbox(image, postId))
+                            
+                            post.classList.remove('invisible')
+                        })
+                    })
+
+
+                    if(metas.isIndexPage) {
+                        if(!!loadMoreButton && allLoadedPosts) loadMoreButton.remove()
+                    }
+                }
+            })
+        }
+        // Init original posts
+        const postsContainer = document.querySelector('#posts-container')
+        
+        const pushPostContainerTop = () => {
+            // Responsive 
+            /*
+            if(window.innerWidth < 900) {
+                const headerHeight = document.querySelector('.main-header').clientHeight
+                postsContainer.style.marginTop = `${ headerHeight + 30 }px`
+            } 
+            */
+            const headerHeight = document.querySelector('.main-header').clientHeight
+            postsContainer.style.marginTop = `${ headerHeight + 30 }px`
+        }
+        pushPostContainerTop()
+        
+
+        if(metas.isIndexPage) {
+            window.addEventListener('resize',  () => {
+                pushPostContainerTop()
+                document.querySelectorAll('#posts-container article').forEach((post) => {
+                    resizeItems(post, 'square') // Resize iframes (videos
+                })
+            })
+        }
+        
+        const originalPosts = Array.from(postsContainer.querySelectorAll('article'))
+        postCallback(originalPosts)
+    </script>
+</html>

@@ -1,0 +1,1714 @@
+<!--
+ 
+    THEME #13 (MAD HATTER - REDUX) BY NEOTHM
+    ========================================
+ 
+    ## Information
+        Creator:                     Neo  @mtrics
+        Release:                     2016-11-05
+        Version:                     1.0
+        Source:                      https://github.com/neothm/public-releases/...
+ 
+    ## Links
+        Support                      https://neothm.com/tagged/answeo
+          > Related to this theme:   https://neothm.com/tagged/a:13
+        Terms of use                 https://neothm.com/terms
+ 
+    ## Dependencies & Credits
+        CSS Reset:                   https://meyerweb.com/eric/tools/css/reset/
+        Tippy.js:                    https://atomiks.github.io/tippyjs/
+        Feather icons:               https://feathericons.com/
+ 
+-->
+    
+<html>
+    <head>
+        {MobileAppHeaders}
+        <meta charset="utf-8" />
+        <title>
+            {Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} | {PostSummary}{/block:PostSummary}{/block:PermalinkPage}
+        </title>
+        
+        <link rel="preconnect" href="https://static.tumblr.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <!-- 
+            Theme options 
+        -->
+        <meta name="image:Favicon" content="{Favicon}" />
+        <meta name="color:Body Text" content="#686868" />
+        <meta name="color:Links" content="#0fff47" />
+        <meta name="color:Links on Hover" content="#0ff0ff" />
+        <meta name="color:Background" content="#fff" />
+        <meta name="color:Accents" content="#ffff00" />
+        
+        <meta name="text:Google Font" content="Lato" />
+        <meta name="text:Google Title Font" content="Cormorant Infant" />
+        <meta name="text:Base Font Size" content="12px" />
+        <meta name="text:Post Size Index" content="250px" />
+        <meta name="text:Post Size Permalink" content="700px" />
+        <meta name="text:Post Spacing" content="50px" />
+        <meta name="text:Post Padding Index" content="0px" />
+        <meta name="text:Post Padding Permalink" content="30px" />
+        
+        <meta name="text:Custom Link 1 URL" content="" />
+        <meta name="text:Custom Link 1 Content" content="" />
+        <meta name="text:Custom Link 2 URL" content="" />
+        <meta name="text:Custom Link 2 Content" content="" />
+        <meta name="text:Custom Link 3 URL" content="" />
+        <meta name="text:Custom Link 3 Content" content="" />
+        
+        <meta name="select:Next Page" content="np-pagination" title="Jump pagination">
+        <meta name="select:Next Page" content="np-load-more" title="Load more button">
+        <meta name="select:Next Page" content="np-infinite-scroll" title="Infinite scroll">
+        
+        <meta name="if:Archive Link" content="1">
+        <meta name="if:Show Tumblr Pages" content="1">
+        <meta name="if:Post Shadow On Hover" content="1">
+        <meta name="if:Show Captions On Hover" content="1">
+
+        <!-- 
+            Header + meta tags
+        -->
+        <link rel="icon" type="image/x-icon" href="{image:Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+        <meta name="viewport" content="width=device-width" />
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        
+        <!-- 
+            Font
+        -->
+        <link href="https://fonts.googleapis.com/css2?family={text:Google Font}:ital,wght@0,400;0,700;1,400;1,700&family={text:Google Title Font}:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/pORrpbukq/glider.min.css" rel="stylesheet">
+        
+        <link href="https://static.tumblr.com/emvnqzg/y0drpkwnq/base.css" rel="stylesheet">
+        
+        {block:IndexPage}
+        <link href="https://static.tumblr.com/emvnqzg/vTtrpj9ew/audio-posts-squares.css" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/YN0rpbv4v/carousel-photosets.css" rel="stylesheet">
+        {/block:IndexPage}
+        {block:PermalinkPage}
+        <link href="https://static.tumblr.com/emvnqzg/OdNrpjdo7/audio-posts.css" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/vOmrpfphp/notes.css" rel="stylesheet">
+        {/block:PermalinkPage}
+        <link href="https://static.tumblr.com/emvnqzg/jLmrpkn2y/posts-captions.css" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/KzPrpa3mt/reblog-trails.css" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/ZtQrpk6bu/pagination.css" rel="stylesheet">
+
+        <style type="text/css">
+            :root {
+                --transition-duration: 0.4s;
+                --body-font: "{text:Google Font}";
+                --title-font: "{text:Google Title Font}";
+                --link-color: {color:Links};
+                --hover-link-color: {color:Links on Hover};
+                --text-color: {color:Body Text};
+                --background-color: {color:Background};
+                --background-color-transparent: {color:Background}CC;
+                
+                --post-size: {block:IndexPage}{text:Post Size Index}{/block:IndexPage}{block:PermalinkPage}{text:Post Size Permalink}{/block:PermalinkPage};
+                --post-margin: {text:Post Spacing};
+                --post-padding: {block:IndexPage}{text:Post Padding Index}{/block:IndexPage}{block:PermalinkPage}{text:Post Padding Permalink}{/block:PermalinkPage};
+
+                --base-font-size: {text:Base Font Size};
+                
+                --accent-color: {color:Accents};
+                /* https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4 */
+                --accent-color-transparent: {color:Accents}99;
+                
+                --glider-dot: {color:Accents};
+                --glider-dot-active: {color:Accents};
+                
+                --lightest-gray: #f2f2f2;
+                --medium-gray: #aaaaaa;
+                --dark-gray: #8c8c8c;
+                
+                --border-radius: 6px;
+                --photoset-spacing: 10px;
+            }
+            
+            /* ================================================================
+                DEFAULT
+            ================================================================ */
+            body {
+                font-size: var(--base-font-size);
+            }
+            
+            .tmblr-lightbox .lightbox-image {
+                border-radius: var(--border-radius) !important;    
+            }
+            
+            iframe.tmblr-iframe.iframe-controls--desktop {
+                top: 16px;
+            }
+            
+            .tippy-content {
+                font: 10px/1 var(--body-font);
+                background-color: var(--accent-color);
+                border-radius: calc(var(--border-radius) / 2);
+                max-width: 120px;
+                text-align: center;
+            }
+            
+            /* ================================================================
+                GLOBAL
+            ================================================================ */
+            #posts-container {
+                margin: 10vh auto;
+                {block:IndexPage}
+                display: grid;
+                grid-template-columns: repeat(4, var(--post-size));
+                grid-auto-flow: dense;
+                gap: var(--post-margin);
+                width: calc((var(--post-size) * 4) + (var(--post-margin) * 3));
+                {/block:IndexPage}
+                {block:PermalinkPage}
+                width: var(--post-size);
+                {/block:PermalinkPage}
+                
+            }
+            
+            article {
+              background-color: #fff;
+              
+              {block:IndexPage}
+              height: var(--post-size);
+              border-radius: var(--border-radius);
+              {/block:IndexPage}
+              width: var(--post-size);
+              
+              transition-duration: var(--transition-duration);
+            }
+            
+            {block:IndexPage} .text-post-container {/block:IndexPage}
+            {block:PermalinkPage} article {/block:PermalinkPage} {
+              padding: var(--post-padding);
+            }
+            
+            {block:IndexPage}
+            {block:IfPostShadowOnHover}
+            article:hover {
+                box-shadow: 7px 7px 0px rgb(200 200 200 / 20%);
+            }
+            {/block:IfPostShadowOnHover}
+            
+            article[data-tags*="enhanced"] {
+                grid-column-end: span 2;
+                grid-row-end: span 2;
+                width: calc((var(--post-size) * 2) + var(--post-margin));
+                height: calc((var(--post-size) * 2) + var(--post-margin));
+            }
+            
+            article[data-tags*="hidden"] {
+                display: none;
+            }
+            {/block:IndexPage}
+            
+            #posts-container.no-search-results {
+                padding: 0 var(--post-margin);
+                margin: 0!important;
+                display: flex;
+                width: unset;
+            }
+            
+            #posts-container.no-search-results h1 {
+                font-size: 4em;
+            }
+            
+            #posts-container.no-search-results h1 i {
+                font-style: italic;
+            }
+            
+            /* ================================================================
+                AUDIO POSTS
+            ================================================================ */
+            {block:IndexPage}
+            .posts-contents {
+                border-radius: var(--border-radius);
+            }
+            
+            .posts-contents.long-posts-contents .read-more-link {
+                /* Position of overlay */
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding-bottom: 12px;
+                
+                /* Gradient background */
+                background: rgb(255,255,255);
+                background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%);
+                height: 60%;
+                
+                /* Align text to bottom of gradient */
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+            
+            .posts-contents.long-posts-contents .read-more-link a {
+                text-transform: uppercase;
+                font-size: 0.8em;
+                letter-spacing: 0.1em;
+                word-spacing: 0.2em;
+            }
+            {/block:IndexPage}
+            /*
+            .audio-metas {
+                font-size: 0.85em;
+            }
+            */
+            
+            .chat-bubble {
+                padding: 8px;
+            }
+            
+            .chat-bubble.even {
+                background-color: var(--lightest-gray);
+                border-radius: var(--border-radius);
+            }
+            
+            /* ================================================================
+                PERMALINKS
+            ================================================================ */
+            {block:IndexPage}
+            /* Captions on posts */
+            .hover-captions, .reblog-metas {
+                position: absolute;
+                right: 10px;
+                z-index: 2;
+            }
+            
+            {block:IfShowCaptionsOnHover}
+            .hover-captions {
+                background-color: #fff;
+                top: 10px;
+                left: 10px;
+                padding: 10px;
+                border-radius: var(--border-radius);
+                font-size: 0.9em;
+                /* margin: 10px; */
+                
+                visibility: hidden;
+                opacity: 0;
+                transition-duration: var(--transition-duration);
+            }
+            
+            .hover-captions .trail-user {
+                margin-bottom: 5px;
+            }
+            
+            .hover-captions .trail-user b {
+                font-weight: bold;
+            }
+            
+            article:hover .hover-captions {
+                visibility: visible;
+                opacity: 1;
+            }
+            
+            .hover-captions .trail-item:first-child .trail-content {
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            
+            .hover-captions .trail-item .trail-content > *:not(:first-child),
+            .hover-captions .trail-item:not(:first-child) {
+                display: none !important;
+            }
+            {/block:IfShowCaptionsOnHover}
+            {block:IfNotShowCaptionsOnHover}
+            .hover-captions {
+                display: none !important;
+            }
+            {/block:IfNotShowCaptionsOnHover}
+            
+            /* Reblog buttons on index */
+            .reblog-metas {
+                gap: 4px;
+                /* bottom: calc((var(--post-padding) * -1) - 10px); */
+                bottom: -30px;
+                transition-duration: var(--transition-duration);
+            }
+            
+            .custom-like-btn {
+                transition-duration: var(--transition-duration);
+            }
+            
+            .reblog-metas > a,
+            .custom-like-btn {
+                /* background-color: rgb(0 0 0 / 50%); */
+                background-color: var(--accent-color-transparent);
+                padding: 3px;
+                width: 18px;
+                height: 18px;
+                cursor: pointer;
+                border-radius: calc(var(--border-radius) / 2);
+            }
+            
+            .reblog-metas > a:hover,
+            .custom-like-btn:hover {
+                background-color: var(--accent-color);
+            }
+            
+            article.photo .reblog-metas,
+            article.audio .reblog-metas {
+                /* margin: 10px;
+                bottom: calc((var(--post-padding) * -1) - 20px); */
+            }
+            
+            article:hover .reblog-metas {
+                bottom: 10px;
+            }
+            
+            
+            .custom-like-btn .like_button.liked + svg {
+                /* fill: var(--accent-color);
+                stroke: var(--accent-color); */
+                fill: #fff;
+            }
+            
+            
+            .reblog-metas svg {
+                stroke: #fff;
+                width: 12px;
+                height: 12px;
+            }
+            
+            .custom-like-btn .like_button {
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                opacity: 0;
+            }
+            
+            .reblog-metas .permalink-notecount {
+                font-size: 0.65em;
+                font-weight: bold;
+                color: #fff;
+                width: unset;
+            }
+            
+            .reblog-metas .permalink-notecount span {
+                opacity: 0;
+                visibility: hidden;
+                
+                transform: translateX(5px);
+                max-width: 0;
+                overflow: hidden;
+                transition-duration: var(--transition-duration);
+            }
+            
+            .reblog-metas .permalink-notecount:hover {
+                gap: 5px;
+            }
+            
+            .reblog-metas .permalink-notecount:hover span {
+                opacity: 1;
+                visibility: visible;
+                
+                transform: translateX(2px);
+                max-width: 50px;
+            }
+            
+            .reblog-metas svg {
+                stroke-width: 2px;
+            }
+            
+            .reblog-metas .permalink-notecount svg,
+            .reblog-metas .glider-arrow-prev svg,
+            .reblog-metas .glider-arrow-next svg {
+                stroke-width: 3px;
+            }
+            
+            {/block:IndexPage}
+            
+            {block:PermalinkPage} 
+            .reblogged-from, .perma-tags, ol.notes, .date-metas {
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 1px solid var(--lightest-gray);
+            }
+            
+            .reblogged-from {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .date-metas,
+            .reblogged-from a {
+                gap: 20px;
+                font-size: 0.85em;
+            }
+            
+            .reblogged-from img {
+                width: 50px;
+                height: 50px;
+                border-radius: var(--border-radius);
+            }
+            
+            .reblogged-from a div {
+                transition-duration: 0s;
+            }
+            
+            .date-metas,
+            .reblogged-from b {
+                font: bold 1em/1 var(--title-font);
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+            }
+            
+            .date-metas sup {
+                vertical-align: super;
+                font-size: 0.6em;
+            }
+            
+            .reblogged-from i {
+                font-style: italic;
+            }
+            
+            .perma-tags {
+                gap: 20px;
+            }
+            
+            .perma-tags svg {
+                width: 30px;
+            }
+            
+            .perma-tags div {
+                gap: 2px 8px;
+                flex-wrap: wrap;
+                width: calc(100% - 38px);
+            }
+            
+            .perma-tags a {
+                text-transform: uppercase;
+                font-size: 0.8em;
+            }
+            {/block:PermalinkPage} 
+
+            /* ================================================================
+                HEADER
+            ================================================================ */
+            .main-header {
+                justify-content: space-between;
+                background-color: var(--background-color);
+                margin: 0 auto;
+                padding: 30px 10px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 4;
+                
+                /* flex-wrap: wrap; */
+                
+                {block:IndexPage}
+                width: calc((var(--post-size) * 4) + (var(--post-margin) * 3) + 20px);
+                {/block:IndexPage}
+                {block:PermalinkPage}
+                width: calc(var(--post-size) + 20px);
+                {/block:PermalinkPage}
+            }
+            
+            .main-header h1 a {
+                color: #000;
+            }
+            
+            /*
+            .banner-image {
+                flex-basis: 100%;
+            }
+            */
+            
+            .main-header form input {
+                padding: 5px;
+                border-bottom: 1px solid var(--medium-gray);
+                transform: translateX(-30px);
+                transition-duration: var(--transition-duration);
+                width: 120px;
+                font: inherit;
+                opacity: 0;
+                visibility: hidden;
+            }
+            
+            .main-header form:hover input,
+            .main-header form.active input {
+                transform: translateX(0px);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .main-header form input:focus {
+                border-color: var(--accent-color);
+            }
+            
+            .main-header form button {
+                cursor: pointer;
+            }
+            
+            .main-header svg {
+                width: 22px;
+                display: block;
+                stroke-width: 1.5;
+            }
+            
+            .main-header > div {
+                gap: 20px;
+                transition: padding var(--transition-duration);
+            }
+            
+            .main-header > div > a {
+                color: #000;
+            }
+            
+            .hamburger-menu {
+                width: 22px;
+                height: 16px;
+                flex-direction: column;
+                display: flex;
+                gap: 5px;
+            }
+            
+            .hamburger-menu span {
+                width: 100%;
+                height: 2px;
+                border-radius: 2px;
+                background: #000;
+            }
+            
+            .hamburger-menu span:nth-child(2) {
+                width: 70%;
+            }
+            
+            .hamburger-menu.active span,
+            .hamburger-menu:hover span {
+                width: 70%;
+            }
+            
+            .hamburger-menu.active span:nth-child(2),
+            .hamburger-menu:hover span:nth-child(2) {
+                width: 100%;
+            }
+            
+            /* ================================================================
+                SIDE
+            ================================================================ */
+            .side-menu {
+                position: fixed;
+                z-index: 3;
+                background-color: var(--background-color-transparent);
+                backdrop-filter: blur(2px);
+            }
+            
+            .side-menu nav {
+                background-color: var(--background-color);
+                width: 30vw;
+                top: 0;
+                right: 0;
+                position: absolute;
+                padding: 3vw;
+                transform: translateX(15vw);
+                transition-duration: var(--transition-duration);
+            }
+            
+            .side-menu.visible nav {
+                transform: translateX(0vw);
+            }
+            
+            .side-menu nav ul {
+                flex-direction: column;
+                gap: 30px;
+                font: 2em/1 var(--title-font);
+                align-items: flex-start;
+            }
+            
+            /* ================================================================
+                PAGINATION
+            ================================================================ */
+            .pagination-container {
+                margin: 0 auto 10vh;
+                width: calc((var(--post-size) * 4) + (var(--post-margin) * 3));
+            }
+
+            
+            /* ================================================================
+                RESPONSIVE
+            ================================================================ */
+            @media only screen and (max-width: 1200px) {
+                {block:IndexPage}
+                .pagination-container,
+                .main-header {
+                    width: calc((var(--post-size) * 3) + (var(--post-margin) * 2) + 20px);
+                }
+                
+                #posts-container {
+                    grid-template-columns: repeat(3, var(--post-size));
+                    width: calc((var(--post-size) * 3) + (var(--post-margin) * 2));
+                }
+                {/block:IndexPage}
+            }
+            
+            @media only screen and (max-width: 900px) {
+                {block:IndexPage}
+                .pagination-container,
+                .main-header {
+                    width: calc((var(--post-size) * 2) + var(--post-margin) + 20px);
+                }
+                
+                #posts-container {
+                    grid-template-columns: repeat(2, var(--post-size));
+                    width: calc((var(--post-size) * 2) + var(--post-margin));
+                }
+                {/block:IndexPage}
+                
+                .side-menu nav {
+                    width: 50%;
+                }
+                
+                .main-header form {
+                    display: none;
+                }
+                
+                iframe.tmblr-iframe.iframe-controls--desktop {
+                    top: 3px;
+                }
+                
+                iframe.tmblr-iframe.iframe-controls--desktop + .ui_dialog_lock + .main-header,
+                iframe.tmblr-iframe.iframe-controls--desktop + .main-header {
+                    padding-top: 60px;
+                }
+            }
+            
+            @media only screen and (max-width: 600px) {
+                #posts-container,
+                .pagination-container,
+                .main-header {
+                    /* width: calc(100% - (var(--post-margin) * 2)); */
+                    width: 100%;
+                    padding-left: calc(var(--post-margin) / 2);
+                    padding-right: calc(var(--post-margin) / 2);
+                } 
+                
+                #posts-container {
+                    display: block;
+                }
+                
+                article[data-tags*="enhanced"] {
+                    grid-column-end: unset;
+                    grid-row-end: unset;
+                }
+                
+                article,
+                article[data-tags*="enhanced"] {
+                    height: unset;
+                    width: 100%;
+                }
+                
+                article {
+                    position: relative;
+                    margin-bottom: var(--post-margin);
+                }
+                
+                .side-menu nav {
+                    width: 75%;
+                }
+                
+                {block:IndexPage}
+                .posts-contents {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                
+                article:after {
+                    content: "";
+                    display: block;
+                    padding-bottom: 100%;
+                }
+                {/block:IndexPage}
+                
+                {block:PermalinkPage}
+                .date-metas, .reblogged-from {
+                    display: block;
+                }
+                .reblogged-from a:first-child {
+                    margin-bottom: 10px;
+                }
+                {/block:PermalinkPage}
+            }
+            
+            /* ================================================================
+                CUSTOM CSS
+            ================================================================ */
+            {CustomCSS}
+        </style>
+    </head>
+    <body class="ox-h oy-auto">
+        <header class="main-header d-flex-a-center">
+            <h1>
+                <a href="/">
+                    {Title}
+                </a>
+            </h1>
+            <div class="d-flex-aj-center">
+                <form action="/search" method="get" class="d-flex-aj-center{block:SearchPage} active{/block:SearchPage}">
+                    <input type="text" name="q" value="{SearchQuery}" autocomplete="off">
+                    <button type="submit">
+                        <span data-feather="search"></span>
+                    </button>
+                </form>
+                
+                {block:AskEnabled}
+                    <a href="/ask" title="{AskLabel}">
+                        <span data-feather="mail"></span>
+                    </a>
+                {/block:AskEnabled}
+                
+                {block:IfArchiveLink}
+                    <a href="/archive" title="Archive">
+                        <span data-feather="calendar"></span>
+                    </a>
+                {/block:IfArchiveLink}
+                
+                <a href="/" class="hamburger-menu">
+                    <span class="d-block"></span>
+                    <span class="d-block"></span>
+                    <span class="d-block"></span>
+                </a>
+            </div>
+        </header>
+        
+        <aside class="side-menu wh-100 invisible">
+            <nav class="h-100 d-flex-a-center">
+                <ul class="d-flex-a-center">
+                    {block:IfShowTumblrPages}
+                        {block:HasPages} 
+                            {block:Pages} 
+                                <li>
+                                    <a href="{URL}">
+                                        {Label}
+                                    </a>
+                                </li>
+                            {/block:Pages}
+                        {/block:HasPages}   
+                    {/block:IfShowTumblrPages}
+        
+                    <li>
+                        <a href="{text:Custom Link 1 URL}">
+                            {text:Custom Link 1 Content}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{text:Custom Link 2 URL}">
+                            {text:Custom Link 2 Content}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{text:Custom Link 3 URL}">
+                            {text:Custom Link 3 Content}
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main -->
+        <main class="oy-h {block:NoSearchResults}wh-100{/block:NoSearchResults}{block:NoPosts}wh-100{/block:NoPosts}">
+            <section id="posts-container"{block:Pagination} data-currentpage="{CurrentPage}"{/block:Pagination}{block:NoSearchResults} class="no-search-results wh-100 d-flex-aj-center"{/block:NoSearchResults}>
+                {block:NoSearchResults} 
+                    <h1>
+                        No search results for <i>{SearchQuery}</i>
+                    </h1>
+                {/block:NoSearchResults}
+                {block:Posts}
+                    <article id="post-{PostID}" class="post p-r ox-h oy-h invisible {PostType}" data-permalink="{Permalink}" data-tags="{tagsAsClasses}">
+                        <div class="d-hidden npf-container">{JSNPF}</div>
+                        
+                        {block:IndexPage}
+                            <div class="reblog-metas d-flex-a-center">
+                                {block:Photoset}
+                                <a class="glider-arrow-prev d-flex-a-center" title="Previous image">
+                                    <span data-feather="chevron-left"></span>
+                                </a>
+                                {/block:Photoset}
+                                
+                                <a href="{Permalink}" title="Permalink" class="permalink-notecount d-flex-a-center">
+                                    <span>{NoteCount}N.</span><span data-feather="plus"></span>
+                                </a>
+                                
+                                <a href="{ReblogURL}" title="Reblog" target="_blank" class="d-flex-a-center">
+                                    <span data-feather="repeat"></span>
+                                </a>
+                                
+                                <div class="custom-like-btn p-r d-flex-a-center">
+                                    {LikeButton}
+                                    <span data-feather="heart"></span>
+                                </div>
+                                
+                                {block:Photoset}
+                                <a class="glider-arrow-next d-flex-a-center" title="Next image">
+                                    <span data-feather="chevron-right"></span>
+                                </a>
+                                {/block:Photoset}
+                            </div>
+                        {/block:IndexPage}
+                    
+                        <div class="posts-contents {block:IndexPage}d-flex-aj-center {/block:IndexPage}wh-100 ox-h oy-h">
+                            <!---------------------- 
+                                MEDIA-BASED POSTS 
+                            ------------------------>
+                            {block:Photo}
+                                <div class="media-container photo-container{block:IndexPage} wh-100{/block:IndexPage}">
+                                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" 
+                                         data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" 
+                                         class="tumblr-lightbox-preload wh-100" />
+                                </div>
+                                
+                                {block:Caption}
+                                    <div class="{block:PermalinkPage}posts-caption{/block:PermalinkPage}{block:IndexPage}hover-captions{/block:IndexPage}">
+                                        {block:RebloggedFrom}
+                                            {block:Reblogs}
+                                                <div class="trail-item">
+                                                    <div class="trail-user{block:IsDeactivated} trail-user-deactivated{/block:IsDeactivated}">
+                                                        <img src="{PortraitURL-64}" alt="{Username}">
+                                                        <b>
+                                                            <a href="{Permalink}">
+                                                                {Username}
+                                                            </a>
+                                                        </b>
+                                                    </div>
+                                                    <div class="trail-content">
+                                                        {Body}
+                                                    </div>
+                                                </div>
+                                            {/block:Reblogs}    
+                                        {/block:RebloggedFrom}
+                                        {block:NotReblog}
+                                            <div class="trail-item">
+                                                <div class="trail-user{block:IsDeactivated} trail-user-deactivated{/block:IsDeactivated}">
+                                                    <img src="{PortraitURL-64}" alt="{Name}">
+                                                    <b>
+                                                        <a href="{Permalink}">
+                                                            {Name}
+                                                        </a>
+                                                    </b>
+                                                </div>
+                                                <div class="trail-content">
+                                                    {Body}
+                                                </div>
+                                            </div>
+                                        {/block:NotReblog}
+                                    </div>
+                                {/block:Caption}
+                            {/block:Photo}
+                            
+                            {block:Photoset}
+                                <div class="media-container photoset-container{block:IndexPage} p-r wh-100{/block:IndexPage}" data-layout={JSPhotosetLayout}>
+                                    {block:IndexPage}
+                                      <div class="glider wh-100">
+                                        {block:Photos} 
+                                            <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" 
+                                                 data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" />
+                                        {/block:Photos}
+                                      </div>
+                                    {/block:IndexPage}
+                                    {block:PermalinkPage}
+                                        {block:Photos} 
+                                            <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" 
+                                                 data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}" 
+                                                class="tumblr-lightbox-preload" />
+                                        {/block:Photos}
+                                    {/block:PermalinkPage}
+                                </div>
+                                
+                                {block:Caption}
+                                    <div class="{block:PermalinkPage}posts-caption{/block:PermalinkPage}{block:IndexPage}hover-captions{/block:IndexPage}">
+                                        {block:RebloggedFrom}
+                                            {block:Reblogs}
+                                                <div class="trail-item">
+                                                    <div class="trail-user{block:IsDeactivated} trail-user-deactivated{/block:IsDeactivated}">
+                                                        <img src="{PortraitURL-64}" alt="{Username}">
+                                                        <b>
+                                                            <a href="{Permalink}">
+                                                                {Username}
+                                                            </a>
+                                                        </b>
+                                                    </div>
+                                                    <div class="trail-content">
+                                                        {Body}
+                                                    </div>
+                                                </div>
+                                            {/block:Reblogs}    
+                                        {/block:RebloggedFrom}
+                                        {block:NotReblog}
+                                            <div class="trail-item">
+                                                <div class="trail-user{block:IsDeactivated} trail-user-deactivated{/block:IsDeactivated}">
+                                                    <img src="{PortraitURL-64}" alt="{Name}">
+                                                    <b>
+                                                        <a href="{Permalink}">
+                                                            {Name}
+                                                        </a>
+                                                    </b>
+                                                </div>
+                                                <div class="trail-content">
+                                                    {Body}
+                                                </div>
+                                            </div>
+                                        {/block:NotReblog}
+                                    </div>
+                                {/block:Caption} 
+                            {/block:Photoset}
+                            
+                            {block:Video} 
+                                <div class="media-container video-container{block:IndexPage} wh-100{/block:IndexPage}">
+                                    <div class="resizable-content{block:IndexPage} d-flex-aj-center wh-100{/block:IndexPage}">
+                                        {Video-700}
+                                    </div>
+                                </div>
+                                
+                                {block:Caption}
+                                    <div class="{block:PermalinkPage}posts-caption{/block:PermalinkPage}{block:IndexPage}hover-captions{/block:IndexPage}">
+                                        {block:RebloggedFrom}
+                                            {block:Reblogs}
+                                                <div class="trail-item">
+                                                    <div class="trail-user{block:IsDeactivated} trail-user-deactivated{/block:IsDeactivated}">
+                                                        <img src="{PortraitURL-64}" alt="{Username}">
+                                                        <b>
+                                                            <a href="{Permalink}">
+                                                                {Username}
+                                                            </a>
+                                                        </b>
+                                                    </div>
+                                                    <div class="trail-content">
+                                                        {Body}
+                                                    </div>
+                                                </div>
+                                            {/block:Reblogs}    
+                                        {/block:RebloggedFrom}
+                                        {block:NotReblog}
+                                            <div class="trail-item">
+                                                <div class="trail-user{block:IsDeactivated} trail-user-deactivated{/block:IsDeactivated}">
+                                                    <img src="{PortraitURL-64}" alt="{Name}">
+                                                    <b>
+                                                        <a href="{Permalink}">
+                                                            {Name}
+                                                        </a>
+                                                    </b>
+                                                </div>
+                                                <div class="trail-content">
+                                                    {Body}
+                                                </div>
+                                            </div>
+                                        {/block:NotReblog}
+                                    </div>
+                                {/block:Caption}
+                            {/block:Video}
+                            
+                            {block:Audio}
+                                <div class="media-container audio-container{block:IndexPage} wh-100{/block:IndexPage}">
+                                    <div class="audio-player{block:IndexPage} wh-100{/block:IndexPage}">
+                                        <div class="audio-player-container{block:IndexPage} wh-100{/block:IndexPage}"{block:AlbumArt} style="background-image: url('{AlbumArtURL}')"{/block:AlbumArt}>
+                                            {block:AudioPlayer}
+                                                {AudioPlayer}
+                                            {/block:AudioPlayer}
+                                        </div>
+                                        
+                                        {block:PermalinkPage}
+                                            <div class="audio-metas">
+                                                {block:TrackName}
+                                                    <h3 class="audio-trackname">
+                                                        {TrackName}
+                                                    </h3>
+                                                {/block:TrackName}
+                                                {block:Artist}
+                                                    <div class="audio-artist d-flex-a-center">
+                                                        <span data-feather="music"></span>
+                                                        {Artist}
+                                                    </div>
+                                                {/block:Artist}
+                                                {block:Album}
+                                                    <div class="audio-album d-flex-a-center">
+                                                        <span data-feather="disc"></span>
+                                                        {Album}
+                                                    </div>
+                                                {/block:Album}
+                                            </div>
+                                        {/block:PermalinkPage}
+                                        
+                                    </div>
+                                </div>
+                                
+                                {block:Caption}
+                                    <div class="{block:PermalinkPage}posts-caption{/block:PermalinkPage}{block:IndexPage}hover-captions{/block:IndexPage}">
+                                        {block:RebloggedFrom}
+                                            {block:Reblogs}
+                                                <div class="trail-item">
+                                                    <div class="trail-user{block:IsDeactivated} trail-user-deactivated{/block:IsDeactivated}">
+                                                        <img src="{PortraitURL-64}" alt="{Username}">
+                                                        <b>
+                                                            <a href="{Permalink}">
+                                                                {Username}
+                                                            </a>
+                                                        </b>
+                                                    </div>
+                                                    <div class="trail-content">
+                                                        {Body}
+                                                    </div>
+                                                </div>
+                                            {/block:Reblogs}    
+                                        {/block:RebloggedFrom}
+                                        {block:NotReblog}
+                                            <div class="trail-item">
+                                                <div class="trail-user{block:IsDeactivated} trail-user-deactivated{/block:IsDeactivated}">
+                                                    <img src="{PortraitURL-64}" alt="{Name}">
+                                                    <b>
+                                                        <a href="{Permalink}">
+                                                            {Name}
+                                                        </a>
+                                                    </b>
+                                                </div>
+                                                <div class="trail-content">
+                                                    {Body}
+                                                </div>
+                                            </div>
+                                        {/block:NotReblog}
+                                    </div>
+                                {/block:Caption} 
+                            {/block:Audio}
+                            
+                            <!---------------------- 
+                                TEXT-BASED POSTS 
+                            ------------------------>
+                            {block:Answer} 
+                                <div class="text-post-container">
+                                    <div class="posts-caption">
+                                        <div class="trail-item">
+                                            <div class="trail-user">
+                                                <img src="{AskerPortraitURL-64}">
+                                                <b>{Asker}</b>
+                                            </div>
+                                            <div class="trail-content">
+                                                {Question}
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="trail-item">
+                                            <div class="trail-user">
+                                                {block:Answerer}
+                                                    <!-- Reblogged answerer -->
+                                                    <img src="{AnswererPortraitURL-64}">
+                                                    <b>{Answerer}</b>
+                                                {/block:Answerer}
+                                                {block:NotReblog}
+                                                    <!-- Original ask -->
+                                                    <img src="{PortraitURL-64}" alt="{Username}">
+                                                    <b>{Username}</b>
+                                                {/block:NotReblog}
+                                            </div>
+                                            
+                                            <div class="trail-content">
+                                                {Answer}
+                                            </div>
+                                        </div>
+                                        
+                                        {block:RebloggedFrom}
+                                            <!-- Has a potential reblog trail -->
+                                            {block:Reblogs}
+                                                <div class="trail-item">
+                                                    <div class="trail-user{block:IsDeactivated} trail-user-deactivated{/block:IsDeactivated}">
+                                                        <img src="{PortraitURL-64}" alt="{Username}">
+                                                        <b>{Username}</b>
+                                                    </div>
+                                                    <div class="trail-content">
+                                                        {Body}
+                                                    </div>
+                                                </div>
+                                            {/block:Reblogs}    
+                                        {/block:RebloggedFrom}
+                                    </div>
+                                </div>
+                            {/block:Answer}
+                            
+                            {block:Text}
+                                <div class="text-post-container">
+                                    {block:Title}
+                                        <header class="post-title">
+                                            <a href="{Permalink}">
+                                                {Title}
+                                            </a>
+                                        </header>
+                                    {/block:Title}
+                                    <div class="posts-caption">
+                                        {block:RebloggedFrom}
+                                            {block:Reblogs}
+                                                <div class="trail-item">
+                                                    <div class="trail-user{block:IsDeactivated} trail-user-deactivated{/block:IsDeactivated}">
+                                                        <img src="{PortraitURL-64}" alt="{Username}">
+                                                        <b>
+                                                            <a href="{Permalink}">
+                                                                {Username}
+                                                            </a>
+                                                        </b>
+                                                    </div>
+                                                    <div class="trail-content">
+                                                        {Body}
+                                                    </div>
+                                                </div>
+                                            {/block:Reblogs}    
+                                        {/block:RebloggedFrom}
+                                        {block:NotReblog}
+                                            <div class="trail-item">
+                                                <div class="trail-user{block:IsDeactivated} trail-user-deactivated{/block:IsDeactivated}">
+                                                    <img src="{PortraitURL-64}" alt="{Name}">
+                                                    <b>
+                                                        <a href="{Permalink}">
+                                                            {Name}
+                                                        </a>
+                                                    </b>
+                                                </div>
+                                                <div class="trail-content">
+                                                    {Body}
+                                                </div>
+                                            </div>
+                                        {/block:NotReblog}
+                                    </div>
+                                </div>
+                            {/block:Text}
+                            
+                            {block:Chat} 
+                                <div class="text-post-container">
+                                    {block:Title}
+                                        <header class="post-title">
+                                            <a href="{Permalink}">
+                                                {Title}
+                                            </a>
+                                        </header>
+                                    {/block:Title}  
+                                    <div class="posts-caption">
+                                        {block:Lines} 
+                                            <div class="chat-bubble {Alt}">
+                                                {block:Label}
+                                                    <b>
+                                                        {Label}
+                                                    </b>
+                                                {/block:Label}
+                                                {Line}
+                                            </div>
+                                        {/block:Lines}
+                                    </div>
+                                    <!-- Chats can't have captions or reblog trails -->
+                                </div>
+                            {/block:Chat}
+                        
+                            {block:Link} 
+                                <div class="text-post-container">
+                                    <header class="post-title">
+                                        <a href="{URL}" target="{Target}">
+                                            {Name} »
+                                        </a>
+                                    </header>
+                                    {block:Description}
+                                        <div class="posts-caption">
+                                            {block:RebloggedFrom}
+                                                {block:Reblogs}
+                                                    <div class="trail-item">
+                                                        <div class="trail-user{block:IsDeactivated} trail-user-deactivated{/block:IsDeactivated}">
+                                                            <img src="{PortraitURL-64}" alt="{Username}">
+                                                            <b>
+                                                                <a href="{Permalink}">
+                                                                    {Username}
+                                                                </a>
+                                                            </b>
+                                                        </div>
+                                                        <div class="trail-content">
+                                                            {Body}
+                                                        </div>
+                                                    </div>
+                                                {/block:Reblogs}    
+                                            {/block:RebloggedFrom}
+                                            {block:NotReblog}
+                                                <div class="trail-item">
+                                                    <div class="trail-user{block:IsDeactivated} trail-user-deactivated{/block:IsDeactivated}">
+                                                        <img src="{PortraitURL-64}" alt="{Name}">
+                                                        <b>
+                                                            <a href="{Permalink}">
+                                                                {Name}
+                                                            </a>
+                                                        </b>
+                                                    </div>
+                                                    <div class="trail-content">
+                                                        {Body}
+                                                    </div>
+                                                </div>
+                                            {/block:NotReblog}
+                                        </div>
+                                    {/block:Description}
+                                </div>
+                            {/block:Link}
+                            
+                            {block:Quote} 
+                                <div class="text-post-container">
+                                    <header class="post-title">
+                                        <blockquote>
+                                            {Quote}
+                                        </blockquote>
+                                    </header>
+                                    <div class="posts-caption">
+                                        <div class="trail-item">
+                                            {block:RebloggedFrom}
+                                                <div class="trail-user{block:IsDeactivated} trail-user-deactivated{/block:IsDeactivated}">
+                                                    <img src="{ReblogRootPortraitURL-64}" alt="{ReblogRootName}">
+                                                    <b>
+                                                        <a href="{ReblogRootURL}">
+                                                            {ReblogRootName}
+                                                        </a>
+                                                    </b>
+                                                </div> 
+                                            {/block:RebloggedFrom}
+                                            {block:NotReblog}
+                                                <div class="trail-user">
+                                                    <img src="{PortraitURL-64}" alt="{Name}">
+                                                    <b>
+                                                        <a href="{Permalink}">
+                                                            {Name}
+                                                        </a>
+                                                    </b>
+                                                </div>
+                                            {/block:NotReblog}
+                                            
+                                            {block:Source} 
+                                                <div class="trail-content">
+                                                    {Source}
+                                                </div>
+                                            {/block:Source}
+                                        </div>
+                                    </div>
+                                    <!-- Quotes can't have captions or reblog trails -->
+                                </div>
+                            {/block:Quote}
+                        </div>
+                        
+                        <!-- Shows on permalink posts but not on pages -->
+                        {block:PermalinkPage}
+                            {block:Date}
+                            <div class="permalink-metas">
+                                <time class="date-metas d-flex-aj-center">
+                                    {block:PinnedPostLabel} 
+                                        <span>{PinnedPostLabel}</span> •
+                                    {/block:PinnedPostLabel}
+                                    <span>
+                                        {Month} {DayOfMonth}<sup>{DayOfMonthSuffix}</sup>, {Year} ({TimeAgo})        
+                                    </span>
+                                    {block:NoteCount} 
+                                        • <span>{NoteCountWithLabel}</span>
+                                    {/block:NoteCount}
+                                </time>
+                                
+                                {block:HasTags}
+                                    <div class="perma-tags d-flex-a-center">
+                                        <span data-feather="hash"></span>
+                                        <div class="d-flex-a-center">
+                                        {block:Tags} 
+                                            <a href="{TagURL}">{Tag}</a>
+                                        {/block:Tags}
+                                        </div>  
+                                    </div>
+                                {/block:HasTags}
+                                
+                                {block:RebloggedFrom}
+                                    <div class="reblogged-from">
+                                        <a href="{ReblogParentURL}" class="d-flex-a-center">
+                                            <img src="{ReblogParentPortraitURL-96}">
+                                            <div>
+                                                <b class="d-block">via {ReblogParentName}</b>
+                                                <i>{ReblogParentTitle}</i>
+                                            </div>
+                                        </a>
+                                        <a href="{ReblogRootURL}" class="d-flex-a-center">
+                                            <img src="{ReblogRootPortraitURL-96}">
+                                            <div>
+                                                <b class="d-block">from {ReblogRootName}</b>
+                                                <i>{ReblogRootTitle}</i>
+                                            </div>
+                                        </a>                                               
+                                    </div>
+                                {/block:RebloggedFrom}
+                                
+                                {block:PostNotes}
+                                    {PostNotes-64}
+                                {/block:PostNotes}
+                            </div>
+                            {/block:Date}
+                        {/block:PermalinkPage}
+                    </article>
+                {/block:Posts}
+            </section>
+            
+            {block:Pagination}
+            <div class="pagination-container {select:Next Page}">
+            
+                <div class="jump-pagination d-flex-aj-center">
+                    {block:PreviousPage}
+                        <a href="{PreviousPage}" class="nav-page d-flex-a-center">
+                            <span data-feather="chevron-left"></span>
+                            Prev
+                        </a>
+                    {/block:PreviousPage}
+                    
+                    {block:JumpPagination length="5"}
+                        {block:CurrentPage}
+                            <span class="current-page">{PageNumber}</span>
+                        {/block:CurrentPage}
+                        {block:JumpPage}
+                            <a class="jump-page" href="{URL}">{PageNumber}</a>
+                        {/block:JumpPage}
+                    {/block:JumpPagination}
+                    
+                    {block:NextPage}
+                        <a href="{NextPage}" class="nav-page d-flex-a-center">
+                            Next
+                            <span data-feather="chevron-right"></span>
+                        </a>
+                    {/block:NextPage}
+                </div>
+                
+                <div class="load-more-container">
+                    <button>
+                        Load more posts
+                    </button>
+                </div>
+                
+            </div>
+            {/block:Pagination}
+        </main>
+    </body>
+    
+    <script src="https://static.tumblr.com/wgg6svp/DXrrnsprs/babel.min.js"></script>    
+    <script src="https://static.tumblr.com/wgg6svp/rKhro34kh/credits.min.js"></script>
+    
+    <script src="https://static.tumblr.com/emvnqzg/Fmtrpa5x3/popper.min.js"></script>
+    <script src="https://static.tumblr.com/emvnqzg/Jf1rpa5xx/tippy-bundle.umd.min.js"></script>
+    <script src="https://static.tumblr.com/emvnqzg/zQ1rpa5z0/feather.min.js"></script>
+    <script src="https://static.tumblr.com/emvnqzg/cPSrpbujq/glider.min.js"></script>
+    <script src="https://static.tumblr.com/emvnqzg/Di3rpklaa/neothm.js"></script>
+    
+    <script type="text/babel">
+        const metas = {
+            // currentUser: { "name": "{Name}", "title": {JSTitle}, "url": {JSBlogURL}, "active": true },
+            isIndexPage: {block:IndexPage}true{/block:IndexPage}{block:PermalinkPage}false{/block:PermalinkPage},
+            isPermalinkPage: {block:IndexPage}false{/block:IndexPage}{block:PermalinkPage}true{/block:PermalinkPage}
+        }
+        
+        tippy('[title]', tippyOptions)
+        {block:IndexPage} const postHeight = forceNumber("{text:Post Size Index}") // Required for formatLongTextPost {/block:IndexPage}
+        
+        // Articles HTML to adapt media posts
+        const articleTemplates = {
+            "photo": "<div class=\"media-container photo-container wh-100\"><img src=\"{PhotoURL-HighRes}\" alt=\"{PhotoAlt}\" data-width=\"{PhotoWidth-HighRes}\" data-height=\"{PhotoHeight-HighRes}\" class=\"tumblr-lightbox-preload wh-100\" /></div>", 
+            "photoset": "<div class=\"media-container photoset-container p-r wh-100\" data-layout={JSPhotosetLayout}><div class=\"glider wh-100\"><img src=\"{PhotoURL-HighRes}\" alt=\"{PhotoAlt}\" data-width=\"{PhotoWidth-HighRes}\" data-height=\"{PhotoHeight-HighRes}\" /></div></div>",
+            "photoset_permalink": "<div class=\"media-container photoset-container\" data-layout=\"{JSPhotosetLayout}\"><img src=\"{PhotoURL-HighRes}\" alt=\"{PhotoAlt}\" data-width=\"{PhotoWidth-HighRes}\" data-height=\"{PhotoHeight-HighRes}\" class=\"tumblr-lightbox-preload\"></div>",
+            "video": "<div class=\"media-container video-container wh-100\"><div class=\"resizable-content d-flex-aj-center wh-100\">{Video-700}</div></div>",
+            "audio": "<div class=\"media-container audio-container wh-100\"><div class=\"audio-player wh-100\"><div class=\"audio-player-container wh-100\" style=\"background-image:url({AlbumArtURL})\">{AudioPlayer}</div></div></div>",
+            "audio_permalink": "<div class=\"media-container audio-container\"><div class=\"audio-player\"><div class=\"audio-player-container\" style=\"background-image:url({AlbumArtURL})\">{AudioPlayer}</div><div class=\"audio-metas\"><h3 class=\"audio-trackname\">{TrackName}</h3><div class=\"audio-artist d-flex-a-center\"><span data-feather=\"music\"></span>{Artist}</div><div class=\"audio-album d-flex-a-center\"><span data-feather=\"disc\"></span>{Album}</div></div></div></div>",
+            "caption": "<div class=\"hover-captions\"><div class=\"trail-item\"><div class=\"trail-user\"><img src=\"{PortraitURL-64}\" alt=\"{Username}\"><b><a href=\"{Permalink}\">{Username}</a></b></div><div class=\"trail-content\">{Body}</div></div></div>"
+        }
+        
+        /*
+            Change NPF posts layout to fit old-type posts
+        */
+        const fixNPFPosts = (allPosts) => {
+            if(allPosts.length > 0) {
+                return new Promise ((resolver) => {
+                    allPosts.forEach((textPost) => {
+                        if(textPost.classList.contains('text')) {
+                            const npfData = decodeHTMLEntities(textPost.querySelector('.npf-container').innerText)
+                            const npfPost = JSON.parse(npfData.substring(1, npfData.length-1)) 
+                            const [npfContent, npfLayout] = buildNPFTrails(npfPost)
+                            const originalPostContent = npfContent[0]
+                            
+                            if(originalPostContent.length > 0) {
+                                // this post is a lil NPF bitch
+                                const firstRow = originalPostContent[0]
+                                
+                                removeEmptyNodes(textPost, '.posts-caption, p')
+                                let newPostType = '', newPostContentNode = document.createElement('div'), rowCounter = 0
+                                
+                                // Post is either a photo or a photoset
+                                if(firstRow.type === 'image') {
+                                    // Get all images before caption
+                                    const postsImagesUntilText = []
+                                    const postsRowCount = []
+                                    let foundText = false
+                                    
+                                    npfContent.forEach((content, trailIndex) => {
+                                        content.forEach((row) => ((!foundText && trailIndex === 0 && row.type === 'image') ? postsImagesUntilText.push(row) : foundText = true))
+                                        if(!foundText) postsRowCount.push('row')
+                                    })
+                                    
+                                    const isPhotoset = postsImagesUntilText.length > 1
+                                    newPostType = isPhotoset ? 'photoset' : 'photo'
+                                    const newContentNode = parser.parseFromString(articleTemplates[`${ newPostType }${ metas.isPermalinkPage && newPostType === 'photoset' ? '_permalink' : '' }`], 'text/html')
+                                    const mediaContainer = newContentNode.querySelector('.media-container')
+                                    
+                                    if(isPhotoset) {
+                                        // Set-up new photoset layout
+                                        const NPFRowSums = npfLayout[0][0].display.map((b) => b.blocks.length)
+                                        let tmpSum = 0, stopIndex = 0
+                                        
+                                        NPFRowSums.some((nbr, i) => {
+                                            if (tmpSum + nbr > postsImagesUntilText.length) {
+                                                stopIndex = i
+                                                return true
+                                            }
+                                            tmpSum += nbr
+                                        })
+    
+                                        const photosetLayout = NPFRowSums.slice(0, stopIndex)
+                                        rowCounter = photosetLayout.length
+                                        mediaContainer.dataset.layout = JSON.stringify(photosetLayout)
+                                        
+                                        if(metas.isIndexPage) {
+                                            // Set-up glider
+                                            const glider = newContentNode.querySelector('.glider')
+                                            NPFReplaceImagesHTML(glider, postsImagesUntilText)
+                                            
+                                            // Add photoset nav to caption 
+                                            const reblogMeta = textPost.querySelector('.reblog-metas')
+                                            reblogMeta.innerHTML = `<a class="glider-arrow-prev d-flex-a-center" title="Previous image"><span data-feather="chevron-left"></span></a> ${ reblogMeta.innerHTML } <a class="glider-arrow-next d-flex-a-center" title="Next image"><span data-feather="chevron-right"></span></a>`
+                                        } else {
+                                            NPFReplaceImagesHTML(mediaContainer, postsImagesUntilText)
+                                        }
+                                    } else {
+                                        rowCounter = 1
+                                        // Set-up solo image post
+                                        NPFReplaceImagesHTML(mediaContainer, postsImagesUntilText)
+                                    }
+                                    // Stuffs to remplace in new post
+                                    newPostContentNode.appendChild(mediaContainer)
+                                }
+                                else if(firstRow.type === 'video') {
+                                    newPostType = 'video'
+                                    
+                                    npfContent.forEach((content, trailIndex) => {
+                                        content.forEach((row) => {
+                                            if(trailIndex === 0 && row.type === 'video') {
+                                                const newContentNode = parser.parseFromString(articleTemplates[newPostType], 'text/html')
+                                                const mediaContainer = newContentNode.querySelector('.media-container')
+                                                const iframeDiv = document.createElement('div')
+                                                if(!!row.embed_html) {
+                                                    iframeDiv.innerHTML = row.embed_html
+                                                } else {
+                                                    iframeDiv.innerHTML = `<iframe src="${ row.media.url }" width="${ row.media.width }" height="${ row.media.height }" />`
+                                                }
+                                                mediaContainer.querySelector('.resizable-content').appendChild(iframeDiv)
+                                                
+                                                newPostContentNode.appendChild(mediaContainer)
+                                            }
+                                        })
+                                    })
+                                    rowCounter = 1
+                                }
+                                else if(firstRow.type === 'audio') {
+                                    newPostType = 'audio'
+                                    const newContentNode = parser.parseFromString(articleTemplates[`${ newPostType }${ metas.isPermalinkPage ? '_permalink' : '' }`], 'text/html')
+                                    const mediaContainer = newContentNode.querySelector('.media-container')
+                                    const audioPlayerContainer = newContentNode.querySelector('.audio-player-container')
+                                    const audioMetasContainer = newContentNode.querySelector('.audio-metas')
+                                    
+                                    npfContent.forEach((content, trailIndex) => {
+                                        content.forEach((row) => {
+                                            if(trailIndex === 0 && row.type === 'audio') {
+                                                if(!!row.poster.length) { audioPlayerContainer.style.backgroundImage = `url(${ row.poster[0].url })` }
+                                                
+                                                const span = document.createElement('span')
+                                                span.setAttribute('class', 'p-r')
+                                                span.innerHTML = `<button class="audio-trigger-play d-flex-aj-center wh-100"><span data-feather="play"></span></button><button class="audio-trigger-pause d-flex-aj-center invisible wh-100"> <span data-feather="pause"></span></button><audio class="invisible" controls><source src="${ row.media.url }" type="${ row.media.type }"></audio>`
+                                                audioPlayerContainer.appendChild(span)
+                                                
+                                                if(!!audioMetasContainer) {
+                                                    audioMetasContainer.querySelector('.audio-trackname').innerHTML += row.title
+                                                    audioMetasContainer.querySelector('.audio-artist').innerHTML += row.artist
+                                                    audioMetasContainer.querySelector('.audio-album').innerHTML += row.album
+                                                }
+                                                
+                                                newPostContentNode.appendChild(mediaContainer)
+                                            }
+                                        })
+                                    })
+                                    rowCounter = 1
+                                }
+                                
+                                if(!!newPostType) {
+                                    const newPostNode = formatNewPostNode(textPost.cloneNode(true), newPostContentNode, newPostType, rowCounter)
+                                    textPost.replaceWith(newPostNode)
+                                }
+                            }
+                        }
+                    })
+                    resolver(true)
+                })
+            } else {
+                return Promise.resolve(true)
+            }
+        }
+        
+        /*
+            Navigation/header
+        */
+        const hamburgerMenu = document.querySelector('.hamburger-menu')
+        const sideNav = document.querySelector('.side-menu')
+        
+        hamburgerMenu.addEventListener('click', (e) => { toggleMenu(e) })
+        sideNav.addEventListener('click', (e) => { toggleMenu(e) })
+        
+        removeEmptyNodes(sideNav, 'a,li')
+        
+        const toggleMenu = (event) => {
+            if(!event.target.closest('.side-menu ul li')) {
+                event.preventDefault()
+                if(hamburgerMenu.classList.contains('active')) {
+                    hamburgerMenu.classList.remove('active')
+                    sideNav.classList.add('invisible')
+                    sideNav.classList.remove('visible')
+                } else {
+                    hamburgerMenu.classList.add('active')
+                    sideNav.classList.remove('invisible')
+                    sideNav.classList.add('visible')
+                }
+            }
+        }
+        
+        
+        {block:Pagination}
+            /*
+                Pagination options
+            */
+            {block:NextPage}metas.nextPage = forceNumber({JSNextPage}){/block:NextPage}
+            metas.totalPages = forceNumber({JSTotalPages}) 
+            
+            const paginationContainer = document.querySelector('.pagination-container')
+            const loadMoreButton = paginationContainer.querySelector('.load-more-container button')
+            const scrollingContainer = window
+            if(paginationContainer.classList.contains('np-infinite-scroll')) {
+                // Scroll
+                scrollingContainer.addEventListener('scroll', infiniteScrollFunction)
+            } else if(paginationContainer.classList.contains('np-load-more')) {
+                // Load more fonction
+                loadMoreButton.addEventListener('click', loadMoreFunction)
+            }
+        {/block:Pagination}
+        
+        /*
+            Place tumblr controls
+        */
+        const moveTumblrControls = () => {
+            const tumblrControls = document.querySelector('iframe.tmblr-iframe')
+            const windowWidth = window.innerWidth
+            
+            // Responsive 
+            if(windowWidth > 600) {
+                if(!!tumblrControls && parseInt(tumblrControls.width) > 0) {
+                    const mainHeader = document.querySelector('.main-header')
+                    const mainHeaderButtons = document.querySelector('.main-header > div')
+                    const offsetRight = Math.floor((document.body.clientWidth - mainHeader.clientWidth) / 2) - 50
+    
+                    if(!!tumblrControls) {
+                        if(windowWidth > 900) {
+                            mainHeaderButtons.style.paddingRight = `${ tumblrControls.clientWidth - 100 }px`
+                        } else {
+                            mainHeaderButtons.style.paddingRight = '0px'
+                        }
+                        tumblrControls.style.right = `${ offsetRight }px`
+                    }
+                }
+            }
+        }
+        
+        window.addEventListener('load', () => { setTimeout(moveTumblrControls, 500) })
+        window.addEventListener('resize',  moveTumblrControls)
+        
+        /*
+            Place tumblr controls
+        */
+        const postCallback = (newPosts, nextPage) => {
+            // Posts loops
+            fixNPFPosts(newPosts).then((res) => {
+                tippy('#posts-container [title]', tippyOptions)
+                feather.replace()
+                
+                if(newPosts.length > 0) {
+                    const newPostsIds = newPosts.map((p) => '#' + p.id) // ['#post-4545', '#post-14545']
+                    
+                    // Reinit like buttons
+                    const rawTumblrIds = newPostsIds.map((p) => p.replace('#post-', '')) // ['4545', '14545']
+                    Tumblr.LikeButton.get_status_by_post_ids(rawTumblrIds)
+                
+                    const allNewImages = document.querySelectorAll(newPostsIds.map((p) => p + ' img').join(', '))
+                    
+                     // Reselect newPosts var because fixNPFPosts replaced Nodes and messed up the ref
+                    const reinitNewPosts = document.querySelectorAll(newPostsIds.join(', '))
+                    
+                    allImagesLoaded(allNewImages).then(() => {
+                        reinitNewPosts.forEach((post) => {
+                            const postId = post.id
+                            
+                            {block:IndexPage}
+                                resizeItems(post, 'square') // Resize iframes (videos)
+                                initGlider(post, 'arrows') // Carousel
+                                formatLongTextPost(post) // Truncate long post
+                            {/block:IndexPage}
+                            {block:PermalinkPage}
+                                formatPhotoset(post)
+                            {/block:PermalinkPage}
+                            
+                            if(post.classList.contains('audio')) customAudioPlayPause(post)
+                            removeEmptyNodes(post, '.hover-captions, p')
+                            
+                            // Init Lightboxes
+                            const imagesToLoad = post.querySelectorAll('.tumblr-lightbox-preload')
+                            imagesToLoad.forEach((image) => tumblrLightbox(image, postId))
+                            
+                            post.classList.remove('invisible')
+                        })
+                    })
+                    
+                    {block:Pagination}if(!!loadMoreButton && allLoadedPosts) loadMoreButton.remove(){/block:Pagination}
+                }
+            })
+        }
+        // Init original posts
+        const postsContainer = document.querySelector('#posts-container')
+        
+        const pushPostContainerTop = () => {
+            // Responsive 
+            /*
+            if(window.innerWidth < 900) {
+                const headerHeight = document.querySelector('.main-header').clientHeight
+                postsContainer.style.marginTop = `${ headerHeight + 30 }px`
+            } 
+            */
+            const headerHeight = document.querySelector('.main-header').clientHeight
+            postsContainer.style.marginTop = `${ headerHeight + 30 }px`
+        }
+        pushPostContainerTop()
+        
+        {block:IndexPage}
+            window.addEventListener('resize',  () => {
+                pushPostContainerTop()
+                document.querySelectorAll('#posts-container article').forEach((post) => {
+                    resizeItems(post, 'square') // Resize iframes (videos
+                })
+            })
+        {/block:IndexPage}
+        
+        const originalPosts = Array.from(postsContainer.querySelectorAll('article'))
+        postCallback(originalPosts)
+    </script>
+</html>
