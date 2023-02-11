@@ -1,0 +1,1433 @@
+<!--
+ 
+    THEME #17 (AFTON'S - REDUX) BY NEOTHM
+    ========================================
+ 
+    ## Information
+        Creator:                     Neo  @mtrics
+        Release:                     2016-11-08
+        Version:                     1.0
+        Source:                      https://github.com/neothm/public-releases/blob/main/aftons-redux.html
+ 
+    ## Links
+        Support                      https://neothm.com/tagged/answeo
+          > Related to this theme:   https://neothm.com/tagged/a:17
+        Terms of use                 https://neothm.com/terms
+ 
+    ## Dependencies & Credits
+        CSS Reset:                   https://meyerweb.com/eric/tools/css/reset/
+        Tippy.js:                    https://atomiks.github.io/tippyjs/
+        Feather icons:               https://feathericons.com/
+        Glider.js:                   https://github.com/NickPiscitelli/Glider.js
+-->
+    
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            AFTON'S REDUX
+        </title>
+        
+        <link rel="preconnect" href="https://static.tumblr.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <!-- 
+            Theme options 
+        -->
+        <meta name="image:Favicon" content="{Favicon}" />
+        <meta name="image:Banner" content="" />
+        <meta name="image:Header Icon" content="{PortraitURL-128}" />
+        
+        <meta name="color:Body Text" content="#686868" />
+        <meta name="color:Links" content="#0fff47" />
+        <meta name="color:Links on Hover" content="#0ff0ff" />
+        <meta name="color:Accents" content="#ffff00" />
+        
+        <meta name="text:Google Font" content="Lato" />
+        <meta name="text:Google Title Font" content="Cormorant Infant" />
+        <meta name="text:Base Font Size" content="12px" />
+        
+        <meta name="text:Post Spacing" content="50px" />
+        <meta name="text:Post Padding" content="0px" />
+        <meta name="text:Header Title" content={JSTitle} />
+        <meta name="text:Header Description" content={JSDescription} />
+        
+        <meta name="text:Custom Link 1 URL" content="" />
+        <meta name="text:Custom Link 1 Name" content="" />
+        <meta name="text:Custom Link 1 Subtitle" content="" />
+        <meta name="text:Custom Link 2 URL" content="" />
+        <meta name="text:Custom Link 2 Name" content="" />
+        <meta name="text:Custom Link 2 Subtitle" content="" />
+        <meta name="text:Custom Link 3 URL" content="" />
+        <meta name="text:Custom Link 3 Name" content="" />
+        <meta name="text:Custom Link 3 Subtitle" content="" />
+        
+        <meta name="select:Next Page" content="np-pagination" title="Jump pagination">
+        <meta name="select:Next Page" content="np-load-more" title="Load more button">
+        <meta name="select:Next Page" content="np-infinite-scroll" title="Infinite scroll">
+        
+        <meta name="select:Post Size" content="60%" title="60%">
+        <meta name="select:Post Size" content="70%" title="70%">
+        <meta name="select:Post Size" content="80%" title="80%">
+        <meta name="select:Post Size" content="90%" title="90%">
+        
+        <meta name="if:Archive Link" content="1">
+        <meta name="if:Show Description in Header" content="1">
+        <meta name="if:Show Image in Description" content="1">
+        
+        <!-- 
+            Header + meta tags
+        -->
+        <link rel="icon" type="image/x-icon" href="{image:Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="description" content="{MetaDescription}" />
+        
+        <!-- 
+            Font
+        -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Infant:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/pORrpbukq/glider.min.css" rel="stylesheet">
+
+        <link href="https://static.tumblr.com/emvnqzg/5P2rpopk2/base.css" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/8p2rpoyi9/audio-posts.css" rel="stylesheet">
+        
+        <link href="https://static.tumblr.com/emvnqzg/H1Hrpordk/carousel-photosets.css" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/vOmrpfphp/notes.css" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/zQirpxbw0/posts-captions.css" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/KkMrpp0jh/reblog-trails.css" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/j4Crpqu9w/pagination.css" rel="stylesheet">
+
+        <link href="https://static.tumblr.com/emvnqzg/wcVrpxfd8/custom-preview.css" rel="stylesheet">
+
+        <style type="text/css">
+            :root {
+                --transition-duration: 0.4s;
+                --body-font: "Montserrat";
+                --title-font: "Cormorant Infant";
+                --link-color: #d0bee8;
+                --hover-link-color: #51467c;
+                --text-color: #686868;
+                
+                --navigation-height: 120px;
+                --max-post-height: 55vh;
+                
+                --post-size: 90%;
+                --post-margin: 10vh;
+                --post-padding: 50px;
+
+                --base-font-size: 14px;
+                --base-line-height: 1.5;
+                
+                --accent-color: #efbaf3;
+                
+                --glider-dot: #efbaf3;
+                --glider-dot-active: #efbaf3;
+                
+                --box-shadow: 0px 5px 10px 0px rgb(200 200 200 / 20%);
+                
+                --lightest-gray: #f2f2f2;
+                --medium-gray: #aaaaaa;
+                --dark-gray: #8c8c8c;
+                
+                --border-radius: 0px;
+                --photoset-spacing: 10px;
+            }
+            
+            /* ================================================================
+                DEFAULT
+            ================================================================ */
+            body {
+                background-color: var(--lightest-gray);    
+            }
+            
+            .tmblr-lightbox .lightbox-image {
+                border-radius: var(--border-radius) !important;    
+            }
+            
+            iframe.tmblr-iframe.iframe-controls--desktop {
+                top: calc(var(--navigation-height) / 2);
+                position: absolute;
+                transform: translateY(-50%) scale(0.7);
+                right: calc(var(--navigation-height) - 50px);
+            }
+            
+            .tippy-content {
+                font: 10px/1 var(--body-font);
+                background-color: var(--accent-color);
+                border-radius: calc(var(--border-radius) / 2);
+                max-width: 120px;
+                text-align: center;
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+                color: #000;
+            }
+            
+            /* ================================================================
+                GLOBAL
+            ================================================================ */
+            main {
+                padding-bottom: var(--post-margin);
+            }
+            
+            #posts-container {
+                margin: 0 auto;
+                /* width: var(--post-size); */
+            }
+            
+            #posts-container .post {
+                margin: var(--post-margin) auto;
+                width: var(--post-size);
+                counter-increment: post-counter;
+            }
+
+            .permalink-page #posts-container .post {
+                background-color: #fff; 
+            }
+            
+            #posts-container .post .trail-item:not(:last-of-type) {
+                margin-bottom: 30px;
+            }
+            
+            .text-post-container,
+            .media-container + .posts-caption {
+                background-color: #fff;
+                padding: var(--post-padding);
+            }
+
+            .index-page .media-container + .posts-caption,
+            .index-page .text-post-container {
+                box-shadow: var(--box-shadow); 
+            }
+                        
+            .text-post-container {
+                
+            }
+            
+            .posts-caption {
+                
+            }
+
+            .index-page .media-container + .posts-caption {
+                margin: -40px 5% 0;
+                z-index: 1;
+                position: relative;
+            }
+
+            .index-page .media-container {
+                max-height: var(--max-post-height);
+            }
+
+            /* ================================================================
+                PHOTOSET POSTS
+            ================================================================ */
+            .index-page .photoset-container .dots {
+                bottom: 0px;
+                z-index: 2;
+            }
+
+            /* ================================================================
+                AUDIO POSTS
+            ================================================================ */
+            .media-container.audio-container {
+                background-color: #fff;
+            }
+
+            .permalink-page .media-container.audio-container {
+                margin-bottom: 20px;
+            }
+            
+            .audio-player {
+                gap: 5vw;
+            }
+            
+            .audio-player-container > span {
+                transform: translate(-50%, -50%) scale(2);
+            }
+            
+            /* ================================================================
+                CHAT POSTS
+            ================================================================ */
+            .chat-bubble {
+                padding: 8px;
+            }
+            
+            .chat-bubble.even {
+                background-color: var(--lightest-gray);
+                border-radius: var(--border-radius);
+            }
+            
+            /* ================================================================
+                POSTS METAS
+            ================================================================ */
+            .posts-metas {
+                background-color: #fff;
+                padding: 15px;
+                gap: 30px;
+            }
+            
+            .posts-metas hr {
+                width: 25px;
+                margin: 0;
+                border: 1px solid var(--accent-color);
+            }
+            
+            .posts-metas a {
+                gap: 15px;
+            }
+            
+            .posts-metas .posts-counter:before {
+                content: counter(post-counter, decimal-leading-zero);
+                font-weight: bold;
+            }
+            
+            .posts-metas i {
+                font-style: italic;
+            }
+            
+            /* ================================================================
+                PERMALINKS
+            ================================================================ */
+            
+            .permalink-page .reblogged-from, 
+            .permalink-page .perma-tags, 
+            .permalink-page ol.notes, 
+            .permalink-page .date-metas {
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 1px solid var(--lightest-gray);
+                padding-left: var(--post-padding);
+                padding-right: var(--post-padding);
+            }
+
+            .permalink-page .permalink-metas {
+                background-color: #fff;
+            }
+
+            .permalink-page .date-metas {
+                margin-top: 0px;
+            }
+
+            .permalink-page .reblogged-from {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .permalink-page .date-metas,
+            .permalink-page .reblogged-from a {
+                gap: 20px;
+                font-size: 0.85em;
+            }
+            
+            .permalink-page .reblogged-from img {
+                width: 50px;
+                height: 50px;
+                border-radius: 4px;
+            }
+            
+            .permalink-page .reblogged-from a div {
+                transition-duration: 0s;
+            }
+            
+            .permalink-page .date-metas,
+            .permalink-page .reblogged-from b {
+                font: bold 1em/1 var(--title-font);
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+            }
+            
+            .permalink-page .date-metas sup {
+                vertical-align: super;
+                font-size: 0.6em;
+            }
+            
+            .permalink-page .reblogged-from i {
+                font-style: italic;
+            }
+            
+            .permalink-page .perma-tags {
+                gap: 20px;
+            }
+            .permalink-page .date-metas {
+                margin-top: 0px;
+            }
+            
+            .permalink-page .perma-tags svg {
+                width: 30px;
+            }
+            
+            .permalink-page .perma-tags div {
+                gap: 2px 8px;
+                flex-wrap: wrap;
+                width: calc(100% - 38px);
+            }
+            
+            .permalink-page .perma-tags a {
+                text-transform: uppercase;
+                font-size: 0.8em;
+            }
+
+            /* ================================================================
+                HEADER
+            ================================================================ */
+            .main-header {
+                font-size: 0.8em;
+            }
+
+            .index-page .main-header {
+                width: 100%;
+                height: 100%;
+            }
+            
+            .side-nav, .main-nav {
+                background-color: #fff;
+                height: var(--navigation-height);
+                padding: 0 var(--navigation-height);
+            }
+            
+            .side-nav ul, .main-nav ul {
+                gap: 100px;
+                /* justify-content: space-between; */
+            }
+            
+            .permalink-page .main-nav {
+                border-bottom: 1px solid var(--lightest-gray);
+            }
+        
+            .index-page .side-nav {
+                position: absolute;
+                transform: rotate(-90deg) translate(0px, -100%);
+                transform-origin: top right;
+                right: 0;
+                top: var(--navigation-height);
+                width: calc(100vh - var(--navigation-height));
+                
+                /* padding-left: calc(var(--navigation-height) * 1.5); */
+                padding-left: 120px;
+            }
+            
+            .main-header ul li {
+                line-height: 1;
+            }
+            
+            .main-header ul li b,
+            .main-header ul li span {
+                display: block;
+            }
+            
+            .main-header ul li b {
+                font-weight: bold;
+                color: #000;
+                text-transform: uppercase;
+                margin-bottom: 5px;
+            }
+            
+            .main-header ul li span {
+                color: var(--dark-gray);
+                transition-duration: var(--transition-duration);
+            }
+            
+            .main-header ul li a:hover span {
+                color: #000;
+            }
+            
+            .banner-container {
+                top: var(--navigation-height);
+                right: var(--navigation-height);
+                background: #fff url('https://64.media.tumblr.com/1eb602c04e15f6a21c148f604671386c/tumblr_nnqawks9fO1r1rfmmo1_1280.jpg') center;
+                background-size: cover;
+            }
+            
+            .index-page .banner-container {
+                position: absolute;
+                width: calc(100% - var(--navigation-height));
+                height: calc(100% - var(--navigation-height));
+            }
+            
+            .permalink-page .banner-container {
+                width: 100%;
+                height: calc(var(--navigation-height) * 2);
+            }
+            
+            .description-container {
+                background-color: #fff;
+                display: var(--show-description-header);
+            }
+            
+            .index-page .description-container {
+                position: absolute;
+                width: 400px;
+                padding: 60px 50px 50px;
+                bottom: 70px;
+                left: var(--navigation-height);
+            }
+            
+            .permalink-page .description-container {
+                width: 100%;
+                height: var(--navigation-height);
+                padding: 0 var(--navigation-height);
+                gap: 40px;
+                box-shadow: var(--box-shadow);
+
+                display: flex;
+                align-items: center;
+            }
+            
+            .permalink-page .description-container .desc-avatar {
+                width: 80px;
+                height: 80px;
+                margin: 10px 0;
+            }
+            
+            .index-page .description-container .desc-avatar {
+                position: absolute;
+                top: 0;
+                transform: translate(20px, -50%);
+                border: 7px solid #fff;
+                left: 0;
+                width: 100px;
+                height: 100px;
+            }
+            
+            .index-page .description-container h1 {
+                margin-bottom: 15px;
+            }
+            
+            .description-container .desc-avatar {
+                border-radius: 50%;
+                display: var(--show-description-image);
+            }
+            
+            /* ================================================================
+                RESPONSIVE
+            ================================================================ */
+            @media only screen and (max-width: 1200px) {
+                .index-page .main-header {
+                    height: unset;
+                }
+                
+                .index-page .main-nav {
+                    border-bottom: 1px solid var(--lightest-gray);
+                }
+
+                .index-page .side-nav {
+                    transform: unset;
+                    position: relative;
+                    top: unset;
+                    width: 100%;
+                    z-index: 1;
+                }
+                
+                .index-page .banner-container {
+                    position: relative;
+                    top: 0;
+                    width: 100%;
+                    right: 0;
+                    height: var(--navigation-height);
+                }
+                
+                .index-page .description-container {
+                    width: 100%;
+                    position: relative;
+                    left: 0;
+                    height: var(--navigation-height);
+                    padding: 0 var(--navigation-height);
+                    bottom: unset;
+                    display: flex;
+                    align-items: center;
+                    gap: 40px;
+                    box-shadow: var(--box-shadow);
+                }
+                
+                .index-page .description-container .desc-avatar {       
+                    position: relative;
+                    top: unset;
+                    left: unset;
+                    transform: unset;
+                    width: 80px;
+                    height: 80px;
+                    margin: 10px 0;
+                    border: none;
+                }
+                
+                .index-page .description-container h1 {
+                    margin-bottom: 0px;
+                }
+                
+                .index-page #posts-container .post {
+                    margin: calc(var(--post-margin) / 2) auto;
+                }
+            }
+            
+            @media only screen and (max-width: 900px) {
+                .banner-container {
+                    display: none;
+                }
+                
+                .side-nav {
+                    border-bottom: 1px solid var(--lightest-gray);
+                }
+                
+                .side-nav, .main-nav, .description-container, #posts-container {
+                    padding: 0 calc(var(--navigation-height) / 2);
+                }
+                
+                .side-nav ul, .main-nav ul {
+                    gap: 40px;
+                }
+                
+                #posts-container .post {
+                    width: 100%;
+                }
+            }
+            
+            @media only screen and (max-width: 600px) {
+                .main-nav, .side-nav {
+                    padding: 0;
+                    border: none;
+                    display: inline-flex;
+                    height: unset;
+                }
+                
+                .side-nav ul, .main-nav ul {
+                    display: inline-flex;
+                    width: unset;
+                }
+                
+                .side-nav {
+                    right: unset;
+                    margin-bottom: 10px;
+                }
+                
+                .main-header {
+                    padding: 20px;
+                    background-color: #fff;
+                    box-shadow: var(--box-shadow);
+                    display: flex;
+                    flex-direction: column-reverse;
+                }
+                
+                .main-header ul li span {
+                    display: none;
+                }
+                
+                .description-container {
+                    padding: unset;
+                    height: unset;
+                    box-shadow: unset;
+                    margin-bottom: 30px;
+                }
+                
+                .description-container .desc-avatar {
+                    width: 50px;
+                    height: 50px;
+                    margin: unset;
+                }
+                
+                #posts-container {
+                    padding: 0 20px;
+                }
+                
+                .media-container + .posts-caption {
+                    margin: 0;
+                }
+                
+                .photoset-container .dots {
+                    bottom: 5px;
+                }
+                
+                #posts-container .post {
+                    margin: 20px auto 60px;
+                }
+                
+                .photoset-container .dots .glider-dot {
+                    width: 10px;
+                    height: 10px;
+                }
+                
+                .posts-metas,
+                .media-container.audio-container {
+                    padding: 10px;
+                }
+                
+                .reblogged-from {
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 20px;
+                }
+                
+                .date-metas {
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    gap: 10px;
+                }
+            }
+
+        </style>
+    </head>
+    <body class="index-page ox-h oy-auto">
+        <div class="customization-container">
+          <input type="checkbox" id="customization-checkbox" name="customization-checkbox" />
+          <label title="Customization options" for="customization-checkbox">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path d="M512 256c0 .9 0 1.8 0 2.7c-.4 36.5-33.6 61.3-70.1 61.3H344c-26.5 0-48 21.5-48 48c0 3.4 .4 6.7 1 9.9c2.1 10.2 6.5 20 10.8 29.9c6.1 13.8 12.1 27.5 12.1 42c0 31.8-21.6 60.7-53.4 62c-3.5 .1-7 .2-10.6 .2C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM128 288c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zm0-96c17.7 0 32-14.3 32-32s-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32zM288 96c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32zm96 96c17.7 0 32-14.3 32-32s-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" />
+            </svg>
+          </label>
+          <div class="customization-options">
+            <h2>Theme options</h2>
+            <h3>Colors</h3>
+            <ul>
+              <li>
+                <span>Text color</span>
+                <div>
+                  <input type="color" data-default="#686868" data-attribute="--text-color" class="variable-input" />
+                </div>
+              </li>
+              <li>
+                <span>Link color</span>
+                <div>
+                  <input type="color" data-default="#d0bee8" data-attribute="--link-color" class="variable-input" />
+                </div>
+              </li>
+              <li>
+                <span>Link color on hover</span>
+                <div>
+                  <input type="color" data-default="#51467c" data-attribute="--hover-link-color" class="variable-input" />
+                </div>
+              </li>
+              <li>
+                <span>Accent color</span>
+                <div>
+                  <input type="color" data-default="#efbaf3" data-attribute="--accent-color" class="variable-input" />
+                </div>
+              </li>
+            </ul>
+            <h3>Text options</h3>
+            <ul>
+              <li>
+                <span>Base font size</span>
+                <div>
+                  <input type="text" data-default="14px" data-attribute="--base-font-size" class="variable-input" />
+                </div>
+              </li>
+              <li title="Not available in preview mode">
+                <span>Font (body)</span>
+                <div>
+                  <input type="text" data-default="Montserrat" data-attribute="--body-font" class="variable-input" disabled />
+                </div>
+              </li>
+              <li title="Not available in preview mode">
+                <span>Font (titles)</span>
+                <div>
+                  <input type="text" data-default="Cormorant Infant" data-attribute="--title-font" class="variable-input" disabled />
+                </div>
+              </li>
+              <li>
+                <span>Post spacing</span>
+                <div>
+                  <input type="text" data-default="20vh" data-attribute="--post-margin" class="variable-input" />
+                </div>
+              </li>
+              <li>
+                <span>Post padding</span>
+                <div>
+                  <input type="text" data-default="75px" data-attribute="--post-padding" class="variable-input" />
+                </div>
+              </li>
+              <li>
+                <span>Navigation height</span>
+                <div>
+                  <input type="text" data-default="120px" data-attribute="--navigation-height" class="variable-input" />
+                </div>
+              </li>
+              <li>
+                <span>Max height on index</span>
+                <div>
+                  <input type="text" data-default="55vh" data-attribute="--max-post-height" class="variable-input" />
+                  <small>
+                    Suggestions:
+                    <a href="#" data-value="unset" class="suggestion-link" title="No height restriction">
+                      unset
+                    </a>,
+                    <a href="#" data-value="60vh" class="suggestion-link">
+                      60vh
+                    </a>
+                  </small>
+                </div>
+              </li>
+            </ul>
+            <h3>Multi-choices</h3>
+            <ul>
+              <li>
+                <span>Post size</span>
+                <div>
+                  <select class="variable-input" data-default="70%" data-attribute="--post-size">
+                    <option value="50%">50%</option>
+                    <option value="60%">60%</option>
+                    <option value="70%">70%</option>
+                    <option value="80%">80%</option>
+                    <option value="90%">90%</option>
+                  </select>
+                </div>
+              </li>
+              <li>
+                <span>Next page type</span>
+                <div>
+                  <select class="variable-input" data-default="np-pagination" data-attribute="--pagination-type">
+                    <option value="np-pagination">Pagination</option>
+                    <option value="np-load-more">Load more button</option>
+                    <option value="np-infinite-scroll">Infinite scroll</option>
+                  </select>
+                </div>
+              </li>
+            </ul>
+            <h3>Toggles</h3>
+            <ul>
+              <li>
+                <span>Show Description in Header</span>
+                <label class="toggle-button">
+                  <input type="checkbox" class="variable-input" data-default="true" data-iftrue="block" data-iffalse="none" data-attribute="--show-description-header" />
+                  <b></b>
+                </label>
+              </li>
+              <li>
+                <span>Show Image in Description</span>
+                <label class="toggle-button">
+                  <input type="checkbox" class="variable-input" data-default="true" data-iftrue="block" data-iffalse="none" data-attribute="--show-description-image" />
+                  <b></b>
+                </label>
+              </li>
+            </ul>
+            <div class="footer-buttons">
+              <button class="show-permalink-page">Preview permalink page</button>
+              <button class="reset-attributes">Reset selected options</button>
+            </div>
+          </div>
+        </div>
+
+        <header class="main-header p-r">
+            <nav class="main-nav">
+                <ul class="wh-100 d-flex-a-center">
+                    <li>
+                        <a href="/">
+                            <b>Home</b>
+                            <span>Lorem ipsum dolor sit amet</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/ask">
+                            <b>Message</b>
+                            <span>Ask me anything</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/submit">
+                            <b>Submit</b>
+                            <span>Submit a post</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/archive">
+                            <b>Archive</b>
+                            <span>Lorem ipsum dolor sit amet</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+            
+            <aside class="side-nav">
+                <ul class="wh-100 d-flex-a-center">
+                    <li>
+                        <a href="/">
+                            <b>Link 1 Name</b>
+                            <span>Link 1 Subtitle</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <b>Link 2 Name</b>
+                            <span>Link 2 Subtitle</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/">
+                            <b>Link 3 Name</b>
+                            <span>Link 3 Subtitle</span>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            
+            <div class="banner-container"></div>
+            
+            <div class="description-container">
+                <img src="https://64.media.tumblr.com/1ab02b30adbcd56e062a4ab4f1d482be/tumblr_nq8t61agSz1uym83ho1_1280.jpg" alt="aftons" class="d-block desc-avatar" />
+                
+                <div>
+                    <h1>Lorem ipsum dolor sit amet</h1>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget velit aliquet sagittis id consectetur purus.</p>
+                        <p><a href="https://mtrics.tumblr.com/post/137555429261/william-adolphe-bouguereau-letoile-lost-1884">header</a> + <a href="https://mtrics.tumblr.com/post/137544564158/h-linnnn-photo-by-linnnn-model-ju-yeon">icon</a></p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main -->
+        <main>
+            <section id="posts-container" data-currentpage="1">
+                <article id="post-708971429266325504" class="post p-r ox-h oy-h photo permalink-post" data-permalink="https://odethm2.tumblr.com/post/708971429266325504/castiel-in-on-the-head-of-a-pin-id-two-close-up" data-tags="test tag_test  reblog"><div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:540,\x22height\x22:463,\x22poster\x22:{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:540,\x22height\x22:463,\x22url\x22:\x22https://44.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s540x810_f1/d5bb35ff1ca534879a6d268c4fa837a308df3824.gifv\x22},\x22url\x22:\x22https://64.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s540x810/c5f5faa002fb1932531335519ab21bcbaead3d1f.gifv\x22,\x22colors\x22:{\x22c0\x22:\x221e0b17\x22,\x22c1\x22:\x2299459b\x22},\x22has_original_dimensions\x22:true},{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:500,\x22height\x22:429,\x22poster\x22:{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:500,\x22height\x22:429,\x22url\x22:\x22https://44.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s500x750_f1/8482508160c71b0d7ff79d409fdec223caa39935.gifv\x22},\x22url\x22:\x22https://64.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s500x750/717a53ad70a179614f617ce18bfa7447d67b77f8.gifv\x22,\x22colors\x22:{\x22c0\x22:\x221e0b17\x22,\x22c1\x22:\x2299459b\x22}},{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:400,\x22height\x22:343,\x22poster\x22:{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:400,\x22height\x22:343,\x22url\x22:\x22https://44.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s400x600_f1/b04a5d26818e239cbf076b3883fb4189fa0343d1.gifv\x22},\x22url\x22:\x22https://64.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s400x600/c5cd5493ff09ecc4fad8deacf7765f6128b52f9e.gifv\x22,\x22colors\x22:{\x22c0\x22:\x221e0b17\x22,\x22c1\x22:\x2299459b\x22}},{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:250,\x22height\x22:214,\x22poster\x22:{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:250,\x22height\x22:214,\x22url\x22:\x22https://44.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s250x400_f1/700ffa143c323d8da386a64ffebbbb13b4185281.gifv\x22},\x22url\x22:\x22https://64.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s250x400/d7439f271049aad0744259693d8a891fdc1c6465.gifv\x22,\x22colors\x22:{\x22c0\x22:\x221e0b17\x22,\x22c1\x22:\x2299459b\x22}},{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:100,\x22height\x22:86,\x22poster\x22:{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:100,\x22height\x22:86,\x22url\x22:\x22https://44.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s100x200_f1/2ffe06cdfe0736d999d3c9a52d11891549a53ee8.gifv\x22},\x22url\x22:\x22https://64.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s100x200/8a53c90c391f70075f13665ea144a2293bbd5927.gifv\x22,\x22colors\x22:{\x22c0\x22:\x221e0b17\x22,\x22c1\x22:\x2299459b\x22}},{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:75,\x22height\x22:75,\x22poster\x22:{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:75,\x22height\x22:75,\x22url\x22:\x22https://44.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s75x75_c1_f1/2b08d4f3ed74e1d0282163b7280887b8b81e4934.gifv\x22},\x22url\x22:\x22https://64.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s75x75_c1/49a66a0d5f3a849604af210762aef59e8ca98124.gifv\x22,\x22colors\x22:{\x22c0\x22:\x221e0b17\x22,\x22c1\x22:\x2299459b\x22},\x22cropped\x22:true}],\x22colors\x22:{\x22c0\x22:\x221e0b17\x22,\x22c1\x22:\x2299459b\x22}},{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:540,\x22height\x22:463,\x22poster\x22:{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:540,\x22height\x22:463,\x22url\x22:\x22https://44.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s540x810_f1/846c94a6e1b176bd7bfc1ea37fb9d1ece778c339.gifv\x22},\x22url\x22:\x22https://64.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s540x810/16fbe3075de4b565eec1adc216ec5ed55c1ef8d6.gifv\x22,\x22colors\x22:{\x22c0\x22:\x22581b42\x22,\x22c1\x22:\x22030315\x22},\x22has_original_dimensions\x22:true},{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:500,\x22height\x22:429,\x22poster\x22:{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:500,\x22height\x22:429,\x22url\x22:\x22https://44.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s500x750_f1/b9668b580a9ca44dfef62a9eb39be9dc7235c8d7.gifv\x22},\x22url\x22:\x22https://64.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s500x750/b20da3bc2dda6efaf6de2c7442d99975f2ada00d.gifv\x22,\x22colors\x22:{\x22c0\x22:\x22581b42\x22,\x22c1\x22:\x22030315\x22}},{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:400,\x22height\x22:343,\x22poster\x22:{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:400,\x22height\x22:343,\x22url\x22:\x22https://44.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s400x600_f1/b0249332657e67e43849503cf5cd20fe9f5654e9.gifv\x22},\x22url\x22:\x22https://64.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s400x600/7ece244d1feac5eb79fa3b0796f958d4be76ea35.gifv\x22,\x22colors\x22:{\x22c0\x22:\x22581b42\x22,\x22c1\x22:\x22030315\x22}},{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:250,\x22height\x22:214,\x22poster\x22:{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:250,\x22height\x22:214,\x22url\x22:\x22https://44.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s250x400_f1/6917eb3d3e37150d6b5c487db4baec193a5a9931.gifv\x22},\x22url\x22:\x22https://64.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s250x400/a1c55267861f851ac8660c60e8011d00ceb7adc5.gifv\x22,\x22colors\x22:{\x22c0\x22:\x22581b42\x22,\x22c1\x22:\x22030315\x22}},{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:100,\x22height\x22:86,\x22poster\x22:{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:100,\x22height\x22:86,\x22url\x22:\x22https://44.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s100x200_f1/24b8a7574e8e460493fca35f6ab86f238fd8f63a.gifv\x22},\x22url\x22:\x22https://64.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s100x200/17e422fd7cf2c9133f045b43995b5d1f171da31e.gifv\x22,\x22colors\x22:{\x22c0\x22:\x22581b42\x22,\x22c1\x22:\x22030315\x22}},{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:75,\x22height\x22:75,\x22poster\x22:{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/webp\x22,\x22width\x22:75,\x22height\x22:75,\x22url\x22:\x22https://44.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s75x75_c1_f1/781cbb2582b12e4cd18dd492a1ce46158fa6c3a1.gifv\x22},\x22url\x22:\x22https://64.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s75x75_c1/62d52a90e39026a62d514e1d5a2ed00a402218b8.gifv\x22,\x22colors\x22:{\x22c0\x22:\x22581b42\x22,\x22c1\x22:\x22030315\x22},\x22cropped\x22:true}],\x22colors\x22:{\x22c0\x22:\x22581b42\x22,\x22c1\x22:\x22030315\x22}},{\x22type\x22:\x22text\x22,\x22text\x22:\x22CASTIEL in ON THE HEAD OF A PIN\x22,\x22formatting\x22:[{\x22type\x22:\x22bold\x22,\x22start\x22:0,\x22end\x22:8},{\x22type\x22:\x22small\x22,\x22start\x22:0,\x22end\x22:8},{\x22type\x22:\x22color\x22,\x22start\x22:0,\x22end\x22:1,\x22hex\x22:\x22#781c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:1,\x22end\x22:2,\x22hex\x22:\x22#6c1c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:2,\x22end\x22:3,\x22hex\x22:\x22#611c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:3,\x22end\x22:4,\x22hex\x22:\x22#561c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:4,\x22end\x22:5,\x22hex\x22:\x22#4a1c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:5,\x22end\x22:6,\x22hex\x22:\x22#3f1c84\x22},{\x22type\x22:\x22color\x22,\x22start\x22:6,\x22end\x22:7,\x22hex\x22:\x22#341c84\x22},{\x22type\x22:\x22small\x22,\x22start\x22:8,\x22end\x22:31},{\x22type\x22:\x22bold\x22,\x22start\x22:11,\x22end\x22:31},{\x22type\x22:\x22color\x22,\x22start\x22:11,\x22end\x22:12,\x22hex\x22:\x22#781c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:12,\x22end\x22:13,\x22hex\x22:\x22#741c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:14,\x22end\x22:15,\x22hex\x22:\x22#6c1c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:15,\x22end\x22:16,\x22hex\x22:\x22#681c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:16,\x22end\x22:17,\x22hex\x22:\x22#641c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:18,\x22end\x22:19,\x22hex\x22:\x22#5c1c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:19,\x22end\x22:20,\x22hex\x22:\x22#581c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:20,\x22end\x22:21,\x22hex\x22:\x22#541c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:21,\x22end\x22:22,\x22hex\x22:\x22#501c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:23,\x22end\x22:24,\x22hex\x22:\x22#481c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:24,\x22end\x22:25,\x22hex\x22:\x22#441c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:26,\x22end\x22:27,\x22hex\x22:\x22#3c1c84\x22},{\x22type\x22:\x22color\x22,\x22start\x22:28,\x22end\x22:29,\x22hex\x22:\x22#341c84\x22},{\x22type\x22:\x22color\x22,\x22start\x22:29,\x22end\x22:30,\x22hex\x22:\x22#301c84\x22},{\x22type\x22:\x22color\x22,\x22start\x22:30,\x22end\x22:31,\x22hex\x22:\x22#2c1c84\x22}]},{\x22type\x22:\x22text\x22,\x22text\x22:\x22[ID. Two close-up GIFs of Cas standing in Dean\u2019s motel room in 4x16 as he explains the plan for Alastair\u2019s interrogation. /END ID]\x22,\x22subtype\x22:\x22indented\x22,\x22formatting\x22:[{\x22type\x22:\x22small\x22,\x22start\x22:0,\x22end\x22:130}]}],\x22layout\x22:[],\x22post\x22:{\x22id\x22:\x22680248202756243458\x22},\x22blog\x22:{\x22name\x22:\x22greatcometcas\x22,\x22title\x22:\x22bury me in burgundy\x22,\x22description\x22:\x22\x3cp\x3espn \u2022 stranger things \u2022 iwtv \u2022 dave malloy\x3c/p\x3e\x3cp\x3e29 \u2022 deangirl \u2022 w*ncesties \x26amp; terfs dni\x3c/p\x3e\x22,\x22url\x22:\x22https://greatcometcas.tumblr.com/\x22,\x22uuid\x22:\x22t:CjmHxzKbhiPkmTAK8kK68Q\x22,\x22updated\x22:1676126923,\x22blog_view_url\x22:\x22https://www.tumblr.com/greatcometcas\x22,\x22key\x22:\x223plf8QCM3\x22,\x22theme\x22:{\x22header_full_width\x22:640,\x22header_full_height\x22:360,\x22header_focus_width\x22:640,\x22header_focus_height\x22:360,\x22avatar_shape\x22:\x22circle\x22,\x22background_color\x22:\x22#e3dcd0\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x22\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/844c585a0aa57dd5805a003671faad11/9d9023d3fa5dc132-69/s640x360/779a5ffd1200d589881a2f2a428c840e876ae845.gif\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/844c585a0aa57dd5805a003671faad11/9d9023d3fa5dc132-69/s2048x3072/ebf65a0b38199c5b023211b16ae81689c649018a.gif\x22,\x22header_image_poster\x22:\x22https://44.media.tumblr.com/844c585a0aa57dd5805a003671faad11/9d9023d3fa5dc132-69/s2048x3072_f1/3986112cc7de646a0a031c8b3845533e76a544f0.gif\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/844c585a0aa57dd5805a003671faad11/9d9023d3fa5dc132-69/s2048x3072/ebf65a0b38199c5b023211b16ae81689c649018a.gif\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#ab2411\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:true,\x22show_title\x22:true,\x22title_color\x22:\x22#444444\x22,\x22title_font\x22:\x22Gibson\x22,\x22title_font_weight\x22:\x22bold\x22},\x22can_message\x22:true,\x22share_likes\x22:false,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22can_show_badges\x22:true,\x22active\x22:true}}]}'</div><time class="posts-metas d-flex-aj-center w-100"><hr><a href="https://odethm2.tumblr.com/post/708971429266325504/castiel-in-on-the-head-of-a-pin-id-two-close-up" class="d-flex-aj-center"><i>16 minutes ago</i></a></time><div class="posts-contents"><div class="media-container photoset-container p-r oy-h" data-layout="[&quot;1&quot;,&quot;1&quot;]"><div class="photoset-row photoset-row-1"><img src="https://64.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s540x810/c5f5faa002fb1932531335519ab21bcbaead3d1f.gifv" alt="greatcometcas:“CASTIEL in ON THE HEAD OF A PIN“[ID. Two close-up GIFs of Cas standing in Dean’s motel room in 4x16 as he explains the plan for Alastair’s interrogation. /END ID]” ”" data-width="540" data-height="463" class="tumblr-lightbox-loaded-trigger"></div><div class="photoset-row photoset-row-1"><img src="https://64.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s540x810/16fbe3075de4b565eec1adc216ec5ed55c1ef8d6.gifv" alt="greatcometcas:“CASTIEL in ON THE HEAD OF A PIN“[ID. Two close-up GIFs of Cas standing in Dean’s motel room in 4x16 as he explains the plan for Alastair’s interrogation. /END ID]” ”" data-width="540" data-height="463" class="tumblr-lightbox-loaded-trigger"></div></div><div class="posts-caption"><div class="trail-item"><div class="trail-user"><img src="https://64.media.tumblr.com/a055e1b1e24b7df7f22368938a76f5ee/9d9023d3fa5dc132-e7/s64x64u_c1/5876929283e1372fc3e08b2e1bc3301754555bff.jpg" alt="greatcometcas"><b><a href="https://greatcometcas.tumblr.com/post/680248202756243458">greatcometcas</a></b></div><div class="trail-content"><p><b><small><span style="color:#781c82">C</span><span style="color:#6c1c82">A</span><span style="color:#611c82">S</span><span style="color:#561c83">T</span><span style="color:#4a1c83">I</span><span style="color:#3f1c84">E</span><span style="color:#341c84">L</span></small></b><small> in <b><span style="color:#781c82">O</span><span style="color:#741c82">N</span> <span style="color:#6c1c82">T</span><span style="color:#681c82">H</span><span style="color:#641c82">E</span> <span style="color:#5c1c83">H</span><span style="color:#581c83">E</span><span style="color:#541c83">A</span><span style="color:#501c83">D</span> <span style="color:#481c83">O</span><span style="color:#441c83">F</span> <span style="color:#3c1c84">A</span> <span style="color:#341c84">P</span><span style="color:#301c84">I</span><span style="color:#2c1c84">N</span></b></small></p><blockquote><p><small>[ID. Two close-up GIFs of Cas standing in Dean’s motel room in 4x16 as he explains the plan for Alastair’s interrogation. /END ID]<br></small></p></blockquote></div></div></div></div><div class="permalink-metas"><time class="date-metas d-flex-aj-center"><span>February 11<sup>th</sup>, 2023 (16 minutes ago)</span>•<span>820 notes</span></time><div class="perma-tags d-flex-a-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-hash"><line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line></svg><div class="d-flex-a-center"><a href="https://odethm2.tumblr.com/tagged/test">test</a><a href="https://odethm2.tumblr.com/tagged/tag%20test">tag test</a></div></div><div class="reblogged-from"><a href="https://greatcometcas.tumblr.com/post/680248202756243458/castiel-in-on-the-head-of-a-pin-id-two-close-up" class="d-flex-a-center"><img src="https://64.media.tumblr.com/a055e1b1e24b7df7f22368938a76f5ee/9d9023d3fa5dc132-e7/s96x96u_c1/c843bf4479c2ff74bad6a8e8523abdceb069b9ad.jpg"><div><b class="d-block">via greatcometcas</b><i>bury me in burgundy</i></div></a><a href="https://greatcometcas.tumblr.com/post/680248202756243458/castiel-in-on-the-head-of-a-pin-id-two-close-up" class="d-flex-a-center"><img src="https://64.media.tumblr.com/a055e1b1e24b7df7f22368938a76f5ee/9d9023d3fa5dc132-e7/s96x96u_c1/c843bf4479c2ff74bad6a8e8523abdceb069b9ad.jpg"><div><b class="d-block">from greatcometcas</b><i>bury me in burgundy</i></div></a></div><ol class="notes"><li class="note like tumblelog_bluebuckstallion without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://bluebuckstallion.tumblr.com/"><img src="https://64.media.tumblr.com/a2a5e29b73d9198ff3c3aadbaa688dc8/9ffbcb4463e3a602-0c/s64x64u_c1/f66f7198e9c62eedde005be18eb540b185856d3f.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://bluebuckstallion.tumblr.com/">bluebuckstallion</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_myfloreanfortescue without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://myfloreanfortescue.tumblr.com/"><img src="https://64.media.tumblr.com/951ead3c9a3792b683ba950d5b05ebde/e751738739a73f67-28/s64x64u_c1/2fc379bdcd9b86fd076efcd5fe55e92082f7c6c9.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://myfloreanfortescue.tumblr.com/">myfloreanfortescue</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_wise-blue-cookies without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://wise-blue-cookies.tumblr.com/"><img src="https://64.media.tumblr.com/3b4e2549ae501c4e6e1029a9f1f9ea41/fd32707966e7c95f-4a/s64x64u_c1/35a9ce1bb711a4d82c4751a3c49bd2a9b9f95062.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://wise-blue-cookies.tumblr.com/">wise-blue-cookies</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_jaguarjoka63 without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://jaguarjoka63.tumblr.com/"><img src="https://assets.tumblr.com/images/default_avatar/cone_open_64.png" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://jaguarjoka63.tumblr.com/">jaguarjoka63</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_despair-dean without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://despair-dean.tumblr.com/"><img src="https://64.media.tumblr.com/46b5afc5a60967a44a46cad20aea5c8a/81d9830b13b7bdf1-0c/s64x64u_c1/de3491c2ae159dae106599e6b0befd54bb8dc13c.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://despair-dean.tumblr.com/post/696759709697507328"><a rel="nofollow" href="https://despair-dean.tumblr.com/post/696759709697507328" class="tumblelog">despair-dean</a>reblogged this from<a rel="nofollow" href="https://greatcometcas.tumblr.com/" class="source_tumblelog">greatcometcas</a></span><div class="clear"></div></li><li class="note like tumblelog_orphicdean without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://orphicdean.tumblr.com/"><img src="https://64.media.tumblr.com/6743468ab52763fa0bb8c934508eaa3c/6e8dece1c2986023-71/s64x64u_c1/92df0c47c1b9baad97c4e3acd85532fb6f48dfba.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://orphicdean.tumblr.com/">orphicdean</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_adommylover4ever without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://adommylover4ever.tumblr.com/"><img src="https://assets.tumblr.com/images/default_avatar/pyramid_closed_64.png" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://adommylover4ever.tumblr.com/">adommylover4ever</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_flightofthecrow without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://flightofthecrow.tumblr.com/"><img src="https://64.media.tumblr.com/6c28db56f05a3db99611d11c22dbba8e/256107dcd1f171c2-34/s64x64u_c1/3214f70718a17e1a30f5ef09fe77e78971f887e9.jpg" class="avatar" alt=""></a><span class="action" data-post-url="https://flightofthecrow.tumblr.com/post/692761746066243585"><a rel="nofollow" href="https://flightofthecrow.tumblr.com/post/692761746066243585" class="tumblelog">flightofthecrow</a>reblogged this from<a rel="nofollow" href="https://valleydean.tumblr.com/" class="source_tumblelog">valleydean</a></span><div class="clear"></div></li><li class="note like tumblelog_spn-lesbian without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://spn-lesbian.tumblr.com/"><img src="https://64.media.tumblr.com/4e1a7b40cba4e4dfa6e21a4e1abbce2d/c23cd3bffdeff9cc-50/s64x64u_c1/76f75f18594536c5f359c423479da3bbe7c82887.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://spn-lesbian.tumblr.com/">spn-lesbian</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_coolcatlover4 without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://coolcatlover4.tumblr.com/"><img src="https://64.media.tumblr.com/b93e5beadc876862ed88a3b372548724/a214d6da47c6336c-10/s64x64u_c1/3de20d58c29fe9bdcd4e33de5c53a6cb68652026.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://coolcatlover4.tumblr.com/post/692718998328049664"><a rel="nofollow" href="https://coolcatlover4.tumblr.com/post/692718998328049664" class="tumblelog">coolcatlover4</a>reblogged this from<a rel="nofollow" href="https://valleydean.tumblr.com/" class="source_tumblelog">valleydean</a></span><div class="clear"></div></li><li class="note like tumblelog_coolcatlover4 without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://coolcatlover4.tumblr.com/"><img src="https://64.media.tumblr.com/b93e5beadc876862ed88a3b372548724/a214d6da47c6336c-10/s64x64u_c1/3de20d58c29fe9bdcd4e33de5c53a6cb68652026.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://coolcatlover4.tumblr.com/">coolcatlover4</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_cringerat without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://cringerat.tumblr.com/"><img src="https://64.media.tumblr.com/afe2ba458e49818d76f08ad7d6809ea6/eb815243f27229bc-94/s64x64u_c1/beadd9e777c953dbfc0090197c4687e8eef9e692.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://cringerat.tumblr.com/">cringerat</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_shadowynachonightmare without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://shadowynachonightmare.tumblr.com/"><img src="https://assets.tumblr.com/images/default_avatar/sphere_open_64.png" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://shadowynachonightmare.tumblr.com/">shadowynachonightmare</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_ladyimtolstoy without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://ladyimtolstoy.tumblr.com/"><img src="https://64.media.tumblr.com/c4596ba18ad4d4e640abea738b2502f6/19459f42eaf65434-cf/s64x64u_c1/8c2ee7405566dc43b3a8481101784c59ebaa1145.jpg" class="avatar" alt=""></a><span class="action" data-post-url="https://ladyimtolstoy.tumblr.com/post/692715502785757184"><a rel="nofollow" href="https://ladyimtolstoy.tumblr.com/post/692715502785757184" class="tumblelog">ladyimtolstoy</a>reblogged this from<a rel="nofollow" href="https://valleydean.tumblr.com/" class="source_tumblelog">valleydean</a></span><div class="clear"></div></li><li class="note like tumblelog_ladyimtolstoy without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://ladyimtolstoy.tumblr.com/"><img src="https://64.media.tumblr.com/c4596ba18ad4d4e640abea738b2502f6/19459f42eaf65434-cf/s64x64u_c1/8c2ee7405566dc43b3a8481101784c59ebaa1145.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://ladyimtolstoy.tumblr.com/">ladyimtolstoy</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_ittybittykylo without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://ittybittykylo.tumblr.com/"><img src="https://64.media.tumblr.com/3871a0102f375578696aafb9d8938654/7d32103734a57570-79/s64x64u_c1/6bb1cc02ae816504586436d98cff6dae3dc354dd.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://ittybittykylo.tumblr.com/">ittybittykylo</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_whoopsitswhump-main without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://whoopsitswhump-main.tumblr.com/"><img src="https://64.media.tumblr.com/5b16324fc96dc0b0db23638083fb8262/782ce55166993bb3-34/s64x64u_c1/02323ba7c983b0dfb32502dafada3eda2034648e.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://whoopsitswhump-main.tumblr.com/">whoopsitswhump-main</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_zither-and-flute without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://zither-and-flute.tumblr.com/"><img src="https://64.media.tumblr.com/avatar_e09a2980637f_64.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://zither-and-flute.tumblr.com/">zither-and-flute</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_so-get-this-sammy without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://so-get-this-sammy.tumblr.com/"><img src="https://64.media.tumblr.com/73f9a2dfc19f81db6117850da5ee01c6/6f3e78aa7ba62e75-98/s64x64u_c1/f8956626fde612f498528c98814db04a188790b4.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://so-get-this-sammy.tumblr.com/">so-get-this-sammy</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_regular-john-16278 without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://regular-john-16278.tumblr.com/"><img src="https://64.media.tumblr.com/40a6cd93fc08c89ca5e5d4db20ce28b5/fadb8d9bd58242ca-f2/s64x64u_c1/eef0f06db9547f11a6009e2ed8591e68f70523ff.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://regular-john-16278.tumblr.com/">regular-john-16278</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_there-are-no-gods-here without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://there-are-no-gods-here.tumblr.com/"><img src="https://64.media.tumblr.com/avatar_268453f1e6bd_64.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://there-are-no-gods-here.tumblr.com/">there-are-no-gods-here</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_buckysbarnin without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://buckysbarnin.tumblr.com/"><img src="https://64.media.tumblr.com/692806ffa7730b642222f46cf2d81a67/7c84d4d04d621af8-9a/s64x64u_c1/3b05e6f7d0f1791822ccb8b766e6e0c8080d907a.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://buckysbarnin.tumblr.com/post/692710196695465984"><a rel="nofollow" href="https://buckysbarnin.tumblr.com/post/692710196695465984" class="tumblelog">buckysbarnin</a>reblogged this from<a rel="nofollow" href="https://valleydean.tumblr.com/" class="source_tumblelog">valleydean</a></span><div class="clear"></div></li><li class="note like tumblelog_strwbryshortie without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://strwbryshortie.tumblr.com/"><img src="https://64.media.tumblr.com/90f50cb61775e3fd72dd176bd2dc215f/edd1ac3ba550b75f-3f/s64x64u_c1/1ce901270b3d45bdaf5006f0d8e22f1f8b782a47.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://strwbryshortie.tumblr.com/">strwbryshortie</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_miramelindamusings without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://miramelindamusings.tumblr.com/"><img src="https://64.media.tumblr.com/b1c5045bcfbbffa8ee74b2335b9a7b70/a1ab3e6275d5452b-ab/s64x64u_c1/8ac168431ffcccc852d78a5ceb9ee8030c6f3184.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://miramelindamusings.tumblr.com/">miramelindamusings</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_arteacactus without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://arteacactus.tumblr.com/"><img src="https://64.media.tumblr.com/67c93a4b04e854970ec2994a6f3603f0/06b42f9a4369dd7e-88/s64x64u_c1/5c528fc6579021e6b37ca4926db2307dfeb0f04e.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://arteacactus.tumblr.com/">arteacactus</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_fitzykreiner without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://fitzykreiner.tumblr.com/"><img src="https://64.media.tumblr.com/0f4ba640cbce5f0f2d34012cd44d5d7d/d2675b0c0b2ea13d-97/s64x64u_c1/dbc0187874306375597a9be6723b993b9712b70a.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://fitzykreiner.tumblr.com/">fitzykreiner</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_valleydean without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://valleydean.tumblr.com/"><img src="https://64.media.tumblr.com/9eced804b35c521a9f8da0a01a271fdc/bedf0ee28eb0320a-6b/s64x64u_c1/fac9cbf8bc35acd9bffe00bc0e16c937dff729ed.jpg" class="avatar" alt=""></a><span class="action" data-post-url="https://valleydean.tumblr.com/post/692709632138969088"><a rel="nofollow" href="https://valleydean.tumblr.com/post/692709632138969088" class="tumblelog">valleydean</a>reblogged this from<a rel="nofollow" href="https://greatcometcas.tumblr.com/" class="source_tumblelog">greatcometcas</a></span><div class="clear"></div></li><li class="note like tumblelog_my-stiel without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://my-stiel.tumblr.com/"><img src="https://64.media.tumblr.com/7b4ec46f47cc3a4d6261c5471566b821/fca5fcc7884bc044-c3/s64x64u_c1/f584866f521d51481f40b0e8ead74cb2c713e912.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://my-stiel.tumblr.com/">my-stiel</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_the-tv-shows-became-my-haven without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://the-tv-shows-became-my-haven.tumblr.com/"><img src="https://64.media.tumblr.com/59efd9117e12f923353c0aea80e64f54/c6fffc9bd6f03090-54/s64x64u_c1/585bbed2a8efa67854d37663c8e876ad8c7f0561.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://the-tv-shows-became-my-haven.tumblr.com/post/692302028484050944"><a rel="nofollow" href="https://the-tv-shows-became-my-haven.tumblr.com/post/692302028484050944" class="tumblelog">the-tv-shows-became-my-haven</a>reblogged this from<a rel="nofollow" href="https://inacatastrophicmind.tumblr.com/" class="source_tumblelog">inacatastrophicmind</a></span><div class="clear"></div></li><li class="note reblog tumblelog_supernaturaling without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://supernaturaling.tumblr.com/"><img src="https://64.media.tumblr.com/36b896dfe6b726c5f97d881bf6ac6eea/3d4614bdf8c2e724-f0/s64x64u_c1/651a70bf423211ebf06f59b8043e8be3f0a79a1e.jpg" class="avatar" alt=""></a><span class="action" data-post-url="https://supernaturaling.tumblr.com/post/691883367824785408"><a rel="nofollow" href="https://supernaturaling.tumblr.com/post/691883367824785408" class="tumblelog">supernaturaling</a>reblogged this from<a rel="nofollow" href="https://greatcometcas.tumblr.com/" class="source_tumblelog">greatcometcas</a></span><div class="clear"></div></li><li class="note like tumblelog_dontthreatenmewith without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://dontthreatenmewith.tumblr.com/"><img src="https://64.media.tumblr.com/avatar_331d70eeddbb_64.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://dontthreatenmewith.tumblr.com/">dontthreatenmewith</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_owlspirit without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://owlspirit.tumblr.com/"><img src="https://64.media.tumblr.com/c420070a61a23196ae1de85bb070274d/a752799290573dc0-7a/s64x64u_c1/c842b284daa022dcc8679d05234e0b252b97c599.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://owlspirit.tumblr.com/">owlspirit</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_selfishdoctoriv without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://selfishdoctoriv.tumblr.com/"><img src="https://64.media.tumblr.com/bce25011b6cea2548429050309b958ed/e0edf79ad0db59f9-d3/s64x64u_c1/4d8e27c7f1b0c584c22a10387e71a195ca5a6000.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://selfishdoctoriv.tumblr.com/post/690076470633168896"><a rel="nofollow" href="https://selfishdoctoriv.tumblr.com/post/690076470633168896" class="tumblelog">selfishdoctoriv</a>reblogged this from<a rel="nofollow" href="https://greatcometcas.tumblr.com/" class="source_tumblelog">greatcometcas</a></span><div class="clear"></div></li><li class="note like tumblelog_selfishdoctoriv without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://selfishdoctoriv.tumblr.com/"><img src="https://64.media.tumblr.com/bce25011b6cea2548429050309b958ed/e0edf79ad0db59f9-d3/s64x64u_c1/4d8e27c7f1b0c584c22a10387e71a195ca5a6000.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://selfishdoctoriv.tumblr.com/">selfishdoctoriv</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_dessertbird without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://dessertbird.tumblr.com/"><img src="https://64.media.tumblr.com/bfebd39dfafc6ac34af0900a04412461/855895d005f89150-48/s64x64u_c1/b12a4a54294c011b234b42153a1e0d7b9055c5ec.jpg" class="avatar" alt=""></a><span class="action" data-post-url="https://dessertbird.tumblr.com/post/689644369260756992"><a rel="nofollow" href="https://dessertbird.tumblr.com/post/689644369260756992" class="tumblelog">dessertbird</a>reblogged this from<a rel="nofollow" href="https://inacatastrophicmind.tumblr.com/" class="source_tumblelog">inacatastrophicmind</a></span><div class="clear"></div></li><li class="note reblog tumblelog_gwenstrife without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://gwenstrife.tumblr.com/"><img src="https://64.media.tumblr.com/d14c54a98f9d0d3460bdaacc6e70beb1/ac3121bd05997048-e3/s64x64u_c1/f57e74530ce39c1a0c08150b6dbcdebc635bdd19.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://gwenstrife.tumblr.com/post/689596040643592192"><a rel="nofollow" href="https://gwenstrife.tumblr.com/post/689596040643592192" class="tumblelog">gwenstrife</a>reblogged this from<a rel="nofollow" href="https://chrrispine.tumblr.com/" class="source_tumblelog">chrrispine</a></span><div class="clear"></div></li><li class="note reblog tumblelog_rypay without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://rypay.tumblr.com/"><img src="https://64.media.tumblr.com/749e73be6916a153a33341e937841ab8/ef5526909caae283-72/s64x64u_c1/35394271644613c9745d86896081ef332c375c74.jpg" class="avatar" alt=""></a><span class="action" data-post-url="https://rypay.tumblr.com/post/689154069716172800"><a rel="nofollow" href="https://rypay.tumblr.com/post/689154069716172800" class="tumblelog">rypay</a>reblogged this from<a rel="nofollow" href="https://greatcometcas.tumblr.com/" class="source_tumblelog">greatcometcas</a></span><div class="clear"></div></li><li class="note reblog tumblelog_wanda-maximoffvs without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://wanda-maximoffvs.tumblr.com/"><img src="https://64.media.tumblr.com/0a84a5a19cc9416aee4cc7c5ff845b03/35ffa9fc220b1b71-ec/s64x64u_c1/b70a1e25352a5a0545f1b5fa69b62d2b8977fe2d.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://wanda-maximoffvs.tumblr.com/post/689111724050219008"><a rel="nofollow" href="https://wanda-maximoffvs.tumblr.com/post/689111724050219008" class="tumblelog">wanda-maximoffvs</a>reblogged this from<a rel="nofollow" href="https://supernaturaldaily.tumblr.com/" class="source_tumblelog">supernaturaldaily</a></span><div class="clear"></div></li><li class="note reblog tumblelog_germanottahooker without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://germanottahooker.tumblr.com/"><img src="https://64.media.tumblr.com/0930e90ccf8ee21984887e485e8958b2/dc2daef03def43fe-71/s64x64u_c1/34837f55abde20f04bfbb0c429b95190ea63394a.jpg" class="avatar" alt=""></a><span class="action" data-post-url="https://germanottahooker.tumblr.com/post/688786617976094720"><a rel="nofollow" href="https://germanottahooker.tumblr.com/post/688786617976094720" class="tumblelog">germanottahooker</a>reblogged this from<a rel="nofollow" href="https://supernaturaldaily.tumblr.com/" class="source_tumblelog">supernaturaldaily</a></span><div class="clear"></div></li><li class="note like tumblelog_knoxproxy without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://knoxproxy.tumblr.com/"><img src="https://64.media.tumblr.com/49f2d4f85f87853ced181333e6cd5e33/ec34ab431b206788-7b/s64x64u_c1/046be53e04ab1dde4da99a646021b6656fe09ebf.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://knoxproxy.tumblr.com/">knoxproxy</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_thatdreamwelongtolive without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://thatdreamwelongtolive.tumblr.com/"><img src="https://64.media.tumblr.com/b2f43c4d2c4a97dfac42b49407272db5/708602c8cd5f02b2-29/s64x64u_c1/7446657fa28253d68427e391a50328eeea451021.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://thatdreamwelongtolive.tumblr.com/">thatdreamwelongtolive</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_silvertongue21 without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://silvertongue21.tumblr.com/"><img src="https://64.media.tumblr.com/12cd1b8fd26c1722e49744aa2711d352/ec5d267e904186f0-b7/s64x64u_c1/868d7383909f9aa69cccedb4bfe84624748b2dfa.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://silvertongue21.tumblr.com/">silvertongue21</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_debdarkpetal without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://debdarkpetal.tumblr.com/"><img src="https://64.media.tumblr.com/0c7327eb4189b6996274baf99df1a14a/8966375aa2a4d3b5-84/s64x64u_c1/f5c03508d2260248b5ee41d70ee1df6cbaf262aa.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://debdarkpetal.tumblr.com/post/688561953429504000"><a rel="nofollow" href="https://debdarkpetal.tumblr.com/post/688561953429504000" class="tumblelog">debdarkpetal</a>reblogged this from<a rel="nofollow" href="https://supernaturaldaily.tumblr.com/" class="source_tumblelog">supernaturaldaily</a></span><div class="clear"></div></li><li class="note like tumblelog_debdarkpetal without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://debdarkpetal.tumblr.com/"><img src="https://64.media.tumblr.com/0c7327eb4189b6996274baf99df1a14a/8966375aa2a4d3b5-84/s64x64u_c1/f5c03508d2260248b5ee41d70ee1df6cbaf262aa.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://debdarkpetal.tumblr.com/">debdarkpetal</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_daraemory without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://daraemory.tumblr.com/"><img src="https://64.media.tumblr.com/avatar_288a7ae61f03_64.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://daraemory.tumblr.com/">daraemory</a>liked this</span><div class="clear"></div></li><li class="note like tumblelog_who-locked-stark-in-the-closet without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://who-locked-stark-in-the-closet.tumblr.com/"><img src="https://64.media.tumblr.com/avatar_8a0109bf9bc3_64.pnj" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://who-locked-stark-in-the-closet.tumblr.com/">who-locked-stark-in-the-closet</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_teaisgettingcold without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://teaisgettingcold.tumblr.com/"><img src="https://64.media.tumblr.com/c4f96e1593cdaaed371ae1beb333525d/4b04b8be4d5ab65f-52/s64x64u_c1/734013ef093011d4ef53ae3252619b3fd8100a1d.pnj" class="avatar" alt=""></a><span class="action" data-post-url="https://teaisgettingcold.tumblr.com/post/688538325048492032"><a rel="nofollow" href="https://teaisgettingcold.tumblr.com/post/688538325048492032" class="tumblelog">teaisgettingcold</a>reblogged this from<a rel="nofollow" href="https://supernaturaldaily.tumblr.com/" class="source_tumblelog">supernaturaldaily</a></span><div class="clear"></div></li><li class="note like tumblelog_elegias-rotineiras without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://elegias-rotineiras.tumblr.com/"><img src="https://64.media.tumblr.com/f5aad6f1665e7b58892b19aa9e31ecb1/62a590b27fd63500-74/s64x64u_c1/1c6c1c6b2eaffbad765af6d9e143aff08111e47d.jpg" class="avatar" alt=""></a><span class="action"><a rel="nofollow" href="https://elegias-rotineiras.tumblr.com/">elegias-rotineiras</a>liked this</span><div class="clear"></div></li><li class="note reblog tumblelog_greatcometcas original_post without_commentary"><a rel="nofollow" class="avatar_frame" target="_blank" href="https://greatcometcas.tumblr.com/"><img src="https://64.media.tumblr.com/a055e1b1e24b7df7f22368938a76f5ee/9d9023d3fa5dc132-e7/s64x64u_c1/5876929283e1372fc3e08b2e1bc3301754555bff.jpg" class="avatar" alt=""></a><span class="action" data-post-url="https://greatcometcas.tumblr.com/post/680248202756243458"><a rel="nofollow" href="https://greatcometcas.tumblr.com/" class="tumblelog">greatcometcas</a>posted this</span><div class="clear"></div></li><li class="note more_notes_link_container" style="text-align:center" id="more_notes_708971429266325504"><a class="more_notes_link" rel="nofollow" href="#" onclick='if(this.style.display="none",document.getElementById("notes_loading_708971429266325504").style.display="block",window.ActiveXObject)var tumblrReq=new ActiveXObject("Microsoft.XMLHTTP");else{if(!window.XMLHttpRequest)return!1;tumblrReq=new XMLHttpRequest}return tumblrReq.onreadystatechange=function(){if(4==tumblrReq.readyState){var e=tumblrReq.responseText.split("\x3c!-- START NOTES --\x3e")[1].split("\x3c!-- END NOTES --\x3e")[0];if(window.tumblrNotesLoaded&&0==tumblrNotesLoaded(e))return;var t=document.getElementById("more_notes_708971429266325504"),r=t.parentNode;r.removeChild(t),r.innerHTML+=e,window.tumblrNotesInserted&&tumblrNotesInserted(e)}},tumblrReq.open("GET","/notes/708971429266325504/0MpwEdfc3?from_c=1648735239&amp;large=true",!0),tumblrReq.send(),!1'>Show more notes</a><span class="notes_loading" id="notes_loading_708971429266325504" style="display:none">Loading...</span></li></ol></div></article>
+
+
+                <article
+                  id="post-708971429266325504"
+                  class="post p-r ox-h oy-h photo"
+                  data-permalink="https://odethm2.tumblr.com/post/708971429266325504/castiel-in-on-the-head-of-a-pin-id-two-close-up"
+                  data-tags="test tag_test  reblog"
+                >
+                  <div class="d-hidden npf-container">
+                    '{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:540,\x22height\x22:463,\x22poster\x22:{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:540,\x22height\x22:463,\x22url\x22:\x22https://44.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s540x810_f1/d5bb35ff1ca534879a6d268c4fa837a308df3824.gif\x22},\x22url\x22:\x22https://64.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s540x810/c5f5faa002fb1932531335519ab21bcbaead3d1f.gif\x22,\x22colors\x22:{\x22c0\x22:\x221e0b17\x22,\x22c1\x22:\x2299459b\x22},\x22has_original_dimensions\x22:true},{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:500,\x22height\x22:429,\x22poster\x22:{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:500,\x22height\x22:429,\x22url\x22:\x22https://44.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s500x750_f1/8482508160c71b0d7ff79d409fdec223caa39935.gif\x22},\x22url\x22:\x22https://64.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s500x750/717a53ad70a179614f617ce18bfa7447d67b77f8.gif\x22,\x22colors\x22:{\x22c0\x22:\x221e0b17\x22,\x22c1\x22:\x2299459b\x22}},{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:400,\x22height\x22:343,\x22poster\x22:{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:400,\x22height\x22:343,\x22url\x22:\x22https://44.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s400x600_f1/b04a5d26818e239cbf076b3883fb4189fa0343d1.gif\x22},\x22url\x22:\x22https://64.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s400x600/c5cd5493ff09ecc4fad8deacf7765f6128b52f9e.gif\x22,\x22colors\x22:{\x22c0\x22:\x221e0b17\x22,\x22c1\x22:\x2299459b\x22}},{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:250,\x22height\x22:214,\x22poster\x22:{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:250,\x22height\x22:214,\x22url\x22:\x22https://44.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s250x400_f1/700ffa143c323d8da386a64ffebbbb13b4185281.gif\x22},\x22url\x22:\x22https://64.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s250x400/d7439f271049aad0744259693d8a891fdc1c6465.gif\x22,\x22colors\x22:{\x22c0\x22:\x221e0b17\x22,\x22c1\x22:\x2299459b\x22}},{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:100,\x22height\x22:86,\x22poster\x22:{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:100,\x22height\x22:86,\x22url\x22:\x22https://44.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s100x200_f1/2ffe06cdfe0736d999d3c9a52d11891549a53ee8.gif\x22},\x22url\x22:\x22https://64.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s100x200/8a53c90c391f70075f13665ea144a2293bbd5927.gif\x22,\x22colors\x22:{\x22c0\x22:\x221e0b17\x22,\x22c1\x22:\x2299459b\x22}},{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:75,\x22height\x22:75,\x22poster\x22:{\x22media_key\x22:\x2212402eccaa2e5f4da0e85d1a2c4e4346:aca111f659d13b19-0f\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:75,\x22height\x22:75,\x22url\x22:\x22https://44.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s75x75_c1_f1/2b08d4f3ed74e1d0282163b7280887b8b81e4934.gif\x22},\x22url\x22:\x22https://64.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s75x75_c1/49a66a0d5f3a849604af210762aef59e8ca98124.gif\x22,\x22colors\x22:{\x22c0\x22:\x221e0b17\x22,\x22c1\x22:\x2299459b\x22},\x22cropped\x22:true}],\x22colors\x22:{\x22c0\x22:\x221e0b17\x22,\x22c1\x22:\x2299459b\x22}},{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:540,\x22height\x22:463,\x22poster\x22:{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:540,\x22height\x22:463,\x22url\x22:\x22https://44.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s540x810_f1/846c94a6e1b176bd7bfc1ea37fb9d1ece778c339.gif\x22},\x22url\x22:\x22https://64.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s540x810/16fbe3075de4b565eec1adc216ec5ed55c1ef8d6.gif\x22,\x22colors\x22:{\x22c0\x22:\x22581b42\x22,\x22c1\x22:\x22030315\x22},\x22has_original_dimensions\x22:true},{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:500,\x22height\x22:429,\x22poster\x22:{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:500,\x22height\x22:429,\x22url\x22:\x22https://44.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s500x750_f1/b9668b580a9ca44dfef62a9eb39be9dc7235c8d7.gif\x22},\x22url\x22:\x22https://64.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s500x750/b20da3bc2dda6efaf6de2c7442d99975f2ada00d.gif\x22,\x22colors\x22:{\x22c0\x22:\x22581b42\x22,\x22c1\x22:\x22030315\x22}},{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:400,\x22height\x22:343,\x22poster\x22:{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:400,\x22height\x22:343,\x22url\x22:\x22https://44.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s400x600_f1/b0249332657e67e43849503cf5cd20fe9f5654e9.gif\x22},\x22url\x22:\x22https://64.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s400x600/7ece244d1feac5eb79fa3b0796f958d4be76ea35.gif\x22,\x22colors\x22:{\x22c0\x22:\x22581b42\x22,\x22c1\x22:\x22030315\x22}},{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:250,\x22height\x22:214,\x22poster\x22:{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:250,\x22height\x22:214,\x22url\x22:\x22https://44.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s250x400_f1/6917eb3d3e37150d6b5c487db4baec193a5a9931.gif\x22},\x22url\x22:\x22https://64.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s250x400/a1c55267861f851ac8660c60e8011d00ceb7adc5.gif\x22,\x22colors\x22:{\x22c0\x22:\x22581b42\x22,\x22c1\x22:\x22030315\x22}},{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:100,\x22height\x22:86,\x22poster\x22:{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:100,\x22height\x22:86,\x22url\x22:\x22https://44.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s100x200_f1/24b8a7574e8e460493fca35f6ab86f238fd8f63a.gif\x22},\x22url\x22:\x22https://64.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s100x200/17e422fd7cf2c9133f045b43995b5d1f171da31e.gif\x22,\x22colors\x22:{\x22c0\x22:\x22581b42\x22,\x22c1\x22:\x22030315\x22}},{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:75,\x22height\x22:75,\x22poster\x22:{\x22media_key\x22:\x2241ae9377238f6db53f7543e24149456f:aca111f659d13b19-c4\x22,\x22type\x22:\x22image/gif\x22,\x22width\x22:75,\x22height\x22:75,\x22url\x22:\x22https://44.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s75x75_c1_f1/781cbb2582b12e4cd18dd492a1ce46158fa6c3a1.gif\x22},\x22url\x22:\x22https://64.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s75x75_c1/62d52a90e39026a62d514e1d5a2ed00a402218b8.gif\x22,\x22colors\x22:{\x22c0\x22:\x22581b42\x22,\x22c1\x22:\x22030315\x22},\x22cropped\x22:true}],\x22colors\x22:{\x22c0\x22:\x22581b42\x22,\x22c1\x22:\x22030315\x22}},{\x22type\x22:\x22text\x22,\x22text\x22:\x22CASTIEL
+                    in ON THE HEAD OF A
+                    PIN\x22,\x22formatting\x22:[{\x22type\x22:\x22bold\x22,\x22start\x22:0,\x22end\x22:8},{\x22type\x22:\x22small\x22,\x22start\x22:0,\x22end\x22:8},{\x22type\x22:\x22color\x22,\x22start\x22:0,\x22end\x22:1,\x22hex\x22:\x22#781c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:1,\x22end\x22:2,\x22hex\x22:\x22#6c1c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:2,\x22end\x22:3,\x22hex\x22:\x22#611c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:3,\x22end\x22:4,\x22hex\x22:\x22#561c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:4,\x22end\x22:5,\x22hex\x22:\x22#4a1c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:5,\x22end\x22:6,\x22hex\x22:\x22#3f1c84\x22},{\x22type\x22:\x22color\x22,\x22start\x22:6,\x22end\x22:7,\x22hex\x22:\x22#341c84\x22},{\x22type\x22:\x22small\x22,\x22start\x22:8,\x22end\x22:31},{\x22type\x22:\x22bold\x22,\x22start\x22:11,\x22end\x22:31},{\x22type\x22:\x22color\x22,\x22start\x22:11,\x22end\x22:12,\x22hex\x22:\x22#781c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:12,\x22end\x22:13,\x22hex\x22:\x22#741c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:14,\x22end\x22:15,\x22hex\x22:\x22#6c1c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:15,\x22end\x22:16,\x22hex\x22:\x22#681c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:16,\x22end\x22:17,\x22hex\x22:\x22#641c82\x22},{\x22type\x22:\x22color\x22,\x22start\x22:18,\x22end\x22:19,\x22hex\x22:\x22#5c1c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:19,\x22end\x22:20,\x22hex\x22:\x22#581c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:20,\x22end\x22:21,\x22hex\x22:\x22#541c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:21,\x22end\x22:22,\x22hex\x22:\x22#501c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:23,\x22end\x22:24,\x22hex\x22:\x22#481c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:24,\x22end\x22:25,\x22hex\x22:\x22#441c83\x22},{\x22type\x22:\x22color\x22,\x22start\x22:26,\x22end\x22:27,\x22hex\x22:\x22#3c1c84\x22},{\x22type\x22:\x22color\x22,\x22start\x22:28,\x22end\x22:29,\x22hex\x22:\x22#341c84\x22},{\x22type\x22:\x22color\x22,\x22start\x22:29,\x22end\x22:30,\x22hex\x22:\x22#301c84\x22},{\x22type\x22:\x22color\x22,\x22start\x22:30,\x22end\x22:31,\x22hex\x22:\x22#2c1c84\x22}]},{\x22type\x22:\x22text\x22,\x22text\x22:\x22[ID.
+                    Two close-up GIFs of Cas standing in Dean\u2019s motel room in 4x16 as he
+                    explains the plan for Alastair\u2019s interrogation. /END
+                    ID]\x22,\x22subtype\x22:\x22indented\x22,\x22formatting\x22:[{\x22type\x22:\x22small\x22,\x22start\x22:0,\x22end\x22:130}]}],\x22layout\x22:[],\x22post\x22:{\x22id\x22:\x22680248202756243458\x22},\x22blog\x22:{\x22name\x22:\x22greatcometcas\x22,\x22title\x22:\x22bury
+                    me in burgundy\x22,\x22description\x22:\x22\x3cp\x3espn \u2022 stranger
+                    things \u2022 iwtv \u2022 dave malloy\x3c/p\x3e\x3cp\x3e29 \u2022 deangirl
+                    \u2022 w*ncesties \x26amp; terfs
+                    dni\x3c/p\x3e\x22,\x22url\x22:\x22https://greatcometcas.tumblr.com/\x22,\x22uuid\x22:\x22t:CjmHxzKbhiPkmTAK8kK68Q\x22,\x22updated\x22:1676126923,\x22blog_view_url\x22:\x22https://www.tumblr.com/greatcometcas\x22,\x22key\x22:\x223plf8QCM3\x22,\x22theme\x22:{\x22header_full_width\x22:640,\x22header_full_height\x22:360,\x22header_focus_width\x22:640,\x22header_focus_height\x22:360,\x22avatar_shape\x22:\x22circle\x22,\x22background_color\x22:\x22#e3dcd0\x22,\x22body_font\x22:\x22Helvetica
+                    Neue\x22,\x22header_bounds\x22:\x22\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/844c585a0aa57dd5805a003671faad11/9d9023d3fa5dc132-69/s640x360/779a5ffd1200d589881a2f2a428c840e876ae845.gif\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/844c585a0aa57dd5805a003671faad11/9d9023d3fa5dc132-69/s2048x3072/ebf65a0b38199c5b023211b16ae81689c649018a.gif\x22,\x22header_image_poster\x22:\x22https://44.media.tumblr.com/844c585a0aa57dd5805a003671faad11/9d9023d3fa5dc132-69/s2048x3072_f1/3986112cc7de646a0a031c8b3845533e76a544f0.gif\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/844c585a0aa57dd5805a003671faad11/9d9023d3fa5dc132-69/s2048x3072/ebf65a0b38199c5b023211b16ae81689c649018a.gif\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#ab2411\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:true,\x22show_title\x22:true,\x22title_color\x22:\x22#444444\x22,\x22title_font\x22:\x22Gibson\x22,\x22title_font_weight\x22:\x22bold\x22},\x22can_message\x22:true,\x22share_likes\x22:false,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22can_show_badges\x22:true,\x22active\x22:true}}]}'
+                  </div>
+                  <time class="posts-metas d-flex-aj-center w-100"
+                    ><hr />
+                    <a
+                      href="https://odethm2.tumblr.com/post/708971429266325504/castiel-in-on-the-head-of-a-pin-id-two-close-up"
+                      class="d-flex-aj-center"
+                      ><b class="posts-counter"></b><i>49 seconds ago</i></a
+                    ></time
+                  >
+                  <div class="posts-contents">
+                    <div
+                      class="media-container photoset-container p-r oy-h w-100 d-flex-aj-center"
+                      data-layout='["1","1"]'
+                    >
+                      <div class="glider">
+                          <img
+                            src="https://64.media.tumblr.com/12402eccaa2e5f4da0e85d1a2c4e4346/aca111f659d13b19-0f/s540x810/c5f5faa002fb1932531335519ab21bcbaead3d1f.gif"
+                            alt="greatcometcas:“CASTIEL in ON THE HEAD OF A PIN“[ID. Two close-up GIFs of Cas standing in Dean’s motel room in 4x16 as he explains the plan for Alastair’s interrogation. /END ID]” ”"
+                            data-width="540"
+                            data-height="463"
+                            class="w-100 tumblr-lightbox-loaded-trigger"
+                          /><img
+                            src="https://64.media.tumblr.com/41ae9377238f6db53f7543e24149456f/aca111f659d13b19-c4/s540x810/16fbe3075de4b565eec1adc216ec5ed55c1ef8d6.gif"
+                            alt="greatcometcas:“CASTIEL in ON THE HEAD OF A PIN“[ID. Two close-up GIFs of Cas standing in Dean’s motel room in 4x16 as he explains the plan for Alastair’s interrogation. /END ID]” ”"
+                            data-width="540"
+                            data-height="463"
+                            class="w-100 tumblr-lightbox-loaded-trigger"
+                          />
+                      </div>
+                      <div role="tablist" class="dots glider-dots"></div>
+                    </div>
+                    <div class="posts-caption">
+                      <div class="trail-item">
+                        <div class="trail-user">
+                          <img
+                            src="https://64.media.tumblr.com/a055e1b1e24b7df7f22368938a76f5ee/9d9023d3fa5dc132-e7/s64x64u_c1/5876929283e1372fc3e08b2e1bc3301754555bff.jpg"
+                            alt="greatcometcas"
+                          /><b
+                            ><a href="https://greatcometcas.tumblr.com/post/680248202756243458"
+                              >greatcometcas</a
+                            ></b
+                          >
+                        </div>
+                        <div class="trail-content">
+                          <p>
+                            <b
+                              ><small
+                                ><span style="color:#781c82">C</span
+                                ><span style="color:#6c1c82">A</span
+                                ><span style="color:#611c82">S</span
+                                ><span style="color:#561c83">T</span
+                                ><span style="color:#4a1c83">I</span
+                                ><span style="color:#3f1c84">E</span
+                                ><span style="color:#341c84">L</span></small
+                              ></b
+                            ><small
+                              > in <b
+                                ><span style="color:#781c82">O</span
+                                ><span style="color:#741c82">N</span
+                                > <span style="color:#6c1c82">T</span
+                                ><span style="color:#681c82">H</span
+                                ><span style="color:#641c82">E</span
+                                > <span style="color:#5c1c83">H</span
+                                ><span style="color:#581c83">E</span
+                                ><span style="color:#541c83">A</span
+                                ><span style="color:#501c83">D</span
+                                > <span style="color:#481c83">O</span
+                                ><span style="color:#441c83">F</span
+                                > <span style="color:#3c1c84">A</span
+                                > <span style="color:#341c84">P</span
+                                ><span style="color:#301c84">I</span
+                                ><span style="color:#2c1c84">N</span></b
+                              ></small
+                            >
+                          </p>
+                          <blockquote>
+                            <p>
+                              <small
+                                >[ID. Two close-up GIFs of Cas standing in Dean’s motel room in
+                                4x16 as he explains the plan for Alastair’s interrogation. /END
+                                ID]<br
+                              /></small>
+                            </p>
+                          </blockquote>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>                
+
+                <article id="post-708975378624102400" class="post p-r ox-h oy-h text" data-permalink="https://odethm2.tumblr.com/post/708975378624102400/but-a-mermaid-has-no-tears-and-therefore-she" data-tags=""><div class="d-hidden npf-container">'{\x22content\x22:[{\x22type\x22:\x22text\x22,\x22text\x22:\x22But a mermaid has no tears, and therefore she suffers so much more.\x22,\x22subtype\x22:\x22quote\x22},{\x22type\x22:\x22text\x22,\x22text\x22:\x22Hans Christian Andersen,\u00a0The Little Mermaid\x22,\x22formatting\x22:[{\x22type\x22:\x22bold\x22,\x22start\x22:0,\x22end\x22:25},{\x22type\x22:\x22link\x22,\x22start\x22:25,\x22end\x22:43,\x22url\x22:\x22https://href.li/?https://www.goodreads.com/quotes/460392-but-a-mermaid-has-no-tears-and-therefore-she-suffers\x22}]}],\x22layout\x22:[],\x22trail\x22:[]}'</div><time class="posts-metas d-flex-aj-center w-100"><hr><a href="https://odethm2.tumblr.com/post/708975378624102400/but-a-mermaid-has-no-tears-and-therefore-she" class="d-flex-aj-center"><b class="posts-counter"></b><i>3 minutes ago</i></a></time><div class="posts-contents"><div class="text-post-container"><div class="posts-caption"><div class="trail-item"><div class="trail-user"><img src="https://assets.tumblr.com/images/default_avatar/cube_open_64.png" alt="odethm2"><b><a href="https://odethm2.tumblr.com/post/708975378624102400/but-a-mermaid-has-no-tears-and-therefore-she">odethm2</a></b></div><div class="trail-content"><p class="npf_quote">But a mermaid has no tears, and therefore she suffers so much more.</p><p><b>Hans Christian Andersen,&nbsp;</b><a href="https://href.li/?https://www.goodreads.com/quotes/460392-but-a-mermaid-has-no-tears-and-therefore-she-suffers">The Little Mermaid</a></p></div></div></div></div></div></article>
+
+                <article id="post-708924669220274176" class="post p-r ox-h oy-h photo" data-permalink="https://odethm2.tumblr.com/post/708924669220274176/tripudios-norway-in-1970-by-stuart-woodman" data-tags="reblog"><div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_m00ah86M2W1qfhbc2o1_500.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:500,\x22height\x22:333,\x22has_original_dimensions\x22:true},{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_m00ah86M2W1qfhbc2o1_400.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:400,\x22height\x22:266},{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_m00ah86M2W1qfhbc2o1_250.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:250,\x22height\x22:167},{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_m00ah86M2W1qfhbc2o1_100.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:100,\x22height\x22:67},{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_m00ah86M2W1qfhbc2o1_75sq.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:75,\x22height\x22:75,\x22cropped\x22:true}],\x22attribution\x22:{\x22type\x22:\x22link\x22,\x22url\x22:\x22http://www.flickr.com/photos/stuartwoodman/3092566762/\x22,\x22url_redirect\x22:\x22https://href.li/?http://www.flickr.com/photos/stuartwoodman/3092566762/\x22}},{\x22type\x22:\x22text\x22,\x22text\x22:\x22Norway in 1970 (by stuart woodman)\x22,\x22formatting\x22:[{\x22type\x22:\x22link\x22,\x22start\x22:19,\x22end\x22:33,\x22url\x22:\x22https://href.li/?http://www.flickr.com/photos/stuartwoodman/3092566762/\x22}]}],\x22layout\x22:[],\x22post\x22:{\x22id\x22:\x2218315889061\x22},\x22blog\x22:{\x22name\x22:\x22adrifts\x22,\x22title\x22:\x22ADRIFTS\x22,\x22description\x22:\x22Design vs Nature\x22,\x22url\x22:\x22https://adrifts.tumblr.com/\x22,\x22uuid\x22:\x22t:yM0mk9CjYcF-VCUv5uAcbA\x22,\x22updated\x22:1619531263,\x22blog_view_url\x22:\x22https://www.tumblr.com/adrifts\x22,\x22key\x22:\x22ZleqLTMlB\x22,\x22theme\x22:{\x22header_full_width\x22:3000,\x22header_full_height\x22:1055,\x22avatar_shape\x22:\x22circle\x22,\x22background_color\x22:\x22#ffffff\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x22\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/a81c88cba9f9993dee9ce842eeeeb4f5/c36b3237e79b5c18-4f/s3000x1055/2eedc8cafd5f8562b38558a114c906225ed4ce3f.png\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/a81c88cba9f9993dee9ce842eeeeb4f5/c36b3237e79b5c18-4f/s2048x3072/9602521558c97d871626a905d453e62bb7339e2a.png\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/a81c88cba9f9993dee9ce842eeeeb4f5/c36b3237e79b5c18-4f/s2048x3072/9602521558c97d871626a905d453e62bb7339e2a.png\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#e92428\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:false,\x22show_title\x22:true,\x22title_color\x22:\x22#000000\x22,\x22title_font\x22:\x22Alternate Gothic\x22,\x22title_font_weight\x22:\x22regular\x22},\x22can_message\x22:true,\x22share_likes\x22:true,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22can_show_badges\x22:true,\x22active\x22:true}}]}'</div><time class="posts-metas d-flex-aj-center w-100"><hr><a href="https://odethm2.tumblr.com/post/708924669220274176/tripudios-norway-in-1970-by-stuart-woodman" class="d-flex-aj-center"><b class="posts-counter"></b><i>27 seconds ago</i></a></time><div class="posts-contents"><div class="media-container photo-container oy-h w-100 d-flex-aj-center"><img src="https://64.media.tumblr.com/tumblr_m00ah86M2W1qfhbc2o1_500.jpg" alt="tripudios:“Norway in 1970 (by stuart woodman)”" data-width="500" data-height="333" class="w-100 tumblr-lightbox-loaded-trigger"></div><div class="posts-caption"><div class="trail-item"><div class="trail-user trail-user-deactivated"><img src="https://assets.tumblr.com/images/default_avatar/cube_open_64.png" alt="tripudios"><b><a href="">tripudios</a></b></div><div class="trail-content"><p>Norway in 1970 (by <a href="https://href.li/?http://www.flickr.com/photos/stuartwoodman/3092566762/">stuart woodman</a>)</p></div></div></div></div></article>
+
+                <article id="post-708926982366396416" class="post p-r ox-h oy-h audio" data-permalink="https://odethm2.tumblr.com/post/708926982366396416/if-you-were-church-id-get-on-my-knees" data-tags="reblog"><div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22audio\x22,\x22provider\x22:\x22tumblr\x22,\x22url\x22:null,\x22title\x22:\x22Church\x22,\x22artist\x22:\x22Fall Out Boy\x22,\x22embed_html\x22:\x22\x3ciframe class=\\\x22tumblr_audio_player tumblr_audio_player_708926982366396416\\\x22 src=\\\x22https://odethm2.tumblr.com/post/708926982366396416/audio_player_iframe/odethm2/tumblr_LjfVE74EH6L6NqWrv?audio_file=https%3A%2F%2Fa.tumblr.com%2Ftumblr_p2xsvfpZj01qaa0v4o1.mp3\\\x22 frameborder=\\\x220\\\x22 allowtransparency=\\\x22true\\\x22 scrolling=\\\x22no\\\x22 width=\\\x22540\\\x22 height=\\\x22169\\\x22\x3e\x3c/iframe\x3e\x22,\x22media\x22:{\x22url\x22:\x22https://a.tumblr.com/tumblr_p2xsvfpZj01qaa0v4o1.mp3?play_key=e6ba8f023e92bbb5aaf06052cd0c6551\x22,\x22type\x22:\x22audio/mpeg\x22},\x22poster\x22:[{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_p2xsvfpZj01qaa0v4o1_1516590700_cover.png\x22,\x22type\x22:\x22image/png\x22,\x22width\x22:500,\x22height\x22:500}]},{\x22type\x22:\x22text\x22,\x22text\x22:\x22If you were church\\nI\'d get on my knees\x22,\x22subtype\x22:\x22heading2\x22,\x22formatting\x22:[{\x22type\x22:\x22italic\x22,\x22start\x22:0,\x22end\x22:19},{\x22type\x22:\x22bold\x22,\x22start\x22:0,\x22end\x22:19},{\x22type\x22:\x22italic\x22,\x22start\x22:19,\x22end\x22:38},{\x22type\x22:\x22bold\x22,\x22start\x22:19,\x22end\x22:38}]}],\x22layout\x22:[{\x22type\x22:\x22rows\x22,\x22display\x22:[{\x22blocks\x22:[0]},{\x22blocks\x22:[1]}]}],\x22post\x22:{\x22id\x22:\x22169984619378\x22},\x22blog\x22:{\x22name\x22:\x22lesbianshepard\x22,\x22title\x22:\x22[SOUNDS OF BRUTAL PEER REVIEW]\x22,\x22description\x22:\x22hollis. 25. currently studying classics and archaeology. nonbinary with they/them pronouns.\x22,\x22url\x22:\x22https://lesbianshepard.tumblr.com/\x22,\x22uuid\x22:\x22t:2tHsYmFBH0lqWNE3qatbiA\x22,\x22updated\x22:1676085032,\x22blog_view_url\x22:\x22https://www.tumblr.com/lesbianshepard\x22,\x22key\x22:\x22pzty4hUDK\x22,\x22theme\x22:{\x22header_full_width\x22:921,\x22header_full_height\x22:660,\x22header_focus_width\x22:921,\x22header_focus_height\x22:660,\x22avatar_shape\x22:\x22square\x22,\x22background_color\x22:\x22#FFFFFF\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x22\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/8ac0f1e4ef5a9139dd8021115ae93f51/ac5e1322ff67f82b-a4/s921x660/68aa9bd29116a46e9b33c2b2a2f60453d4d90a07.png\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/8ac0f1e4ef5a9139dd8021115ae93f51/ac5e1322ff67f82b-a4/s2048x3072/eb6897bf6d262fa5c8be10b39a81b9d82bc39e2e.png\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/8ac0f1e4ef5a9139dd8021115ae93f51/ac5e1322ff67f82b-a4/s2048x3072/eb6897bf6d262fa5c8be10b39a81b9d82bc39e2e.png\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#9CC7E1\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:true,\x22show_title\x22:true,\x22title_color\x22:\x22#444444\x22,\x22title_font\x22:\x22Gibson\x22,\x22title_font_weight\x22:\x22regular\x22},\x22can_message\x22:true,\x22share_likes\x22:false,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22can_show_badges\x22:true,\x22active\x22:true}}]}'</div><time class="posts-metas d-flex-aj-center w-100"><hr><a href="https://odethm2.tumblr.com/post/708926982366396416/if-you-were-church-id-get-on-my-knees" class="d-flex-aj-center"><b class="posts-counter"></b><i>8 seconds ago</i></a></time><div class="posts-contents"><div class="media-container audio-container oy-h"><div class="audio-player"><div class="audio-player-container" style="background-image:url(https://64.media.tumblr.com/tumblr_p2xsvfpZj01qaa0v4o1_1516590700_cover.png)"><span id="audio_player_708926982366396416"><div class="audio_player"><iframe class="tumblr_audio_player tumblr_audio_player_708926982366396416" src="https://odethm2.tumblr.com/post/708926982366396416/audio_player_iframe/odethm2/tumblr_LjfVE74EH6L6NqWrv?audio_file=https%3A%2F%2Fa.tumblr.com%2Ftumblr_p2xsvfpZj01qaa0v4o1.mp3&amp;color=white&amp;simple=1" frameborder="0" allowtransparency="true" scrolling="no" width="207" height="27"></iframe></div></span></div><div class="audio-metas"><h3 class="audio-trackname">Church</h3><div class="audio-artist d-flex-a-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-music"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>Fall Out Boy</div><div class="audio-album d-flex-a-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-disc"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg>MANIA</div></div></div></div></div></article>
+
+                <article id="post-708929012956807168" class="post p-r ox-h oy-h answer" data-permalink="https://odethm2.tumblr.com/post/708929012956807168/hi-neo-ive-been-trying-to-use-your-un-nest" data-tags="reblog"><div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22text\x22,\x22text\x22:\x22Hi Neo! I\'ve been trying to use your un-nest caption script, which is awesome but it seems to only work for me on photoset posts. I use the PXU photoset script which I always use first and then I put your script in after and it only seems to trigger/work on photosets and not regular photos. I\'ve tried to do it different ways and the script source is the updated version. I tried using without PXU and it still won\'t work. Do you know what I\'m doing wrong? \x22},{\x22type\x22:\x22text\x22,\x22text\x22:\x22Hey!\u00a0\x22},{\x22type\x22:\x22text\x22,\x22text\x22:\x22From the sound of it, you\u2019re more or less using something like this:\u00a0\x22},{\x22type\x22:\x22text\x22,\x22text\x22:\x22$(\'.photo-slideshow\').pxuPhotoset({ \u00a0 OPTIONS}).unnest({ \u00a0 OPTIONS});\x22,\x22formatting\x22:[{\x22type\x22:\x22bold\x22,\x22start\x22:35,\x22end\x22:45},{\x22type\x22:\x22italic\x22,\x22start\x22:35,\x22end\x22:45},{\x22type\x22:\x22bold\x22,\x22start\x22:57,\x22end\x22:67},{\x22type\x22:\x22italic\x22,\x22start\x22:57,\x22end\x22:67}]},{\x22type\x22:\x22text\x22,\x22text\x22:\x22I can\u2019t be sure and I can\u2019t guess what you\u2019ve put in your code, so all I can do is show you the correct syntax for both of the scripts inits:\u00a0\x22},{\x22type\x22:\x22text\x22,\x22text\x22:\x22$(\'.photo-slideshow\').pxuPhotoset({ \u00a0 OPTIONS});$(\'article\').unnest({ OPTIONS});\x22,\x22formatting\x22:[{\x22type\x22:\x22bold\x22,\x22start\x22:35,\x22end\x22:45},{\x22type\x22:\x22italic\x22,\x22start\x22:35,\x22end\x22:45},{\x22type\x22:\x22bold\x22,\x22start\x22:50,\x22end\x22:59},{\x22type\x22:\x22bold\x22,\x22start\x22:70,\x22end\x22:80},{\x22type\x22:\x22italic\x22,\x22start\x22:70,\x22end\x22:80}]},{\x22type\x22:\x22text\x22,\x22text\x22:\x22Make sure to change\u00a0\u2018article\u2019 to your actual post selector, like .posts or .articles or .post, \u2026\x22},{\x22type\x22:\x22text\x22,\x22text\x22:\x22If you still have more trouble, do right click on your page \x3e view source, select all + copy, then paste your source code into freetexthost. Send me the generated link (indicating it\u2019s a follow-up to this question of course) without forgetting to change the \u201chttp://freetexthost.com/\u201d part of the URL to just \u201cFTH\u201d\u00a0\u00a0\x22,\x22formatting\x22:[{\x22type\x22:\x22link\x22,\x22start\x22:127,\x22end\x22:139,\x22url\x22:\x22https://href.li/?http://freetexthost.com\x22},{\x22type\x22:\x22bold\x22,\x22start\x22:127,\x22end\x22:139},{\x22type\x22:\x22italic\x22,\x22start\x22:259,\x22end\x22:283},{\x22type\x22:\x22link\x22,\x22start\x22:259,\x22end\x22:283,\x22url\x22:\x22https://href.li/?http://freetexthost.com/\x22},{\x22type\x22:\x22bold\x22,\x22start\x22:310,\x22end\x22:313}]},{\x22type\x22:\x22text\x22,\x22text\x22:\x22Have a nice day :)\x22}],\x22layout\x22:[{\x22type\x22:\x22ask\x22,\x22blocks\x22:[0]}],\x22post\x22:{\x22id\x22:\x22154816336329\x22},\x22blog\x22:{\x22name\x22:\x22neothm\x22,\x22title\x22:\x2200111011\x22,\x22description\x22:\x22[SEND YOUR MESSAGES FROM THE BLOG]\x3cbr /\x3ethemes, pages, and very intense discussions brought to you by \x3ca href=\\\x22http://mtrics.tumblr.com/\\\x22\x3e@mtrics\x3c/a\x3e\x22,\x22url\x22:\x22https://neothm.com/\x22,\x22uuid\x22:\x22t:T7bJO0Dvq8LH0eO9rR-1sw\x22,\x22updated\x22:1595357726,\x22blog_view_url\x22:\x22https://www.tumblr.com/neothm\x22,\x22key\x22:\x22E6y2wjCai\x22,\x22theme\x22:{\x22header_full_width\x22:3000,\x22header_full_height\x22:1055,\x22header_focus_width\x22:551,\x22header_focus_height\x22:310,\x22avatar_shape\x22:\x22circle\x22,\x22background_color\x22:\x22#FFFFFF\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x220,575,310,24\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/9d0f5ae4da65c7ee33e04f2a374b66d1/dcb902e63c4d1983-87/s3000x1055/8a77d6723a722f846fc0b26d75f5c522263e371c.jpg\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/9d0f5ae4da65c7ee33e04f2a374b66d1/dcb902e63c4d1983-87/s2048x3072_c800,0,19167,29384/4b46f5a9e073cdb7546b0f537b3c98e401b4a7e5.jpg\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/9d0f5ae4da65c7ee33e04f2a374b66d1/dcb902e63c4d1983-87/s2048x3072/a085308474129053634d6b470e9e27bb8afaed75.jpg\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#bd806d\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:true,\x22show_title\x22:true,\x22title_color\x22:\x22#9c9a96\x22,\x22title_font\x22:\x22Avalon\x22,\x22title_font_weight\x22:\x22bold\x22},\x22can_message\x22:true,\x22share_likes\x22:false,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22can_show_badges\x22:true,\x22active\x22:true}}]}'</div><time class="posts-metas d-flex-aj-center w-100"><hr><a href="https://odethm2.tumblr.com/post/708929012956807168/hi-neo-ive-been-trying-to-use-your-un-nest" class="d-flex-aj-center"><b class="posts-counter"></b><i>12 seconds ago</i></a></time><div class="posts-contents"><div class="text-post-container"><div class="posts-caption"><div class="trail-item"><div class="trail-user"><img src="https://assets.tumblr.com/images/anonymous_avatar_64.gif"><b>Anonymous</b></div><div class="trail-content">Hi Neo! I've been trying to use your un-nest caption script, which is awesome but it seems to only work for me on photoset posts. I use the PXU photoset script which I always use first and then I put your script in after and it only seems to trigger/work on photosets and not regular photos. I've tried to do it different ways and the script source is the updated version. I tried using without PXU and it still won't work. Do you know what I'm doing wrong?</div></div><div class="trail-item"><div class="trail-user"><img src="https://64.media.tumblr.com/53724e3026a974aa4bfe5e8c831d0044/c8b78f5751ab3592-7b/s64x64u_c1/2dc7970f1fa479cabbdfd334331feab8ad5ff373.png"><b><a href="https://neothm.com/post/154816336329/hi-neo-ive-been-trying-to-use-your-un-nest" class="answerer">neothm</a></b></div><div class="trail-content"><p>Hey!&nbsp;<br></p><p>From the sound of it, you’re more or less using something like this:&nbsp;<br></p><pre>$('.photo-slideshow').pxuPhotoset({<b><i><br> &nbsp; OPTIONS</i></b><br>}).unnest({ 
+<b><i> &nbsp; OPTIONS
+</i></b>});</pre><p>I can’t be sure and I can’t guess what you’ve put in your code, so all I can do is show you the correct syntax for both of the scripts inits:&nbsp;</p><pre>$('.photo-slideshow').pxuPhotoset({<b><i><br> &nbsp; OPTIONS</i></b><br>});
+<br>$(<b>'article'</b>).unnest({ 
+<b><i>   OPTIONS
+</i></b>});</pre><p>Make sure to change&nbsp;‘article’ to your actual post selector, like .posts or .articles or .post, …</p><p>If you still have more trouble, do right click on your page &gt; view source, select all + copy, then paste your source code into<a href="https://href.li/?http://freetexthost.com"><b>freetexthost</b></a>. Send me the generated link (indicating it’s a follow-up to this question of course) without forgetting to change the “<i><a href="https://href.li/?http://freetexthost.com/">http://freetexthost.com/</a></i>” part of the URL to just “<b>FTH</b>”&nbsp;&nbsp;</p><p>Have a nice day :)</p></div></div></div></div></div></article>
+
+                <article id="post-708924530018697216" class="post p-r ox-h oy-h photo" data-permalink="https://odethm2.tumblr.com/post/708924530018697216" data-tags="reblog"><div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_li6bloZTI71qbvjcao1_1280.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:800,\x22height\x22:536,\x22has_original_dimensions\x22:true},{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_li6bloZTI71qbvjcao1_640.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:640,\x22height\x22:429},{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_li6bloZTI71qbvjcao1_540.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:540,\x22height\x22:362},{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_li6bloZTI71qbvjcao1_500.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:500,\x22height\x22:335},{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_li6bloZTI71qbvjcao1_400.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:400,\x22height\x22:268},{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_li6bloZTI71qbvjcao1_250.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:250,\x22height\x22:168},{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_li6bloZTI71qbvjcao1_100.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:100,\x22height\x22:67},{\x22url\x22:\x22https://64.media.tumblr.com/tumblr_li6bloZTI71qbvjcao1_75sq.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:75,\x22height\x22:75,\x22cropped\x22:true}],\x22attribution\x22:{\x22type\x22:\x22link\x22,\x22url\x22:\x22http://3lostkids.tumblr.com\x22,\x22url_redirect\x22:\x22https://href.li/?http://3lostkids.tumblr.com\x22}}],\x22layout\x22:[],\x22post\x22:{\x22id\x22:\x223908007107\x22},\x22blog\x22:{\x22name\x22:\x22qwerl\x22,\x22title\x22:\x2225yr old moody cancer\x22,\x22description\x22:\x22\x22,\x22url\x22:\x22https://qwerl.tumblr.com/\x22,\x22uuid\x22:\x22t:mk_nbi85s1i4F3Swgj8tFA\x22,\x22updated\x22:1653503788,\x22blog_view_url\x22:\x22https://www.tumblr.com/qwerl\x22,\x22key\x22:\x22DfzpQ9SiK\x22,\x22theme\x22:{\x22header_full_width\x22:1280,\x22header_full_height\x22:1280,\x22header_focus_width\x22:543,\x22header_focus_height\x22:306,\x22avatar_shape\x22:\x22circle\x22,\x22background_color\x22:\x22#FFFFFF\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x22461,897,767,354\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/32e8a418ba699e58850c7a422634adc8/d5bef80df938a7b7-f1/s1280x1280/98a1341f429bb5e152917a147392d82dc2de22f6.png\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/32e8a418ba699e58850c7a422634adc8/d5bef80df938a7b7-f1/s2048x3072_c27656,36016,70078,59922/9137e976ef7166d485b971aadc476a62e98bf400.png\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/32e8a418ba699e58850c7a422634adc8/d5bef80df938a7b7-f1/s2048x3072/64f15914623dff18b38554e0c675c45e8efcd489.png\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#FFFFFF\x22,\x22show_avatar\x22:true,\x22show_description\x22:false,\x22show_header_image\x22:true,\x22show_title\x22:true,\x22title_color\x22:\x22#72ff8c\x22,\x22title_font\x22:\x22Ziclets\x22,\x22title_font_weight\x22:\x22bold\x22},\x22can_message\x22:true,\x22share_likes\x22:false,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22can_show_badges\x22:true,\x22active\x22:true}}]}'</div><time class="posts-metas d-flex-aj-center w-100"><hr><a href="https://odethm2.tumblr.com/post/708924530018697216" class="d-flex-aj-center"><b class="posts-counter"></b><i>1 hour ago</i></a></time><div class="posts-contents"><div class="media-container photo-container oy-h w-100 d-flex-aj-center"><img src="https://64.media.tumblr.com/tumblr_li6bloZTI71qbvjcao1_1280.jpg" alt="" data-width="800" data-height="536" class="w-100 tumblr-lightbox-loaded-trigger"></div></div></article>
+
+
+
+                <article id="post-708926148812439552" class="post p-r ox-h oy-h text" data-permalink="https://odethm2.tumblr.com/post/708926148812439552" data-tags="reblog"><div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22text\x22,\x22text\x22:\x22bitches love my ugly t shirts and questionable music taste\x22}],\x22layout\x22:[],\x22post\x22:{\x22id\x22:\x22703050389861367808\x22},\x22blog\x22:{\x22name\x22:\x22velmaifsheslayed\x22,\x22title\x22:\x22journal\x22,\x22description\x22:\x22\x3cp\x3ei have thoughts \x3c/p\x3e\x22,\x22url\x22:\x22https://www.tumblr.com/velmaifsheslayed\x22,\x22uuid\x22:\x22t:uvQddUP5BJYn-uOLGI0ywg\x22,\x22updated\x22:1675889141,\x22blog_view_url\x22:\x22https://www.tumblr.com/velmaifsheslayed\x22,\x22key\x22:\x22G3KPp9I9c\x22,\x22theme\x22:{\x22header_full_width\x22:1536,\x22header_full_height\x22:2048,\x22header_focus_width\x22:1323,\x22header_focus_height\x22:744,\x22avatar_shape\x22:\x22circle\x22,\x22background_color\x22:\x22#35276D\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x2277,1323,821,0\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/36dea929ccfc779641e2283cf63125d3/fc0f5ba117c28748-d0/s1536x2048/65010873f42ef03f5e70a363907205f1f7c382a9.jpg\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/36dea929ccfc779641e2283cf63125d3/fc0f5ba117c28748-d0/s2048x3072_c0,3760,86133,40088/799bc43d834c2074bcc4dca5d47510bb681771b5.jpg\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/36dea929ccfc779641e2283cf63125d3/fc0f5ba117c28748-d0/s2048x3072/a87f54009d48b23e3a25be3de1ef989f198e8021.jpg\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#463491\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:true,\x22show_title\x22:true,\x22title_color\x22:\x22#FFFFFF\x22,\x22title_font\x22:\x22Gibson\x22,\x22title_font_weight\x22:\x22bold\x22},\x22can_message\x22:true,\x22share_likes\x22:false,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22can_show_badges\x22:true,\x22active\x22:true}},{\x22content\x22:[{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22media_key\x22:\x22fc2075e03ae97ea5c53f0006b134442a:2cc7c288ce0fdad7-03\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:540,\x22height\x22:540,\x22url\x22:\x22https://64.media.tumblr.com/fc2075e03ae97ea5c53f0006b134442a/2cc7c288ce0fdad7-03/s540x810/5037952a44afadafe74eaafaec2306bc3911e44c.jpg\x22,\x22has_original_dimensions\x22:true},{\x22media_key\x22:\x22fc2075e03ae97ea5c53f0006b134442a:2cc7c288ce0fdad7-03\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:500,\x22height\x22:500,\x22url\x22:\x22https://64.media.tumblr.com/fc2075e03ae97ea5c53f0006b134442a/2cc7c288ce0fdad7-03/s500x750/0e855b18f4fc939e275df9d68cb48a6aaa29334a.jpg\x22},{\x22media_key\x22:\x22fc2075e03ae97ea5c53f0006b134442a:2cc7c288ce0fdad7-03\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:400,\x22height\x22:400,\x22url\x22:\x22https://64.media.tumblr.com/fc2075e03ae97ea5c53f0006b134442a/2cc7c288ce0fdad7-03/s400x600/4eaab9a93b079d296b12ed9422b87ae5ab7c2ec8.jpg\x22},{\x22media_key\x22:\x22fc2075e03ae97ea5c53f0006b134442a:2cc7c288ce0fdad7-03\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:250,\x22height\x22:250,\x22url\x22:\x22https://64.media.tumblr.com/fc2075e03ae97ea5c53f0006b134442a/2cc7c288ce0fdad7-03/s250x400/25282944370a6ca023ee18eb1731ee2e1112cf4a.jpg\x22},{\x22media_key\x22:\x22fc2075e03ae97ea5c53f0006b134442a:2cc7c288ce0fdad7-03\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:100,\x22height\x22:100,\x22url\x22:\x22https://64.media.tumblr.com/fc2075e03ae97ea5c53f0006b134442a/2cc7c288ce0fdad7-03/s100x200/03c84958f34f0a67fa4c760fe20ffdae9df9180d.jpg\x22},{\x22media_key\x22:\x22fc2075e03ae97ea5c53f0006b134442a:2cc7c288ce0fdad7-03\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:75,\x22height\x22:75,\x22url\x22:\x22https://64.media.tumblr.com/fc2075e03ae97ea5c53f0006b134442a/2cc7c288ce0fdad7-03/s75x75_c1/5906802e07c25d208e77133055fcdb2628119450.jpg\x22,\x22cropped\x22:true}],\x22colors\x22:{\x22c0\x22:\x22060301\x22,\x22c1\x22:\x22070401\x22,\x22c2\x22:\x222f2417\x22,\x22c3\x22:\x22473b32\x22,\x22c4\x22:\x22ef9503\x22},\x22exif\x22:{\x22Time\x22:\x221670799998\x22}}],\x22layout\x22:[],\x22post\x22:{\x22id\x22:\x22708267493241864192\x22},\x22blog\x22:{\x22name\x22:\x22dylf-lover-natural\x22,\x22title\x22:\x22welcome to hell\x22,\x22description\x22:\x22? danni//20s//leviathan!cas is my boo ?\x22,\x22url\x22:\x22https://www.tumblr.com/dylf-lover-natural\x22,\x22uuid\x22:\x22t:-21Yn8poxViW9oSCpuqntA\x22,\x22updated\x22:1676073673,\x22blog_view_url\x22:\x22https://www.tumblr.com/dylf-lover-natural\x22,\x22key\x22:\x22ZuHqxLcu0\x22,\x22theme\x22:{\x22header_full_width\x22:666,\x22header_full_height\x22:375,\x22avatar_shape\x22:\x22square\x22,\x22background_color\x22:\x22#6D1F14\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x22\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/dd666e468a077fcbe00fcf5199b8b7f0/ee2c55e8a93bc879-a9/s666x375/884821c0fad80e4066516621dd447ed64ee24ae4.png\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/dd666e468a077fcbe00fcf5199b8b7f0/ee2c55e8a93bc879-a9/s2048x3072/e4dcbf6f8aa4299fecdb0dadadf054727a19bca1.png\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/dd666e468a077fcbe00fcf5199b8b7f0/ee2c55e8a93bc879-a9/s2048x3072/e4dcbf6f8aa4299fecdb0dadadf054727a19bca1.png\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#B9513C\x22,\x22show_avatar\x22:false,\x22show_description\x22:true,\x22show_header_image\x22:true,\x22show_title\x22:true,\x22title_color\x22:\x22#E38C7A\x22,\x22title_font\x22:\x22Clarendon Text Pro\x22,\x22title_font_weight\x22:\x22regular\x22},\x22can_message\x22:true,\x22share_likes\x22:false,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22can_show_badges\x22:true,\x22active\x22:true}}]}'</div><time class="posts-metas d-flex-aj-center w-100"><hr><a href="https://odethm2.tumblr.com/post/708926148812439552" class="d-flex-aj-center"><b class="posts-counter"></b><i>18 seconds ago</i></a></time><div class="posts-contents"><div class="text-post-container"><div class="posts-caption"><div class="trail-item"><div class="trail-user"><img src="https://64.media.tumblr.com/a2a267a2eae1745d19a94c162eb0a01c/48f5651ac6a5798e-be/s64x64u_c1/012b9373779301021331e876e3e71091c1a12735.pnj" alt="velmaifsheslayed"><b><a href="https://velmaifsheslayed.tumblr.com/post/703050389861367808">velmaifsheslayed</a></b></div><div class="trail-content"><p>bitches love my ugly t shirts and questionable music taste</p></div></div><div class="trail-item"><div class="trail-user"><img src="https://64.media.tumblr.com/ebd9f4a15d884d8ae7ed38de484cad70/362e021f1e86a7a6-28/s64x64u_c1/54209256f013857f22ec0248ead451b9e48ce590.pnj" alt="dylf-lover-natural"><b><a href="https://dylf-lover-natural.tumblr.com/post/708267493241864192">dylf-lover-natural</a></b></div><div class="trail-content"><div class="npf_row"><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/fc2075e03ae97ea5c53f0006b134442a/2cc7c288ce0fdad7-03/s1280x1920/8bf9795c665729eade5dc8c48cb802f1d1cd6d1c.jpg" data-big-photo-height="540" data-big-photo-width="540"><img class="post_media_photo image" src="https://64.media.tumblr.com/fc2075e03ae97ea5c53f0006b134442a/2cc7c288ce0fdad7-03/s500x750/0e855b18f4fc939e275df9d68cb48a6aaa29334a.jpg" alt="image"></a></figure></div></div></div></div></div></div></div></article>
+
+                <article id="post-708924557848969216" class="post p-r ox-h oy-h photo" data-permalink="https://odethm2.tumblr.com/post/708924557848969216/awayfromemptygold-sleazeburger-mercury-in" data-tags="reblog"><div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22url\x22:\x22https://64.media.tumblr.com/2fad58cd08f6ad03a00e828121560bbb/tumblr_o19nggFwkj1qali1no1_1280.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:1280,\x22height\x22:1280},{\x22url\x22:\x22https://64.media.tumblr.com/2fad58cd08f6ad03a00e828121560bbb/tumblr_o19nggFwkj1qali1no1_640.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:640,\x22height\x22:640},{\x22url\x22:\x22https://64.media.tumblr.com/2fad58cd08f6ad03a00e828121560bbb/tumblr_o19nggFwkj1qali1no1_540.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:540,\x22height\x22:540},{\x22url\x22:\x22https://64.media.tumblr.com/2fad58cd08f6ad03a00e828121560bbb/tumblr_o19nggFwkj1qali1no1_500.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:500,\x22height\x22:500},{\x22url\x22:\x22https://64.media.tumblr.com/2fad58cd08f6ad03a00e828121560bbb/tumblr_o19nggFwkj1qali1no1_400.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:400,\x22height\x22:400},{\x22url\x22:\x22https://64.media.tumblr.com/2fad58cd08f6ad03a00e828121560bbb/tumblr_o19nggFwkj1qali1no1_250.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:250,\x22height\x22:250},{\x22url\x22:\x22https://64.media.tumblr.com/2fad58cd08f6ad03a00e828121560bbb/tumblr_o19nggFwkj1qali1no1_100.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:100,\x22height\x22:100},{\x22url\x22:\x22https://64.media.tumblr.com/2fad58cd08f6ad03a00e828121560bbb/tumblr_o19nggFwkj1qali1no1_75sq.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:75,\x22height\x22:75,\x22cropped\x22:true}]},{\x22type\x22:\x22image\x22,\x22media\x22:[{\x22url\x22:\x22https://64.media.tumblr.com/db415353b334d6d0d0083b41135d0973/tumblr_o19nggFwkj1qali1no2_1280.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:1280,\x22height\x22:1280},{\x22url\x22:\x22https://64.media.tumblr.com/db415353b334d6d0d0083b41135d0973/tumblr_o19nggFwkj1qali1no2_640.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:640,\x22height\x22:640},{\x22url\x22:\x22https://64.media.tumblr.com/db415353b334d6d0d0083b41135d0973/tumblr_o19nggFwkj1qali1no2_540.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:540,\x22height\x22:540},{\x22url\x22:\x22https://64.media.tumblr.com/db415353b334d6d0d0083b41135d0973/tumblr_o19nggFwkj1qali1no2_500.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:500,\x22height\x22:500},{\x22url\x22:\x22https://64.media.tumblr.com/db415353b334d6d0d0083b41135d0973/tumblr_o19nggFwkj1qali1no2_400.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:400,\x22height\x22:400},{\x22url\x22:\x22https://64.media.tumblr.com/db415353b334d6d0d0083b41135d0973/tumblr_o19nggFwkj1qali1no2_250.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:250,\x22height\x22:250},{\x22url\x22:\x22https://64.media.tumblr.com/db415353b334d6d0d0083b41135d0973/tumblr_o19nggFwkj1qali1no2_100.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:100,\x22height\x22:100},{\x22url\x22:\x22https://64.media.tumblr.com/db415353b334d6d0d0083b41135d0973/tumblr_o19nggFwkj1qali1no2_75sq.jpg\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:75,\x22height\x22:75,\x22cropped\x22:true}]},{\x22type\x22:\x22text\x22,\x22text\x22:\x22Mercury in Retroglamour\x22}],\x22layout\x22:[{\x22type\x22:\x22rows\x22,\x22display\x22:[{\x22blocks\x22:[0,1]},{\x22blocks\x22:[2]}]}],\x22post\x22:{\x22id\x22:\x22137699861511\x22},\x22blog\x22:{\x22name\x22:\x22sleazeburger\x22,\x22title\x22:\x22Sleazeburger in Paradise\x22,\x22description\x22:\x22Signe Pierce / Artist + Photographer / LA x NYC / AMERICAN REFLEXXX\x22,\x22url\x22:\x22https://sleazeburger.tumblr.com/\x22,\x22uuid\x22:\x22t:ZGsNdvTuWAAh6sWWS4RWpQ\x22,\x22updated\x22:1673074518,\x22blog_view_url\x22:\x22https://www.tumblr.com/sleazeburger\x22,\x22key\x22:\x224Qxg4suU4\x22,\x22theme\x22:{\x22header_full_width\x22:500,\x22header_full_height\x22:281,\x22header_focus_width\x22:329,\x22header_focus_height\x22:186,\x22avatar_shape\x22:\x22circle\x22,\x22background_color\x22:\x22#000000\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x2247,414,233,85\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/4fb951d6ed9e860f6aa45b8323d9835a/5931a7b28e88c716-3c/s500x281/07b31819b3999a3a568adb361e859f5449b2846a.gif\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/4fb951d6ed9e860f6aa45b8323d9835a/5931a7b28e88c716-3c/s2048x3072_c17000,16726,82800,82918/fd970048ede5b1f85cbeaa0ad58f6ddefd32134b.gif\x22,\x22header_image_poster\x22:\x22https://44.media.tumblr.com/4fb951d6ed9e860f6aa45b8323d9835a/5931a7b28e88c716-3c/s2048x3072_f1/9e611a24f43b16af67234c6955ac45a87447e8a9.gif\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/4fb951d6ed9e860f6aa45b8323d9835a/5931a7b28e88c716-3c/s2048x3072/c32de323aa7dcd6df6638310a4a1aae0294817de.gif\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#301cff\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:true,\x22show_title\x22:true,\x22title_color\x22:\x22#fc529c\x22,\x22title_font\x22:\x22Avalon\x22,\x22title_font_weight\x22:\x22bold\x22},\x22can_message\x22:true,\x22share_likes\x22:true,\x22share_following\x22:false,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22can_show_badges\x22:true,\x22active\x22:true}},{\x22content\x22:[{\x22type\x22:\x22text\x22,\x22text\x22:\x22glo\x22}],\x22layout\x22:[],\x22broken_blog_name\x22:\x22awayfromemptygold\x22}]}'</div><time class="posts-metas d-flex-aj-center w-100"><hr><a href="https://odethm2.tumblr.com/post/708924557848969216/awayfromemptygold-sleazeburger-mercury-in" class="d-flex-aj-center"><b class="posts-counter"></b><i>30 minutes ago</i></a></time><div class="posts-contents"><div class="media-container photoset-container p-r oy-h w-100 d-flex-aj-center" data-layout='["2"]'><div class="glider"><img src="https://64.media.tumblr.com/2fad58cd08f6ad03a00e828121560bbb/tumblr_o19nggFwkj1qali1no1_1280.jpg" alt="awayfromemptygold:“ sleazeburger:“ Mercury in Retroglamour”glo”" data-width="1280" data-height="1280" class="w-100 glider-slide active center visible tumblr-lightbox-loaded-trigger" data-gslide="0" style="height:auto;width:943px"><img src="https://64.media.tumblr.com/db415353b334d6d0d0083b41135d0973/tumblr_o19nggFwkj1qali1no2_1280.jpg" alt="awayfromemptygold:“ sleazeburger:“ Mercury in Retroglamour”glo”" data-width="1280" data-height="1280" class="w-100 glider-slide tumblr-lightbox-loaded-trigger right-1" data-gslide="1" style="height:auto;width:943px"></div><div role="tablist" class="dots glider-dots"></div></div><div class="posts-caption"><div class="trail-item"><div class="trail-user"><img src="https://64.media.tumblr.com/avatar_40fd435f97bc_64.pnj" alt="sleazeburger"><b><a href="https://sleazeburger.tumblr.com/post/137699861511">sleazeburger</a></b></div><div class="trail-content"><p>Mercury in Retroglamour</p></div></div><div class="trail-item"><div class="trail-user trail-user-deactivated"><img src="https://assets.tumblr.com/images/default_avatar/octahedron_open_64.png" alt="awayfromemptygold"><b><a href="">awayfromemptygold</a></b></div><div class="trail-content"><p>glo</p></div></div></div></div></article>
+
+                <article id="post-708928743351156736" class="post p-r ox-h oy-h video" data-permalink="https://odethm2.tumblr.com/post/708928743351156736" data-tags="reblog"><div class="d-hidden npf-container">'{\x22content\x22:[],\x22layout\x22:[],\x22trail\x22:[{\x22content\x22:[{\x22type\x22:\x22video\x22,\x22provider\x22:\x22tumblr\x22,\x22url\x22:\x22https://va.media.tumblr.com/tumblr_rhfz1mHqJP1xd5v61.mp4\x22,\x22media\x22:{\x22url\x22:\x22https://va.media.tumblr.com/tumblr_rhfz1mHqJP1xd5v61.mp4\x22,\x22type\x22:\x22video/mp4\x22,\x22width\x22:576,\x22height\x22:1024},\x22poster\x22:[{\x22media_key\x22:\x22c6798aa5189cd2e13a2a98f2a6e3c3eb:74576dd6b1be37bc-da\x22,\x22type\x22:\x22image/jpeg\x22,\x22width\x22:456,\x22height\x22:810,\x22url\x22:\x22https://64.media.tumblr.com/c6798aa5189cd2e13a2a98f2a6e3c3eb/74576dd6b1be37bc-da/s540x810/4696bc5d08b7fb46b9cdd77fbed78be865129d81.jpg\x22}]},{\x22type\x22:\x22text\x22,\x22text\x22:\x22@deanwithscissors \x22,\x22formatting\x22:[{\x22type\x22:\x22mention\x22,\x22start\x22:0,\x22end\x22:17,\x22blog\x22:{\x22name\x22:\x22deanwithscissors\x22,\x22url\x22:\x22https://deanwithscissors.tumblr.com/\x22,\x22uuid\x22:\x22t:nuz3indVSlyRN646_XSN0A\x22}}]}],\x22layout\x22:[],\x22post\x22:{\x22id\x22:\x22694037270692577280\x22},\x22blog\x22:{\x22name\x22:\x22deanwinchestersgirl87\x22,\x22title\x22:\x22MY FANDOM IS BETTER THAN YOURS ?\x22,\x22description\x22:\x22\x22,\x22url\x22:\x22https://www.tumblr.com/deanwinchestersgirl87\x22,\x22uuid\x22:\x22t:iVM9sBjhAulWaG9rKjU_Aw\x22,\x22updated\x22:1676081432,\x22blog_view_url\x22:\x22https://www.tumblr.com/deanwinchestersgirl87\x22,\x22key\x22:\x22vrs3BDYpd\x22,\x22theme\x22:{\x22header_full_width\x22:720,\x22header_full_height\x22:960,\x22header_focus_width\x22:720,\x22header_focus_height\x22:405,\x22avatar_shape\x22:\x22square\x22,\x22background_color\x22:\x22#000000\x22,\x22body_font\x22:\x22Helvetica Neue\x22,\x22header_bounds\x22:\x22111,720,516,0\x22,\x22header_image\x22:\x22https://64.media.tumblr.com/537c82b0e6ef416887b860e55028d495/b66ca67e0cb69fff-cf/s720x714/fe0ca1442811ff8347534f11e1d40cea980effd1.jpg\x22,\x22header_image_focused\x22:\x22https://64.media.tumblr.com/537c82b0e6ef416887b860e55028d495/b66ca67e0cb69fff-cf/s2048x3072_c0,11563,100000,53750/7d35dd414a38f3b57cf011650bdcb8d9f180b56e.jpg\x22,\x22header_image_poster\x22:\x22\x22,\x22header_image_scaled\x22:\x22https://64.media.tumblr.com/537c82b0e6ef416887b860e55028d495/b66ca67e0cb69fff-cf/s2048x3072/dab78ff655c990681d9ebe54e7c039591d40e720.jpg\x22,\x22header_stretch\x22:true,\x22link_color\x22:\x22#3F2019\x22,\x22show_avatar\x22:true,\x22show_description\x22:true,\x22show_header_image\x22:true,\x22show_title\x22:true,\x22title_color\x22:\x22#82CD1E\x22,\x22title_font\x22:\x22Favorit\x22,\x22title_font_weight\x22:\x22regular\x22},\x22can_message\x22:true,\x22share_likes\x22:true,\x22share_following\x22:true,\x22is_nsfw\x22:false,\x22is_adult\x22:false,\x22can_be_followed\x22:true,\x22placement_id\x22:\x22\x22,\x22tumblrmart_accessories\x22:{},\x22can_show_badges\x22:true,\x22active\x22:true}}]}'</div><time class="posts-metas d-flex-aj-center w-100"><hr><a href="https://odethm2.tumblr.com/post/708928743351156736" class="d-flex-aj-center"><b class="posts-counter"></b><i>51 seconds ago</i></a></time><div class="posts-contents"><div class="media-container video-container oy-h w-100 d-flex-aj-center"><div class="resizable-content w-100"><div><iframe src="https://va.media.tumblr.com/tumblr_rhfz1mHqJP1xd5v61.mp4" width="576" height="1024"></iframe></div></div></div><div class="posts-caption"><div class="trail-item"><div class="trail-user"><img src="https://64.media.tumblr.com/86d577ee125e5c605e0b1a59b772b3ab/964dabf560b788d5-eb/s64x64u_c1/81b5c74ae6b9a00c9db9f7638ed46020a647b4e0.png" alt="deanwinchestersgirl87"><b><a href="https://deanwinchestersgirl87.tumblr.com/post/694037270692577280">deanwinchestersgirl87</a></b></div><div class="trail-content"><p><a class="tumblelog" href="https://tmblr.co/MZAUGcLQRiYi1XKEjkyB3Ew">@deanwithscissors</a></p></div></div></div></div></article>
+            </section>
+            
+
+            <button class="back-to-top invisible np-pagination" title="Scroll to top">
+                <span data-feather="chevron-up" class="d-block wh-100"></span>
+            </button>
+            
+            <div class="pagination-container np-pagination">
+                <div class="jump-pagination d-flex-aj-center">
+                    <a href="/" class="nav-page d-flex-a-center">
+                        <span data-feather="chevron-left"></span>
+                        Prev
+                    </a>
+    
+                    <a class="jump-page" href="/">1</a>
+                    <span class="current-page">2</span>
+                    <a class="jump-page" href="/">3</a>
+                    <a class="jump-page" href="/">4</a>
+                    <a class="jump-page" href="/">5</a>
+                    <a href="/" class="nav-page d-flex-a-center">
+                        Next
+                        <span data-feather="chevron-right"></span>
+                    </a>
+                </div>
+                
+                <div class="load-more-container">
+                    <button>
+                        Load more posts
+                    </button>
+                </div>
+                
+            </div>
+        </main>
+    </body>
+    
+    <script src="https://static.tumblr.com/wgg6svp/DXrrnsprs/babel.min.js"></script>    
+    <script src="https://static.tumblr.com/emvnqzg/Fmtrpa5x3/popper.min.js"></script>
+    <script src="https://static.tumblr.com/emvnqzg/Jf1rpa5xx/tippy-bundle.umd.min.js"></script>
+    <script src="https://static.tumblr.com/emvnqzg/zQ1rpa5z0/feather.min.js"></script>
+    <script src="https://static.tumblr.com/emvnqzg/cPSrpbujq/glider.min.js"></script>
+    <script src="https://static.tumblr.com/emvnqzg/1CBrpqsh1/neothm.js"></script>
+
+    <script type="text/babel">
+        const root = document.querySelector(':root')
+        const dynamicInputs = document.querySelectorAll('.customization-options .variable-input')
+        const resetButton = document.querySelector('.customization-options .reset-attributes')
+        const showPermaButton = document.querySelector('.customization-options .show-permalink-page')
+
+        const customizationSpecialCases = (attribute, value) => {
+          if(attribute == "--pagination-type") {
+            const paginationContainer = document.querySelector('.pagination-container')
+            paginationContainer.classList.remove(...paginationContainer.classList)
+            paginationContainer.classList.add('pagination-container', value)
+          } else if(attribute === "--post-size") {
+            document.querySelectorAll('#posts-container article').forEach((post) => {
+              resizeItems(post) // Resize iframes (videos
+            })
+          }
+        }
+
+        const setInputsToDefault = (input) => {
+          let defaultValue = input.dataset.default
+          if(input.type === 'checkbox') {
+            if(defaultValue === 'true') input.checked = true
+            defaultValue = input.checked ? input.dataset.iftrue : input.dataset.iffalse
+          } else {
+            input.value = defaultValue
+          }
+          root.style.setProperty(input.dataset.attribute, defaultValue)
+          customizationSpecialCases(input.dataset.attribute, defaultValue)
+        }
+
+        const handleInputChange = (input, value = '') => {
+          if(!!value) {
+            input.value = value
+          } else {
+            if(input.type === 'checkbox') {
+              value = input.checked ? input.dataset.iftrue : input.dataset.iffalse
+            } else {
+              value = input.value
+            }
+          }
+          console.log(input.dataset.attribute, value)
+          root.style.setProperty(input.dataset.attribute, value)
+          customizationSpecialCases(input.dataset.attribute, value)
+        }
+
+        dynamicInputs.forEach((input) => {
+          setInputsToDefault(input)
+          
+          input.addEventListener('change', () => {
+            handleInputChange(input)
+          })
+          
+          const suggestions = input.parentElement.querySelectorAll('.suggestion-link')
+          suggestions.forEach((link) => {
+            link.addEventListener('click', (e) => {
+              e.preventDefault()
+              const value = e.target.dataset.value
+              console.log(value)
+              handleInputChange(input, value)
+            })
+          })
+        })
+
+        resetButton.addEventListener('click', () => {
+          if(confirm("Reset all options to default?")) {
+            dynamicInputs.forEach((input) => setInputsToDefault(input))
+          }
+        })
+
+        showPermaButton.addEventListener('click', () => {
+          window.scroll({ top: 0, behavior: 'smooth' })
+
+          if(document.body.classList.contains('permalink-page')) {
+            document.body.classList.remove('permalink-page')
+            document.body.classList.add('index-page')
+            showPermaButton.innerText = "Preview permalink page"
+          } else {
+            document.body.classList.add('permalink-page')
+            document.body.classList.remove('index-page')
+            showPermaButton.innerText = "Back to index view"
+          }
+
+          postCallback(Array.from(postsContainer.querySelectorAll('article')))
+        })
+
+
+        const metas = {
+            // currentUser: { "name": "{Name}", "title": {JSTitle}, "url": {JSBlogURL}, "active": true },
+            isIndexPage: true,
+            isPermalinkPage: false
+        }
+        
+        tippy('[title]', tippyOptions)
+        
+        // Articles HTML to adapt media posts
+        const articleTemplates = {
+            "photo": "<div class=\"media-container photo-container oy-h w-100 d-flex-aj-center\"><img src alt data-width data-height class=\"tumblr-lightbox-preload w-100\"></div>", 
+            "photoset": "<div class=\"media-container photoset-container p-r oy-h w-100 d-flex-aj-center\" data-layout><div class=\"glider\"><img src alt data-width data-height class=\"w-100 tumblr-lightbox-preload\"></div><div role=\"tablist\" class=\"dots\"></div></div>",
+            "photoset_permalink": "<div class=\"media-container photoset-container\" data-layout><img src alt data-width data-height class=\"tumblr-lightbox-preload\"></div>",
+            "video": "<div class=\"media-container video-container oy-h w-100 d-flex-aj-center\"><div class=\"resizable-content w-100\"></div></div>",
+            "audio": "<div class=\"media-container audio-container oy-h\"><div class=\"audio-player\"><div class=\"audio-player-container\" style></div><div class=\"audio-metas\"><h3 class=\"audio-trackname\"></h3><div class=\"audio-artist d-flex-a-center\"><span data-feather=\"music\"></span></div><div class=\"audio-album d-flex-a-center\"><span data-feather=\"disc\"></span></div></div></div></div>"
+        }
+        
+        /*
+            Change NPF posts layout to fit old-type posts
+        */
+        const fixNPFPosts = (allPosts) => {
+            if(allPosts.length > 0) {
+                return new Promise ((resolver) => {
+                    allPosts.forEach((textPost) => {
+                        if(textPost.classList.contains('text')) {
+                            const npfData = decodeHTMLEntities(textPost.querySelector('.npf-container').innerText)
+                            const npfPost = JSON.parse(npfData.substring(1, npfData.length-1)) 
+                            const [npfContent, npfLayout] = buildNPFTrails(npfPost)
+                            const originalPostContent = npfContent[0]
+                            
+                            if(originalPostContent.length > 0) {
+                                // this post is a lil NPF bitch
+                                const firstRow = originalPostContent[0]
+                                
+                                removeEmptyNodes(textPost, '.posts-caption, p, .trail-content')
+                                let newPostType = '', newPostContentNode = document.createElement('div'), rowCounter = 0
+                                
+                                // Post is either a photo or a photoset
+                                if(firstRow.type === 'image') {
+                                    // Get all images before caption
+                                    const postsImagesUntilText = []
+                                    const postsRowCount = []
+                                    let foundText = false
+                                    
+                                    npfContent.forEach((content, trailIndex) => {
+                                        content.forEach((row) => ((!foundText && trailIndex === 0 && row.type === 'image') ? postsImagesUntilText.push(row) : foundText = true))
+                                        if(!foundText) postsRowCount.push('row')
+                                    })
+                                    
+                                    const isPhotoset = postsImagesUntilText.length > 1
+                                    newPostType = isPhotoset ? 'photoset' : 'photo'
+                                    const newContentNode = parser.parseFromString(articleTemplates[`${ metas.isPermalinkPage && newPostType === 'photoset' ? 'photoset_permalink' : newPostType }`], 'text/html')
+                                    const mediaContainer = newContentNode.querySelector('.media-container')
+                                    
+                                    if(isPhotoset) {
+                                        // Set-up new photoset layout
+                                        let photosetLayout;
+                                        if(!!firstRow.display) {
+                                            const NPFRowSums = firstRow.display.map((b) => b.blocks.length)
+                                            let tmpSum = 0, stopIndex = 0
+                                            
+                                            NPFRowSums.some((nbr, i) => {
+                                                if (tmpSum + nbr > postsImagesUntilText.length) {
+                                                    stopIndex = i
+                                                    return true
+                                                }
+                                                tmpSum += nbr
+                                            })
+        
+                                            photosetLayout = NPFRowSums.slice(0, stopIndex)
+                                        } else {
+                                            photosetLayout = []
+                                            for(let i=0; i < postsImagesUntilText.length; i++){
+                                                photosetLayout.push('1')
+                                            }
+                                        }
+                                        
+                                        rowCounter = photosetLayout.length
+                                        mediaContainer.dataset.layout = JSON.stringify(photosetLayout)
+                                        
+                                        if(metas.isIndexPage) {
+                                            // Set-up glider
+                                            const glider = newContentNode.querySelector('.glider')
+                                            NPFReplaceImagesHTML(glider, postsImagesUntilText)
+                                        } else {
+                                            NPFReplaceImagesHTML(mediaContainer, postsImagesUntilText)
+                                        }
+                                    } else {
+                                        rowCounter = 1
+                                        // Set-up solo image post
+                                        NPFReplaceImagesHTML(mediaContainer, postsImagesUntilText)
+                                    }
+                                    // Stuffs to remplace in new post
+                                    newPostContentNode.appendChild(mediaContainer)
+                                }
+                                else if(firstRow.type === 'video') {
+                                    newPostType = 'video'
+                                    
+                                    npfContent.forEach((content, trailIndex) => {
+                                        content.forEach((row) => {
+                                            if(trailIndex === 0 && row.type === 'video') {
+                                                const newContentNode = parser.parseFromString(articleTemplates[newPostType], 'text/html')
+                                                const mediaContainer = newContentNode.querySelector('.media-container')
+                                                const iframeDiv = document.createElement('div')
+                                                if(!!row.embed_html) {
+                                                    iframeDiv.innerHTML = row.embed_html
+                                                } else {
+                                                    iframeDiv.innerHTML = `<iframe src="${ row.media.url }" width="${ row.media.width }" height="${ row.media.height }" />`
+                                                }
+                                                mediaContainer.querySelector('.resizable-content').appendChild(iframeDiv)
+                                                
+                                                newPostContentNode.appendChild(mediaContainer)
+                                            }
+                                        })
+                                    })
+                                    rowCounter = 1
+                                }
+                                else if(firstRow.type === 'audio') {
+                                    newPostType = 'audio'
+                                    const newContentNode = parser.parseFromString(articleTemplates[newPostType], 'text/html')
+                                    const mediaContainer = newContentNode.querySelector('.media-container')
+                                    const audioPlayerContainer = newContentNode.querySelector('.audio-player-container')
+                                    const audioMetasContainer = newContentNode.querySelector('.audio-metas')
+                                    
+                                    npfContent.forEach((content, trailIndex) => {
+                                        content.forEach((row) => {
+                                            if(trailIndex === 0 && row.type === 'audio') {
+                                                if(!!row.poster.length) { audioPlayerContainer.style.backgroundImage = `url(${ row.poster[0].url })` }
+                                                
+                                                const span = document.createElement('span')
+                                                span.setAttribute('class', 'p-r')
+                                                span.innerHTML = `<button class="audio-trigger-play d-flex-aj-center wh-100"><span data-feather="play"></span></button><button class="audio-trigger-pause d-flex-aj-center invisible wh-100"> <span data-feather="pause"></span></button><audio class="invisible" controls><source src="${ row.media.url }" type="${ row.media.type }"></audio>`
+                                                audioPlayerContainer.appendChild(span)
+                                                
+                                                if(!!audioMetasContainer) {
+                                                    audioMetasContainer.querySelector('.audio-trackname').innerHTML += row.title
+                                                    audioMetasContainer.querySelector('.audio-artist').innerHTML += row.artist
+                                                    audioMetasContainer.querySelector('.audio-album').innerHTML += row.album
+                                                }
+                                                
+                                                newPostContentNode.appendChild(mediaContainer)
+                                            }
+                                        })
+                                    })
+                                    rowCounter = 1
+                                }
+                                
+                                if(!!newPostType) {
+                                    const newPostNode = formatNewPostNode(textPost.cloneNode(true), newPostContentNode, newPostType, rowCounter)
+                                    textPost.replaceWith(newPostNode)
+                                }
+                            }
+                        }
+                    })
+                    resolver(true)
+                })
+            } else {
+                return Promise.resolve(true)
+            }
+        }
+        
+        
+        /*
+            Pagination options
+        */
+        /*
+            {block:NextPage}metas.nextPage = forceNumber({JSNextPage}){/block:NextPage}
+            metas.totalPages = forceNumber({JSTotalPages}) 
+            
+            const paginationContainer = document.querySelector('.pagination-container')
+            const loadMoreButton = paginationContainer.querySelector('.load-more-container button')
+            const scrollingContainer = window
+            
+            if(paginationContainer.classList.contains('np-infinite-scroll') || paginationContainer.classList.contains('np-load-more')) {
+                backToTopInit(scrollingContainer)
+                
+                if(paginationContainer.classList.contains('np-infinite-scroll')) {
+                    // Scroll
+                    scrollingContainer.addEventListener('scroll', infiniteScrollFunction)
+                } else {
+                    // Load more fonction
+                    loadMoreButton.addEventListener('click', loadMoreFunction)
+                }
+            }
+        */
+
+        /*
+            Place tumblr controls
+        */
+        const postCallback = (newPosts, nextPage) => {
+            // Posts loops
+            fixNPFPosts(newPosts).then((res) => {
+                tippy('#posts-container [title]', tippyOptions)
+                feather.replace()
+                
+                if(newPosts.length > 0) {
+                    const newPostsIds = newPosts.map((p) => '#' + p.id) // ['#post-4545', '#post-14545']
+                    
+                    // Reinit like buttons
+                    const rawTumblrIds = newPostsIds.map((p) => p.replace('#post-', '')) // ['4545', '14545']
+                
+                    const allNewImages = document.querySelectorAll(newPostsIds.map((p) => p + ' img').join(', '))
+                    
+                     // Reselect newPosts var because fixNPFPosts replaced Nodes and messed up the ref
+                    const reinitNewPosts = document.querySelectorAll(newPostsIds.join(', '))
+                    
+                    allImagesLoaded(allNewImages).then(() => {
+                        reinitNewPosts.forEach((post) => {
+                            const postId = post.id
+                            
+                            resizeItems(post) // Resize iframes (videos)
+                            
+                            initGlider(post, 'dots') // Carousel
+                            
+                            if(post.classList.contains('permalink-post')) formatPhotoset(post)
+                            
+                            if(post.classList.contains('audio')) customAudioPlayPause(post)
+                            removeEmptyNodes(post, '.posts-caption, p, .trail-content')
+                            
+                            // Init Lightboxes
+                            const imagesToLoad = post.querySelectorAll('.tumblr-lightbox-preload')
+                            imagesToLoad.forEach((image) => tumblrLightbox(image, postId))
+                            
+                            post.classList.remove('invisible')
+                        })
+                    })
+                    
+                    /*
+                        if(!!loadMoreButton && allLoadedPosts) loadMoreButton.remove() 
+                    */
+                }
+            })
+        }
+        // Init original posts
+        const postsContainer = document.querySelector('#posts-container')
+        
+        window.addEventListener('resize',  () => {
+            document.querySelectorAll('#posts-container article').forEach((post) => {
+                resizeItems(post) // Resize iframes (videos
+            })
+        })
+        
+        const originalPosts = Array.from(postsContainer.querySelectorAll('article'))
+        postCallback(originalPosts)
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

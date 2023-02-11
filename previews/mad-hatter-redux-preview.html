@@ -7,7 +7,7 @@
         Creator:                     Neo  @mtrics
         Release:                     2016-11-05
         Version:                     1.0
-        Source:                      https://github.com/neothm/public-releases/...
+        Source:                      https://github.com/neothm/public-releases/blob/main/mad-hatter-redux.html
  
     ## Links
         Support                      https://neothm.com/tagged/answeo
@@ -81,7 +81,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         <link href="https://static.tumblr.com/emvnqzg/pORrpbukq/glider.min.css" rel="stylesheet">
         
-        <link href="https://static.tumblr.com/emvnqzg/yLjrpkn1m/base.css" rel="stylesheet">
+        <link href="https://static.tumblr.com/emvnqzg/HCcrpm9ic/base.css" rel="stylesheet">
         
         <link href="https://static.tumblr.com/emvnqzg/vOmrpfphp/notes.css" rel="stylesheet">
 
@@ -106,6 +106,7 @@
                 --post-padding: 20px;
                 --post-padding-permalink: 20px;
                 --base-font-size: 12px;
+                --base-line-height: 1.5;
                 
                 
                 --accent-color: #4d8b3c;
@@ -270,10 +271,6 @@
             /* ================================================================
                 DEFAULT
             ================================================================ */
-            body {
-                font-size: var(--base-font-size);
-            }
-            
             .tmblr-lightbox .lightbox-image {
                 border-radius: var(--border-radius) !important;    
             }
@@ -938,6 +935,7 @@
             .customization-options .footer-buttons {
               display: flex;
               justify-content: space-between;
+              gap: 20px;
             }
 
             .customization-options .footer-buttons button {
@@ -1662,14 +1660,13 @@
         </main>
     </body>
     
-    <script src="https://static.tumblr.com/wgg6svp/DXrrnsprs/babel.min.js"></script>    
-    <script src="https://static.tumblr.com/wgg6svp/rKhro34kh/credits.min.js"></script>
+    <script src="https://static.tumblr.com/wgg6svp/DXrrnsprs/babel.min.js"></script>
     
     <script src="https://static.tumblr.com/emvnqzg/Fmtrpa5x3/popper.min.js"></script>
     <script src="https://static.tumblr.com/emvnqzg/Jf1rpa5xx/tippy-bundle.umd.min.js"></script>
     <script src="https://static.tumblr.com/emvnqzg/zQ1rpa5z0/feather.min.js"></script>
     <script src="https://static.tumblr.com/emvnqzg/cPSrpbujq/glider.min.js"></script>
-    <script src="https://static.tumblr.com/emvnqzg/Di3rpklaa/neothm.js"></script>
+    <script src="https://static.tumblr.com/emvnqzg/vcArpmc7h/neothm.js"></script>
     
     <script type="text/babel">
 
@@ -1731,6 +1728,7 @@
       })
 
       showPermaButton.addEventListener('click', () => {
+        window.scroll({ top: 0, behavior: 'smooth' })
         if(document.body.classList.contains('permalink-page')) {
           document.body.classList.remove('permalink-page')
           document.body.classList.add('index-page')
